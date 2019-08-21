@@ -42,14 +42,17 @@
 
 -   [Travis CI](https://travis-ci.org/)
 
-## Linting
+## Linting & Formatting
+
+-   Common
+
+    -   [Prettier](https://prettier.io/)
 
 -   Python
     -   [Black](https://github.com/psf/black)
     -   [Flake8](http://flake8.pycqa.org/)
 -   JavaScript/TypeScript
     -   [ESLint](https://eslint.org/)
-    -   [Prettier](https://prettier.io/)
 
 ## API documentation
 
