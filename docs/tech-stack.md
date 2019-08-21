@@ -14,20 +14,29 @@
 ## Frontend
 
 -   Common
+
     -   [React](https://reactjs.org/)
     -   [TypeScript](https://www.typescriptlang.org/)
     -   [OpenAPI](https://swagger.io/docs/specification/about/)
     -   [i18next](https://react.i18next.com/)
+    -   [Styled Components](https://www.styled-components.com/)
 
-*   Browser
+-   Browser
 
     -   [Next.js](https://nextjs.org)
     -   [React Router DOM](https://reacttraining.com/react-router/web/guides/quick-start)
 
-*   Mobile
+-   Mobile
     -   [React Native](https://facebook.github.io/react-native/)
     -   [React Native Elements](https://react-native-training.github.io/react-native-elements/)
     -   [React Navigation](https://reactnavigation.org/)
+
+## Testing
+
+-   Backend
+    -   [Pytest](https://docs.pytest.org/en/latest/)
+-   Frontend
+    -   [Jest](https://jestjs.io/)
 
 ## CI/CD
 
