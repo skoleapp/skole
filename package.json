@@ -8,6 +8,7 @@
     "build": "docker-compose build",
     "stop": "docker-compose down",
     "clean": "docker system prune -af",
-    "clean:volumes": "docker volume prune -f"
+    "clean:volumes": "docker volume prune -f",
+    "gen": "docker exec -it frontend yarn run gen"
   }
 }
