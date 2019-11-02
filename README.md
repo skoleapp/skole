@@ -11,7 +11,4 @@
 - To stop containers, run `yarn run stop`.
 - To clean containers, run `yarn run clean`.
 - To clean volumes, run `yarn run clean:volumes`
-
-### Generating code from GraphQL schemas
-- Whenever you modify contents of the `/graphql` folder in the frontend directory, you need to re-generate the code.
-- To do this, make sure the backend is running in the root of the frontend directory, run: `yarn run gen`.
+- To generate code, run `yarn run gen`.
