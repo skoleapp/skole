@@ -7,7 +7,6 @@
 
 ### Dev environment
 - To start development environment, run: `yarn start`.
-- To run backend only, run: `yarn run backend`.
 - To build images, run `yarn run build`.
 - To stop containers, run `yarn run stop`.
 - To clean containers, run `yarn run clean`.
