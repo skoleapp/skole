@@ -5,11 +5,9 @@
   "author": "Skole Team",
   "scripts": {
     "start": "docker-compose up",
-    "start backend": "docker-compose run backend",
     "build": "docker-compose build",
     "stop": "docker-compose down",
     "clean": "docker system prune -af",
-    "clean:volumes": "docker volume prune -f",
-    "generate": "docker exec -it frontend yarn run gen"
+    "clean:volumes": "docker volume prune -f"
   }
 }
