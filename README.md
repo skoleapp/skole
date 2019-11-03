@@ -14,4 +14,4 @@
 - To make migrations, run `yarn makemigrations`.
 - To migrate db, run: `yarn migrate`.
 - To create superuser, run `yarn createsuperuser`.
-- To generate GraphQL code, run `yarn gen`.
+- To generate GraphQL code, run `yarn gen` on frontend root (while backend running).
