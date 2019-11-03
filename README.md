@@ -13,5 +13,5 @@
 - To clean volumes, run `yarn run clean:volumes`.
 - To make migrations, run `yarn run makemigrations`.
 - To migrate db, run: `yarn run migrate`.
-- To cretate superuser, run `yarn run createsuperuser`.
+- To create superuser, run `yarn run createsuperuser`.
 - To generate GraphQL code, run `yarn run gen`.
