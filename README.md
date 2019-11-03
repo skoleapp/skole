@@ -7,11 +7,11 @@
 
 ### Dev environment
 - To start development environment, run: `yarn start`.
-- To build images, run `yarn run build`.
-- To stop containers, run `yarn run stop`.
-- To clean containers, run `yarn run clean`.
-- To clean volumes, run `yarn run clean:volumes`.
-- To make migrations, run `yarn run makemigrations`.
-- To migrate db, run: `yarn run migrate`.
-- To create superuser, run `yarn run createsuperuser`.
-- To generate GraphQL code, run `yarn run gen`.
+- To build images, run `yarn build`.
+- To stop containers, run `yarn stop`.
+- To clean containers, run `yarn clean`.
+- To clean volumes, run `yarn clean:volumes`.
+- To make migrations, run `yarn makemigrations`.
+- To migrate db, run: `yarn migrate`.
+- To create superuser, run `yarn createsuperuser`.
+- To generate GraphQL code, run `yarn gen`.
