@@ -11,6 +11,7 @@
     "clean:volumes": "docker volume prune -f",
     "makemigrations": "docker exec -it backend python manage.py makemigrations",
     "migrate": "docker exec -it backend python manage.py migrate",
-    "createsuperuser": "docker exec -it backend python manage.py createsuperuser"
+    "createsuperuser": "docker exec -it backend python manage.py createsuperuser",
+    "gen": "docker exec -it frontend yarn gen"
   }
 }
