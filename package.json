@@ -9,9 +9,9 @@
     "stop": "docker-compose down",
     "clean": "docker system prune -af",
     "clean:volumes": "docker volume prune -f",
-    "makemigrations": "docker exec -it backend python manage.py makemigrations",
-    "migrate": "docker exec -it backend python manage.py migrate",
-    "createsuperuser": "docker exec -it backend python manage.py createsuperuser",
-    "gen": "docker exec -it frontend yarn gen"
+    "makemigrations": "docker-compose run --rm backend sh -c 'python manage.py makemigrations'",
+    "migrate": "docker-compose run --rm backend sh -c 'python manage.py migrate'",
+    "createsuperuser": "docker-compose run --rm backend sh -c 'python manage.py createsuperuser'",
+    "gen": "docker-compose run --rm frontend sh -c 'yarn gen'"
   }
 }
