@@ -9,7 +9,7 @@ services:
     env_file:
       - ./.env.dev
     volumes:
-      - ./backend/src:/app
+      - ./backend/src:/app/src
     command: >
       sh -c "python manage.py wait_for_db &&
             python manage.py migrate &&
@@ -19,6 +19,8 @@ services:
   db:
     container_name: db
     image: postgres:12.0-alpine
+    ports:
+      - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
