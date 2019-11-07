@@ -12,6 +12,6 @@
     "makemigrations": "docker-compose run --rm backend sh -c 'python manage.py makemigrations'",
     "migrate": "docker-compose run --rm backend sh -c 'python manage.py migrate'",
     "createsuperuser": "docker-compose run --rm backend sh -c 'python manage.py createsuperuser'",
-    "gen": "docker-compose run --rm frontend sh -c 'yarn gen'"
+    "gen": "yarn start backend && docker-compose run --rm frontend sh -c 'yarn gen'"
   }
 }
