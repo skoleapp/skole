@@ -15,3 +15,6 @@
 - To migrate db, run: `yarn migrate`.
 - To create superuser, run `yarn createsuperuser`.
 - To generate GraphQL code, run `yarn gen`.
+
+### Notes
+- When cloning the repository, use `git clone --recursive <link>`
