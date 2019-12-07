@@ -1,16 +1,17 @@
 # Skole :mortar_board:
 
 ### Requirements
+
 - [Docker](https://www.docker.com/)
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/lang/en/)
 
-### Dev environment
-- To start development environment, run: `yarn start`.
+### Useful Commands
+
 - To build images, run `yarn build`.
-- To stop containers, run `yarn stop`.
-- To clean containers, run `yarn clean`.
-- To clean volumes, run `yarn clean:volumes`.
+- To start containers, run `yarn start`.
+- To clean unused containers, run `yarn clean`.
+- To clean unused volumes, run `yarn clean:volumes`.
 - To make migrations, run `yarn makemigrations`.
 - To migrate db, run: `yarn migrate`.
 - To create superuser, run `yarn createsuperuser`.
@@ -19,4 +20,5 @@
 - To run tests in the backend, run `yarn test-backend`.
 
 ### Notes
+
 - When cloning the repository, use `git clone --recursive <link>`
