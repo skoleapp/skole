@@ -8,6 +8,10 @@
 
 ### Useful Commands
 
+- To build images, run `yarn build`.
+- To start containers, run `yarn start`.
+- To clean unused containers, run `yarn clean`.
+- To clean unused volumes, run `yarn clean:volumes`.
 - To make migrations, run `yarn makemigrations`.
 - To migrate db, run: `yarn migrate`.
 - To create superuser, run `yarn createsuperuser`.
