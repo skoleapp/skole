@@ -1,0 +1,20 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="skole" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Project Files" level="WARNING" enabled="true">
+        <option name="ignoredIdentifiers">
+          <list>
+            <option value="api.schemas.comment.CommentType.*" />
+          </list>
+        </option>
+      </scope>
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="api.schemas.comment.CommentType.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
