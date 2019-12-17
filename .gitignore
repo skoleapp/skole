@@ -1,2 +1,6 @@
 .vscode
-workspace.xml
+.idea/**/*.imi
+.idea/shelf
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/workspace.xml
