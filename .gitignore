@@ -1,5 +1,5 @@
 .vscode
-.idea/**/*.imi
+.idea/**/*.iml
 .idea/shelf
 .idea/tasks.xml
 .idea/usage.statistics.xml
