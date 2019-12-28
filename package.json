@@ -9,11 +9,11 @@
     "stop": "docker-compose down",
     "clean": "docker system prune -af",
     "clean:volumes": "docker volume prune -f",
-    "makemigrations": "docker-compose run --rm backend sh -c 'python manage.py makemigrations'",
-    "migrate": "docker-compose run --rm backend sh -c 'python manage.py migrate'",
-    "createsuperuser": "docker-compose run --rm backend sh -c 'python manage.py createsuperuser'",
-    "import-sample-data": "docker-compose run --rm backend sh -c 'python manage.py loaddata sample.yaml'",
-    "test-backend": "docker-compose run --rm backend sh -c 'pytest'",
+    "make-migrations": "docker-compose run --rm backend sh -c 'yarn make-migrations'",
+    "clear-migrations": "docker-compose run --rm backend sh -c 'yarn clear-migrations'",
+    "migrate": "docker-compose run --rm backend sh -c 'yarn migrate'",
+    "create-superuser": "docker-compose run --rm backend sh -c 'yarn create-superuser'",
+    "import-sample-data": "docker-compose run --rm backend sh -c 'yarn import-sample-data'",
     "gen": "docker-compose run --rm frontend sh -c 'yarn gen'"
   }
 }

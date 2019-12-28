@@ -6,7 +6,7 @@
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/lang/en/)
 
-### Useful Commands
+### Useful Monorepo Commands
 
 - To build images, run `yarn build`.
 - To start containers, run `yarn start`.
