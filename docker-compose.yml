@@ -10,6 +10,7 @@ services:
       - ./.env.dev
     volumes:
       - ./backend/src:/app/src
+      - ./backend/htmlcov:/app/htmlcov
     command: >
       sh -c "python src/manage.py wait_for_db &&
              python src/manage.py migrate &&
