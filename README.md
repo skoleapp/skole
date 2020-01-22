@@ -19,7 +19,6 @@
 - To run tests in the backend, run `yarn backend:test`.
 - To run linting, type checks etc. in the backend, run `yarn backend:lint`.
 - To generate GraphQL code in the frontend, run `yarn frontend:gen`.
-- To run linting in the frontend, run `yarn frontend:lint`.
 
 ### Notes
 
