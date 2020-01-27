@@ -13,7 +13,7 @@
     "backend:clear-migrations": "docker-compose run --rm backend sh -c 'yarn clear-migrations'",
     "backend:migrate": "docker-compose run --rm backend sh -c 'yarn migrate'",
     "backend:create-superuser": "docker-compose run --rm backend sh -c 'yarn create-superuser'",
-    "backend:import-sample-data": "docker-compose run --rm backend sh -c 'yarn import-sample-data'",
+    "backend:import-test-data": "docker-compose run --rm backend sh -c 'yarn import-test-data'",
     "backend:test": "docker-compose run --rm backend sh -c 'yarn test'",
     "backend:lint": "docker-compose run --rm backend sh -c 'yarn lint'",
     "frontend:gen": "docker-compose run --rm frontend sh -c 'yarn gen'"
