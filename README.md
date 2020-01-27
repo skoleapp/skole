@@ -15,9 +15,9 @@
 - To make migrations, run `yarn backend:make-migrations`.
 - To migrate db, run: `yarn backend:migrate`.
 - To create superuser, run `yarn backend:create-superuser`.
-- To import sample data, run `yarn backend:import-sample-data`.
-- To run tests in the backend, run `yarn backend:test`.
-- To run linting, type checks etc. in the backend, run `yarn backend:lint`.
+- To import test data, run `yarn backend:import-test-data`.
+- To run tests and type checks in the backend, run `yarn backend:test`.
+- To run linting in the backend, run `yarn backend:lint`.
 - To generate GraphQL code in the frontend, run `yarn frontend:gen`.
 
 ### Notes
