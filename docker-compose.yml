@@ -29,7 +29,7 @@ services:
   frontend:
     container_name: frontend
     ports:
-      - '3000:3000'
+      - '3001:3001'
     env_file:
       - ./.env.dev
     build: ./frontend
