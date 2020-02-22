@@ -1,0 +1,28 @@
+{
+  "family": "skole-service",
+  "containerDefinitions": [
+    {
+      "name": "skole-service",
+      "image": "630869177434.dkr.ecr.eu-north-1.amazonaws.com/skole:latest",
+      "cpu": 128,
+      "memoryReservation": 128,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "command": [
+        "./entrypoint.sh"
+      ],
+      "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+              "awslogs-group": "skole-logs",
+              "awslogs-region": "eu-north-1"
+          }
+      },
+      "essential": true
+    }
+  ]
+}

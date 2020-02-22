@@ -1,0 +1,14 @@
+{
+    "cluster": "skole",
+    "serviceName": "skole-service",
+    "taskDefinition": "skole-service",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-north-1:630869177434:targetgroup/skole-target-group/b5cbc2518b2da7b8",
+            "containerName": "skole-service",
+            "containerPort": 8000
+        }
+    ],
+    "desiredCount": 1,
+    "role": "ecsServiceRole"
+}
