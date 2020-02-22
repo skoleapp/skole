@@ -17,6 +17,7 @@ services:
              python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db
+    restart: unless-stopped
   db:
     container_name: db
     image: postgres:12.0-alpine
@@ -26,6 +27,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env.dev
+    restart: unless-stopped
   frontend:
     container_name: frontend
     ports:
@@ -38,6 +40,7 @@ services:
       - /app/node_modules
       - /app/.next
     command: "yarn dev"
+    restart: unless-stopped
 
 volumes:
   postgres_data:
