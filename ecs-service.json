@@ -1,10 +1,10 @@
 {
-    "cluster": "skole",
+    "cluster": "skole-cluster",
     "serviceName": "skole-service",
     "taskDefinition": "skole-service",
     "loadBalancers": [
         {
-            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-north-1:630869177434:targetgroup/skole-target-group/b5cbc2518b2da7b8",
+            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/skole-target-group/c42292c1b8fcc44e",
             "containerName": "skole-service",
             "containerPort": 8000
         }
