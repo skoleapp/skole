@@ -1,27 +1,27 @@
-version: '3.7'
+version: "3.7"
 
 services:
   backend:
     container_name: backend
     build: ./backend
     ports:
-      - '8000:8000'
+      - "8000:8000"
     env_file:
       - ./.env.dev
     volumes:
-      - ./backend/src:/app/src
+      - ./backend:/app
       - ./backend/htmlcov:/app/htmlcov
     command: >
-      sh -c "python src/manage.py wait_for_db &&
-             python src/manage.py migrate &&
-             python src/manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db
   db:
     container_name: db
     image: postgres:12.0-alpine
     ports:
-      - '5432:5432'
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
@@ -29,7 +29,7 @@ services:
   frontend:
     container_name: frontend
     ports:
-      - '3001:3001'
+      - "3001:3001"
     env_file:
       - ./.env.dev
     build: ./frontend
