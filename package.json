@@ -6,6 +6,8 @@
   "scripts": {
     "start": "docker-compose up",
     "build": "docker-compose build",
+    "build:backend": "yarn build backend",
+    "build:frontend": "yarn build frontend",
     "prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
     "stop": "docker-compose down",
     "clean": "docker system prune -af",
@@ -16,7 +18,8 @@
     "backend:create-superuser": "docker-compose run --rm backend sh -c 'yarn create-superuser'",
     "backend:import-test-data": "docker-compose run --rm backend sh -c 'yarn import-test-data'",
     "backend:test": "docker-compose run --rm backend sh -c 'yarn test'",
-    "backend:lint": "docker-compose run --rm backend sh -c 'yarn lint'",
+    "backend:makemessages": "docker-compose run --rm backend sh -c 'yarn makemessages'",
+    "backend:compilemessages": "docker-compose run --rm backend sh -c 'yarn compilemessages'",
     "frontend:gen": "docker-compose run --rm frontend sh -c 'yarn gen'"
   }
 }
