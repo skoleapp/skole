@@ -13,14 +13,16 @@
         }
       ],
       "command": [
-        "./entrypoint.sh"
+        "sh",
+        "-c",
+        "python manage.py wait_for_db && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn --bind 0.0.0.0:8000 config.wsgi"
       ],
       "logConfiguration": {
-          "logDriver": "awslogs",
-          "options": {
-              "awslogs-group": "skole-logs",
-              "awslogs-region": "eu-central-1"
-          }
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "skole-logs",
+          "awslogs-region": "eu-central-1"
+        }
       },
       "essential": true
     }
