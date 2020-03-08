@@ -66,6 +66,10 @@
         {
           "name": "CORS_ORIGIN_WHITELIST",
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/CORS_ORIGIN_WHITELIST"
+        },
+        {
+          "name": "DJANGO_SETTINGS_MODULE",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DJANGO_SETTINGS_MODULE"
         }
       ]
     },
