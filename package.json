@@ -12,14 +12,13 @@
     "stop": "docker-compose down",
     "clean": "docker system prune -af",
     "clean:volumes": "docker volume prune -f",
-    "backend:make-migrations": "docker-compose run --rm backend sh -c 'yarn make-migrations'",
-    "backend:clear-migrations": "docker-compose run --rm backend sh -c 'yarn clear-migrations'",
-    "backend:migrate": "docker-compose run --rm backend sh -c 'yarn migrate'",
-    "backend:create-superuser": "docker-compose run --rm backend sh -c 'yarn create-superuser'",
-    "backend:import-test-data": "docker-compose run --rm backend sh -c 'yarn import-test-data'",
-    "backend:test": "docker-compose run --rm backend sh -c 'yarn test'",
-    "backend:makemessages": "docker-compose run --rm backend sh -c 'yarn makemessages'",
-    "backend:compilemessages": "docker-compose run --rm backend sh -c 'yarn compilemessages'",
+    "backend:make-migrations": "docker-compose run --rm backend sh -c 'python manage.py makemigrations'",
+    "backend:migrate": "docker-compose run --rm backend sh -c 'python manage.py migrate'",
+    "backend:create-superuser": "docker-compose run --rm backend sh -c 'python manage.py createsuperuser'",
+    "backend:import-test-data": "docker-compose run --rm backend sh -c 'python manage.py loaddata test-data.yaml'",
+    "backend:test": "docker-compose run --rm backend sh -c 'mypy . && pytest --cov-report html --cov=. tests'",
+    "backend:makemessages": "docker-compose run --rm backend sh -c 'django-admin makemessages'",
+    "backend:compilemessages": "docker-compose run --rm backend sh -c 'django-admin compilemessages'",
     "frontend:gen": "docker-compose run --rm frontend sh -c 'yarn gen'"
   }
 }
