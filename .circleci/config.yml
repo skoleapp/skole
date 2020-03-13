@@ -1,28 +1,51 @@
 version: 2.1
 
 orbs:
-  aws-ecr: circleci/aws-ecr@6.7.0
+  aws-ecr: circleci/aws-ecr@6.7.1
   aws-ecs: circleci/aws-ecs@1.1.0
 
 workflows:
-  build-and-deploy:
+  deploy-skole:
     jobs:
       - aws-ecr/build-and-push-image:
+          name: build-backend
           pre-steps:
             - checkout
             - run:
                 command: |
-                  git submodule init
-                  git submodule update --remote
-          account-url: AWS_ACCOUNT_URL
-          repo: '${AWS_RESOURCE_NAME_PREFIX}'
-          region: AWS_DEFAULT_REGION
+                  git submodule update --init --recursive
+          account-url: AWS_ECR_ACCOUNT_URL
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          dockerfile: ./backend/Dockerfile.prod
+          region: AWS_REGION
+          repo: backend
           tag: '${CIRCLE_SHA1}'
-          path: backend
+      - aws-ecr/build-and-push-image:
+          name: build-frontend
+          pre-steps:
+            - checkout
+            - run:
+                command: |
+                  git submodule update --init --recursive
+          account-url: AWS_ECR_ACCOUNT_URL
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          dockerfile: ./frontend/Dockerfile.prod
+          region: AWS_REGION
+          repo: frontend
+          tag: '${CIRCLE_SHA1}'
+      - aws-ecs/update-task-definition-from-json:
+          requires:
+            - build-backend
+            - build-frontend
+          pre-steps:
+            - checkout
+          task-definition-json: task-definition.json
       - aws-ecs/deploy-service-update:
           requires:
-            - aws-ecr/build-and-push-image
+            - aws-ecs/update-task-definition-from-json
           aws-region: AWS_DEFAULT_REGION
-          family: '${AWS_RESOURCE_NAME_PREFIX}-service'
-          cluster-name: '${AWS_RESOURCE_NAME_PREFIX}-cluster'
-          container-image-name-updates: 'container=${AWS_RESOURCE_NAME_PREFIX}-service,tag=${CIRCLE_SHA1}'
+          family: skole-service
+          cluster-name: skole-cluster
+          container-image-name-updates: 'container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}'
