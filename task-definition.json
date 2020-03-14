@@ -5,8 +5,8 @@
     {
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend:latest",
-      "cpu": 512,
-      "memoryReservation": 491,
+      "cpu": 1,
+      "memory": 122,
       "portMappings": [
         {
           "containerPort": 8000,
@@ -16,7 +16,7 @@
       "command": [
         "sh",
         "-c",
-        "python manage.py wait_for_db && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn --bind 0.0.0.0:8000 config.wsgi"
+        "python manage.py wait_for_db && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn --log-level info --access-logfile '-' --bind 0.0.0.0:8000 config.wsgi"
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
@@ -76,8 +76,8 @@
     {
       "name": "frontend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend:latest",
-      "cpu": 512,
-      "memoryReservation": 492,
+      "cpu": 2,
+      "memory": 368,
       "portMappings": [
         {
           "containerPort": 3001,
