@@ -20,6 +20,9 @@ workflows:
           region: AWS_REGION
           repo: backend
           tag: '${CIRCLE_SHA1}'
+          filters:
+            branches:
+              - deployment
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
@@ -34,6 +37,9 @@ workflows:
           region: AWS_REGION
           repo: frontend
           tag: '${CIRCLE_SHA1}'
+          filters:
+            branches:
+              - deployment
 
       - aws-ecs/update-task-definition-from-json:
           requires:
@@ -42,6 +48,9 @@ workflows:
           pre-steps:
             - checkout
           task-definition-json: task-definition.json
+          filters:
+            branches:
+              - deployment
 
       - aws-ecs/deploy-service-update:
           requires:
@@ -50,3 +59,6 @@ workflows:
           family: skole-service
           cluster-name: skole-cluster
           container-image-name-updates: 'container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}'
+          filters:
+            branches:
+              - deployment
