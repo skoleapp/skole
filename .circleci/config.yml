@@ -12,8 +12,7 @@ workflows:
           pre-steps:
             - checkout
             - run:
-                command: |
-                  git submodule update --init --recursive
+                command: git submodule update --init --recursive
           account-url: AWS_ECR_ACCOUNT_URL
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -21,13 +20,13 @@ workflows:
           region: AWS_REGION
           repo: backend
           tag: '${CIRCLE_SHA1}'
+
       - aws-ecr/build-and-push-image:
           name: build-frontend
           pre-steps:
             - checkout
             - run:
-                command: |
-                  git submodule update --init --recursive
+                command: git submodule update --init --recursive
           account-url: AWS_ECR_ACCOUNT_URL
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -35,6 +34,7 @@ workflows:
           region: AWS_REGION
           repo: frontend
           tag: '${CIRCLE_SHA1}'
+
       - aws-ecs/update-task-definition-from-json:
           requires:
             - build-backend
@@ -42,6 +42,7 @@ workflows:
           pre-steps:
             - checkout
           task-definition-json: task-definition.json
+
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecs/update-task-definition-from-json
