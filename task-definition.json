@@ -6,7 +6,7 @@
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend:latest",
       "cpu": 1,
-      "memory": 122,
+      "memoryReservation": 122,
       "portMappings": [
         {
           "containerPort": 8000,
@@ -77,7 +77,7 @@
       "name": "frontend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend:latest",
       "cpu": 2,
-      "memory": 368,
+      "memoryReservation": 368,
       "portMappings": [
         {
           "containerPort": 3001,
