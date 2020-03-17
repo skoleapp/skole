@@ -24,6 +24,7 @@ workflows:
             branches:
               only:
                 - master
+                - develop
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
@@ -42,6 +43,7 @@ workflows:
             branches:
               only:
                 - master
+                - develop
 
       - aws-ecs/update-task-definition-from-json:
           requires:
@@ -54,6 +56,7 @@ workflows:
             branches:
               only:
                 - master
+                - develop
 
       - aws-ecs/deploy-service-update:
           requires:
@@ -66,3 +69,4 @@ workflows:
             branches:
               only:
                 - master
+                - develop
