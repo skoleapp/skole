@@ -23,7 +23,6 @@ workflows:
           filters:
             branches:
               only:
-                - master
                 - develop
 
       - aws-ecr/build-and-push-image:
@@ -42,7 +41,6 @@ workflows:
           filters:
             branches:
               only:
-                - master
                 - develop
 
       - aws-ecs/update-task-definition-from-json:
@@ -55,7 +53,6 @@ workflows:
           filters:
             branches:
               only:
-                - master
                 - develop
 
       - aws-ecs/deploy-service-update:
@@ -68,5 +65,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
                 - develop
