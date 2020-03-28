@@ -25,3 +25,8 @@
 ### Notes
 
 - When cloning the repository, use `git clone --recursive <link>`
+
+### Environment variables
+
+- To set up environment variables for development, copy the contents of env.template to a file called .env.dev and set the remaining variables accordingly.
+- For uploading files during development you need a Cloudmersive API key which you can get [here](https://www.cloudmersive.com/).
