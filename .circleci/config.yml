@@ -41,7 +41,7 @@ jobs:
             run --rm frontend sh -c "yarn type-check && yarn lint"
 
 workflows:
-  deploy-skole:
+  deploy:
     jobs:
       - test-backend:
         filters:
