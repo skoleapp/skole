@@ -56,6 +56,7 @@ jobs:
 workflows:
   deploy:
     jobs:
+      # Production deployment workflow
       - test-backend:
           <<: *prod-branch
       - test-frontend:
@@ -72,7 +73,7 @@ workflows:
           region: AWS_REGION
           repo: backend
           tag: "${CIRCLE_SHA1}"
-          <<: [ *prod-branch, *staging-branch ]
+          <<: *prod-branch
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
@@ -92,16 +93,6 @@ workflows:
           task-definition-json: task-definition.json
           <<: *prod-branch
 
-      - aws-ecs/update-task-definition-from-json:
-          name: update-staging-task-definition
-          requires:
-            - build-backend
-            - build-frontend
-          pre-steps:
-            - checkout
-          task-definition-json: task-definition-staging.json
-          <<: *staging-branch
-
       - aws-ecs/deploy-service-update: &update-service
           name: update-prod-service
           requires:
@@ -113,6 +104,30 @@ workflows:
           container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
           <<: *prod-branch
 
+      # Staging deployment workflow
+      - aws-ecr/build-and-push-image:
+          name: build-staging-backend
+          repo: backend-staging
+          <<: *build-image
+          <<: *staging-branch
+
+      - aws-ecr/build-and-push-image:
+          name: build-staging-frontend
+          dockerfile: ./frontend/Dockerfile.prod
+          repo: frontend-staging
+          <<: *build-image
+          <<: *staging-branch
+
+      - aws-ecs/update-task-definition-from-json:
+          name: update-staging-task-definition
+          requires:
+            - build-staging-backend
+            - build-staging-frontend
+          pre-steps:
+            - checkout
+          task-definition-json: task-definition-staging.json
+          <<: *staging-branch
+
       - aws-ecs/deploy-service-update:
           name: update-staging-service
           requires:
@@ -122,3 +137,4 @@ workflows:
           family: skole-staging-task
           <<: *update-service
           <<: *staging-branch
+
