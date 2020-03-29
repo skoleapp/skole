@@ -4,20 +4,44 @@ orbs:
   aws-ecr: circleci/aws-ecr@6.7.1
   aws-ecs: circleci/aws-ecs@1.1.0
 
-branches-to-deploy: &branches-to-deploy
-  branches:
-    only:
-      - develop
+
+prod-branch: &prod-branch
+  filters:
+    branches:
+      only:
+        - master
+
+staging-branch: &staging-branch
+  filters:
+    branches:
+      only:
+        - develop
+
+build-image: &build-image
+  pre-steps:
+    - update-submodules
+  account-url: AWS_ECR_ACCOUNT_URL
+  aws-access-key-id: AWS_ACCESS_KEY_ID
+  aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+  region: AWS_REGION
+  tag: "${CIRCLE_SHA1}"
+
+
+commands:
+  update-submodules:
+    steps:
+      - checkout
+      - run:
+          name: "Update submodules"
+          command: git submodule update --init --recursive
+
 
 jobs:
   test-backend:
     machine:
       image: ubuntu-1604:201903-01 
     steps:
-      - checkout
-      - run:
-          name: "Update submodules"
-          command: git submodule update --init --recursive
+      - update-submodules
       - run:
           name: "Run type-check and tests"
           command: >
@@ -29,10 +53,7 @@ jobs:
     machine:
       image: ubuntu-1604:201903-01 
     steps:
-      - checkout
-      - run:
-          name: "Update submodules"
-          command: git submodule update --init --recursive
+      - update-submodules
       - run:
           name: "Run type-check and linting"
           command: >
@@ -40,69 +61,84 @@ jobs:
             docker-compose -f docker-compose.circleci.yml
             run --rm frontend sh -c "yarn type-check && yarn lint"
 
+
 workflows:
   deploy:
     jobs:
+      # Production deployment workflow
       - test-backend:
-        filters:
-          <<: *branches-to-deploy
+          <<: *prod-branch
       - test-frontend:
-        filters:
-          <<: *branches-to-deploy
+          <<: *prod-branch
+
       - aws-ecr/build-and-push-image:
           name: build-backend
-          requires:
-            - test-backend
-          pre-steps:
-            - checkout
-            - run:
-                name: "Update submodules"
-                command: git submodule update --init --recursive
-          account-url: AWS_ECR_ACCOUNT_URL
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           dockerfile: ./backend/Dockerfile.prod
-          region: AWS_REGION
           repo: backend
-          tag: "${CIRCLE_SHA1}"
-          filters:
-            <<: *branches-to-deploy
+          <<: *build-image
+          <<: *prod-branch
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
-          requires:
-            - test-frontend
-          pre-steps:
-            - checkout
-            - run:
-                name: "Update submodules"
-                command: git submodule update --init --recursive
-          account-url: AWS_ECR_ACCOUNT_URL
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           dockerfile: ./frontend/Dockerfile.prod
-          region: AWS_REGION
           repo: frontend
-          tag: "${CIRCLE_SHA1}"
-          filters:
-            <<: *branches-to-deploy
+          <<: *build-image
+          <<: *prod-branch
 
       - aws-ecs/update-task-definition-from-json:
+          name: update-prod-task-definition
           requires:
+            - test-backend
+            - test-frontend
             - build-backend
             - build-frontend
           pre-steps:
             - checkout
           task-definition-json: task-definition.json
-          filters:
-            <<: *branches-to-deploy
+          <<: *prod-branch
+
+      - aws-ecs/deploy-service-update: &update-service
+          name: update-prod-service
+          requires:
+            - update-prod-task-definition
+          aws-region: AWS_DEFAULT_REGION
+          cluster-name: skole-cluster
+          service-name: skole-service
+          family: skole-task
+          container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
+          <<: *prod-branch
+
+      # Staging deployment workflow
+      - aws-ecr/build-and-push-image:
+          name: build-staging-backend
+          dockerfile: ./backend/Dockerfile.prod
+          repo: backend-staging
+          <<: *build-image
+          <<: *staging-branch
+
+      - aws-ecr/build-and-push-image:
+          name: build-staging-frontend
+          dockerfile: ./frontend/Dockerfile.prod
+          repo: frontend-staging
+          <<: *build-image
+          <<: *staging-branch
+
+      - aws-ecs/update-task-definition-from-json:
+          name: update-staging-task-definition
+          requires:
+            - build-staging-backend
+            - build-staging-frontend
+          pre-steps:
+            - checkout
+          task-definition-json: task-definition-staging.json
+          <<: *staging-branch
 
       - aws-ecs/deploy-service-update:
+          name: update-staging-service
           requires:
-            - aws-ecs/update-task-definition-from-json
-          aws-region: AWS_DEFAULT_REGION
-          family: skole-service
-          cluster-name: skole-cluster
-          container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
-          filters:
-            <<: *branches-to-deploy
+            - update-staging-task-definition
+          cluster-name: skole-staging-cluster
+          service-name: skole-staging-service
+          family: skole-staging-task
+          <<: *update-service
+          <<: *staging-branch
