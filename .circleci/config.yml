@@ -9,13 +9,13 @@ prod-branch: &prod-branch
   filters:
     branches:
       only:
-        - deploy
+        - master
 
 staging-branch: &staging-branch
   filters:
     branches:
       only:
-        - doesnotmatchanybranch
+        - develop
 
 build-image: &build-image
   pre-steps:
@@ -142,4 +142,3 @@ workflows:
           family: skole-staging-task
           <<: *update-service
           <<: *staging-branch
-
