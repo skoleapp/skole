@@ -26,6 +26,10 @@ build-image: &build-image
   region: AWS_REGION
   tag: "${CIRCLE_SHA1}"
 
+update-service: &update-service
+  aws-region: AWS_DEFAULT_REGION
+  container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
+
 
 commands:
   update-submodules:
@@ -97,15 +101,14 @@ workflows:
           task-definition-json: task-definition.json
           <<: *prod-branch
 
-      - aws-ecs/deploy-service-update: &update-service
+      - aws-ecs/deploy-service-update:
           name: update-prod-service
           requires:
             - update-prod-task-definition
-          aws-region: AWS_DEFAULT_REGION
           cluster-name: skole-cluster
           service-name: skole-service
           family: skole-task
-          container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
+          <<: *update-service
           <<: *prod-branch
 
       # Staging deployment workflow
