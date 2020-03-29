@@ -17,6 +17,15 @@ staging-branch: &staging-branch
       only:
         - doesnotmatchanybranch
 
+build-image: &build-image
+  pre-steps:
+    - update-submodules
+  account-url: AWS_ECR_ACCOUNT_URL
+  aws-access-key-id: AWS_ACCESS_KEY_ID
+  aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+  region: AWS_REGION
+  tag: "${CIRCLE_SHA1}"
+
 
 commands:
   update-submodules:
@@ -62,17 +71,11 @@ workflows:
       - test-frontend:
           <<: *prod-branch
 
-      - aws-ecr/build-and-push-image: &build-image
+      - aws-ecr/build-and-push-image:
           name: build-backend
-          pre-steps:
-            - update-submodules
-          account-url: AWS_ECR_ACCOUNT_URL
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           dockerfile: ./backend/Dockerfile.prod
-          region: AWS_REGION
           repo: backend
-          tag: "${CIRCLE_SHA1}"
+          <<: *build-image
           <<: *prod-branch
 
       - aws-ecr/build-and-push-image:
@@ -80,6 +83,7 @@ workflows:
           dockerfile: ./frontend/Dockerfile.prod
           repo: frontend
           <<: *build-image
+          <<: *prod-branch
 
       - aws-ecs/update-task-definition-from-json:
           name: update-prod-task-definition
@@ -107,6 +111,7 @@ workflows:
       # Staging deployment workflow
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
+          dockerfile: ./backend/Dockerfile.prod
           repo: backend-staging
           <<: *build-image
           <<: *staging-branch
