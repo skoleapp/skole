@@ -86,6 +86,7 @@ workflows:
           name: build-frontend
           dockerfile: ./frontend/Dockerfile.prod
           repo: frontend
+          context: frontend-prod-env
           <<: *build-image
           <<: *prod-branch
 
@@ -123,6 +124,7 @@ workflows:
           name: build-staging-frontend
           dockerfile: ./frontend/Dockerfile.prod
           repo: frontend-staging
+          context: frontend-staging-env
           <<: *build-image
           <<: *staging-branch
 
