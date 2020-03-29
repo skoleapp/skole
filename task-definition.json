@@ -1,12 +1,12 @@
 {
-  "family": "skole-service",
+  "family": "skole-task",
   "executionRoleArn": "arn:aws:iam::630869177434:role/skole-ecs-execution-role",
   "containerDefinitions": [
     {
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend:latest",
       "cpu": 1,
-      "memoryReservation": 122,
+      "memoryReservation": 332,
       "portMappings": [
         {
           "containerPort": 8000,
@@ -81,7 +81,7 @@
       "name": "frontend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend:latest",
       "cpu": 2,
-      "memoryReservation": 368,
+      "memoryReservation": 663,
       "portMappings": [
         {
           "containerPort": 3001,

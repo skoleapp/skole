@@ -101,7 +101,7 @@ workflows:
           requires:
             - aws-ecs/update-task-definition-from-json
           aws-region: AWS_DEFAULT_REGION
-          family: skole-service
+          family: skole-task
           cluster-name: skole-cluster
           container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
           filters:
