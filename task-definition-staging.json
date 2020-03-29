@@ -4,9 +4,9 @@
   "containerDefinitions": [
     {
       "name": "backend",
-      "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend:latest",
+      "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend-staging:latest",
       "cpu": 1,
-      "memoryReservation": 332,
+      "memoryReservation": 163,
       "portMappings": [
         {
           "containerPort": 8000,
@@ -21,7 +21,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "backend-logs",
+          "awslogs-group": "backend-staging-logs",
           "awslogs-region": "eu-central-1"
         }
       },
@@ -37,7 +37,7 @@
         },
         {
           "name": "DATABASE_URL",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DATABASE_URL"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_DATABASE_URL"
         },
         {
           "name": "ALLOWED_HOSTS",
@@ -53,11 +53,11 @@
         },
         {
           "name": "AWS_S3_BUCKET_NAME",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/S3_BUCKET_NAME"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_S3_BUCKET_NAME"
         },
         {
           "name": "AWS_S3_BUCKET_NAME_STATIC",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/S3_BUCKET_NAME_STATIC"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_S3_BUCKET_NAME_STATIC"
         },
         {
           "name": "AWS_ACCESS_KEY_ID",
@@ -69,7 +69,7 @@
         },
         {
           "name": "CORS_ORIGIN_WHITELIST",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/CORS_ORIGIN_WHITELIST"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_CORS_ORIGIN_WHITELIST"
         },
         {
           "name": "DJANGO_SETTINGS_MODULE",
@@ -79,9 +79,9 @@
     },
     {
       "name": "frontend",
-      "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend:latest",
+      "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend-staging:latest",
       "cpu": 2,
-      "memoryReservation": 663,
+      "memoryReservation": 328,
       "portMappings": [
         {
           "containerPort": 3001,
@@ -92,7 +92,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "frontend-logs",
+          "awslogs-group": "frontend-staging-logs",
           "awslogs-region": "eu-central-1"
         }
       },
@@ -100,11 +100,11 @@
       "secrets": [
         {
           "name": "API_URL",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/API_URL"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_API_URL"
         },
         {
           "name": "BACKEND_URL",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/BACKEND_URL"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_BACKEND_URL"
         },
         {
           "name": "CLOUDMERSIVE_API_KEY",
