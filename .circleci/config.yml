@@ -8,7 +8,7 @@ prod-branch: &prod-branch
   filters:
     branches:
       only:
-        - develop
+        - deploy
 
 staging-branch: &staging-branch
   filters:
