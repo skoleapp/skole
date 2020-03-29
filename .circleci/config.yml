@@ -4,11 +4,21 @@ orbs:
   aws-ecr: circleci/aws-ecr@6.7.1
   aws-ecs: circleci/aws-ecs@1.1.0
 
+branches-to-test: &branches-to-test
+  filters:
+    branches:
+      only:
+        - master
+        - develop
+        - deploy
+
 branches-to-deploy: &branches-to-deploy
   filters:
     branches:
       only:
+        - master
         - develop
+        - deploy
 
 commands:
   update-submodules:
