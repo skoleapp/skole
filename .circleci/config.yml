@@ -5,19 +5,25 @@ orbs:
   aws-ecs: circleci/aws-ecs@1.1.0
 
 branches-to-deploy: &branches-to-deploy
-  branches:
-    only:
-      - develop
+  filters:
+    branches:
+      only:
+        - develop
+
+commands:
+  update-submodules:
+    steps:
+      - checkout
+      - run:
+          name: "Update submodules"
+          command: git submodule update --init --recursive
 
 jobs:
   test-backend:
     machine:
       image: ubuntu-1604:201903-01 
     steps:
-      - checkout
-      - run:
-          name: "Update submodules"
-          command: git submodule update --init --recursive
+      - update-submodules
       - run:
           name: "Run type-check and tests"
           command: >
@@ -29,10 +35,7 @@ jobs:
     machine:
       image: ubuntu-1604:201903-01 
     steps:
-      - checkout
-      - run:
-          name: "Update submodules"
-          command: git submodule update --init --recursive
+      - update-submodules
       - run:
           name: "Run type-check and linting"
           command: >
@@ -44,20 +47,15 @@ workflows:
   deploy:
     jobs:
       - test-backend:
-        filters:
           <<: *branches-to-deploy
       - test-frontend:
-        filters:
           <<: *branches-to-deploy
       - aws-ecr/build-and-push-image:
           name: build-backend
           requires:
             - test-backend
           pre-steps:
-            - checkout
-            - run:
-                name: "Update submodules"
-                command: git submodule update --init --recursive
+            - update-submodules
           account-url: AWS_ECR_ACCOUNT_URL
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -65,18 +63,14 @@ workflows:
           region: AWS_REGION
           repo: backend
           tag: "${CIRCLE_SHA1}"
-          filters:
-            <<: *branches-to-deploy
+          <<: *branches-to-deploy
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
           requires:
             - test-frontend
           pre-steps:
-            - checkout
-            - run:
-                name: "Update submodules"
-                command: git submodule update --init --recursive
+            - update-submodules
           account-url: AWS_ECR_ACCOUNT_URL
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -84,8 +78,7 @@ workflows:
           region: AWS_REGION
           repo: frontend
           tag: "${CIRCLE_SHA1}"
-          filters:
-            <<: *branches-to-deploy
+          <<: *branches-to-deploy
 
       - aws-ecs/update-task-definition-from-json:
           requires:
@@ -94,8 +87,7 @@ workflows:
           pre-steps:
             - checkout
           task-definition-json: task-definition.json
-          filters:
-            <<: *branches-to-deploy
+          <<: *branches-to-deploy
 
       - aws-ecs/deploy-service-update:
           requires:
@@ -104,5 +96,4 @@ workflows:
           family: skole-task
           cluster-name: skole-cluster
           container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
-          filters:
-            <<: *branches-to-deploy
+          <<: *branches-to-deploy
