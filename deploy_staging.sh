@@ -1,13 +1,10 @@
 #!/usr/bin/env sh
 
-# to run this script you need to have aws cli and jq installed:
-#
+# To run this script you need to have aws cli and jq installed:
 # $ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" && sudo installer -pkg AWSCLIV2.pkg -target / && rm AWSCLIV2.pkg
-#
 # $ brew install jq
 #
-#
-# Then run this and provide the correct secrets:
+# After installing aws cli configure skole secrets with:
 # $ aws configure
 
 set -e
