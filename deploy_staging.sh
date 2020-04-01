@@ -5,6 +5,10 @@
 # $ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" && sudo installer -pkg AWSCLIV2.pkg -target / && rm AWSCLIV2.pkg
 #
 # $ brew install jq
+#
+#
+# Then run this and provide the correct secrets:
+# $ aws configure
 
 set -e
 
