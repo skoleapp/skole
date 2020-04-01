@@ -77,14 +77,16 @@ workflows:
 
       - aws-ecr/build-and-push-image:
           name: build-backend
-          dockerfile: ./backend/Dockerfile.prod
+          dockerfile: backend/Dockerfile.prod
+          path: backend
           repo: backend
           <<: *build-image
           <<: *prod-branch
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
-          dockerfile: ./frontend/Dockerfile.prod
+          dockerfile: frontend/Dockerfile.prod
+          path: frontend
           repo: frontend
           context: frontend-prod-env
           extra-build-args: &frontend-build-args "--build-arg API_URL --build-arg BACKEND_URL --build-arg CLOUDMERSIVE_API_KEY"
@@ -116,14 +118,16 @@ workflows:
       # Staging deployment workflow
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
-          dockerfile: ./backend/Dockerfile.prod
+          dockerfile: backend/Dockerfile.prod
+          path: backend
           repo: backend-staging
           <<: *build-image
           <<: *staging-branch
 
       - aws-ecr/build-and-push-image:
           name: build-staging-frontend
-          dockerfile: ./frontend/Dockerfile.prod
+          dockerfile: frontend/Dockerfile.prod
+          path: frontend
           repo: frontend-staging
           context: frontend-staging-env
           extra-build-args: *frontend-build-args
