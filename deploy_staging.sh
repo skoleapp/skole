@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # To run this script you need to have aws cli and jq installed:
 # $ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" && sudo installer -pkg AWSCLIV2.pkg -target / && rm AWSCLIV2.pkg
@@ -9,7 +9,11 @@
 
 set -e
 
-aws ecr get-login --no-include-email --region eu-central-1 | bash
+aws --region eu-central-1 ecr get-login-password \
+    | docker login \
+        --password-stdin \
+        --username AWS \
+        "630869177434.dkr.ecr.eu-central-1.amazonaws.com"
 
 docker build -f backend/Dockerfile.prod -t backend-staging . && docker tag backend-staging 630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend-staging:latest && docker push 630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend-staging:latest
  
@@ -17,4 +21,4 @@ docker build -f frontend/Dockerfile.prod -t frontend-staging --build-arg API_URL
 
 TASK_DEF=$(aws ecs register-task-definition --cli-input-json file://task-definition-staging.json | jq -r .taskDefinition.taskDefinitionArn)
 
-aws ecs update-service --task-definition "$TASK_DEF" --cluster skole-staging-cluster --service skole-staging-service --force-new-deployment > /dev/null
+aws ecs update-service --task-definition "$TASK_DEF" --cluster skole-staging-cluster --service skole-staging-service --force-new-deployment
