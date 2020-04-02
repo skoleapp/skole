@@ -77,7 +77,7 @@ workflows:
 
       - aws-ecr/build-and-push-image:
           name: build-backend
-          dockerfile: backend/Dockerfile.prod
+          dockerfile: Dockerfile.prod
           path: backend
           repo: backend
           <<: *build-image
@@ -85,7 +85,7 @@ workflows:
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
-          dockerfile: frontend/Dockerfile.prod
+          dockerfile: Dockerfile.prod
           path: frontend
           repo: frontend
           context: frontend-prod-env
@@ -118,7 +118,7 @@ workflows:
       # Staging deployment workflow
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
-          dockerfile: backend/Dockerfile.prod
+          dockerfile: Dockerfile.prod
           path: backend
           repo: backend-staging
           <<: *build-image
@@ -126,7 +126,7 @@ workflows:
 
       - aws-ecr/build-and-push-image:
           name: build-staging-frontend
-          dockerfile: frontend/Dockerfile.prod
+          dockerfile: Dockerfile.prod
           path: frontend
           repo: frontend-staging
           context: frontend-staging-env
