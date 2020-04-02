@@ -27,7 +27,7 @@ build-image: &build-image
   tag: "${CIRCLE_SHA1}"
 
 update-service: &update-service
-  aws-region: AWS_REGION
+  aws-region: $AWS_REGION
   container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
 
 
