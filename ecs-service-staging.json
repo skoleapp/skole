@@ -4,12 +4,12 @@
   "taskDefinition": "skole-staging-task",
   "loadBalancers": [
     {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/backend-staging/2b78b0cfa07ea2ba",
+      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/backend-staging/2a41000d2ead688b",
       "containerName": "backend",
       "containerPort": 8000
     },
     {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/frontend-staging/0b2d04df378c2c3c",
+      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/frontend-staging/c017a78c1b1e512c",
       "containerName": "frontend",
       "containerPort": 3001
     }
