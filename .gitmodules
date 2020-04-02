@@ -1,6 +1,8 @@
 [submodule "backend"]
 	path = backend
 	url = git@github.com:ruohola/skole-backend.git
+	update = rebase
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:ruohola/skole-frontend.git
+	update = rebase
