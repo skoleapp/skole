@@ -35,5 +35,5 @@
 
 - Make sure your device and the server are on the same network, i.e. hotspot.
 - Make sure your computer has firewall not blocking incoming requests.
-- Check your WiFi inet address using ifconfig and replace the `API_URL` environment variable with it.
+- Check your WiFi inet address using ifconfig and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
 - Thats it, now you should be able to connect on the dev server locally with your device at http://<your_wifi_inet>:3001/.
