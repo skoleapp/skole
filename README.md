@@ -30,3 +30,10 @@
 
 - To set up environment variables for development, copy the contents of env.template to a file called .env.dev and set the remaining variables accordingly.
 - For uploading files during development you need a Cloudmersive API key which you can get [here](https://www.cloudmersive.com/).
+
+### Developing on your mobile device locally
+
+- Make sure your device and the server are on the same network, i.e. hotspot.
+- Make sure your computer has firewall not blocking incoming requests.
+- Check your WiFi inet address using ifconfig and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
+- Thats it, now you should be able to connect on the dev server locally with your device at http://<your_wifi_inet>:3001/.
