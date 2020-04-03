@@ -33,7 +33,7 @@
         },
         {
           "name": "SECRET_KEY",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/SECRET_KEY"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_SECRET_KEY"
         },
         {
           "name": "DATABASE_URL",
