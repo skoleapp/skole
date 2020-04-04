@@ -30,6 +30,11 @@ update-service: &update-service
   aws-region: $AWS_REGION
   container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
 
+verify-deployment: &verify-deployment
+  task-definition-arn: "arn:aws:ecs:eu-central-1:630869177434:task-definition/skole-staging-task"
+  max-poll-attempts: 50
+  poll-interval: 20
+
 
 commands:
   update-submodules:
@@ -114,6 +119,12 @@ workflows:
           family: skole-task
           <<: *update-service
           <<: *prod-branch
+          post-steps:
+            - aws-ecs/verify-revision-is-deployed:
+                cluster-name: skole-cluster
+                service-name: skole-service
+                family: skole-task
+                <<: *verify-deployment
 
       # Staging deployment workflow
       - aws-ecr/build-and-push-image:
@@ -153,3 +164,9 @@ workflows:
           family: skole-staging-task
           <<: *update-service
           <<: *staging-branch
+          post-steps:
+            - aws-ecs/verify-revision-is-deployed:
+                cluster-name: skole-staging-cluster
+                service-name: skole-staging-service
+                family: skole-staging-task
+                <<: *verify-deployment
