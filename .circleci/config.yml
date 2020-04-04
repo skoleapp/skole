@@ -30,11 +30,6 @@ update-service: &update-service
   aws-region: $AWS_REGION
   container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
 
-verify-deployment: &verify-deployment
-  max-poll-attempts: 50
-  poll-interval: 20
-  task-definition-arn: "${TASK_DEFINITION_ARN}"
-
 
 commands:
   update-submodules:
@@ -119,21 +114,6 @@ workflows:
           family: skole-task
           <<: *update-service
           <<: *prod-branch
-          post-steps:
-            - run:
-                name: "Get latest task definition arn"
-                command: >
-                  TASK_DEFINITION_ARN=$(aws ecs describe-task-definition \
-                      --task-definition skole-task \
-                      --output text \
-                      --query "taskDefinition.taskDefinitionArn")
-                  echo "export TASK_DEFINITION_ARN='${TASK_DEFINITION_ARN}'" >>
-                  $BASH_ENV
-            - aws-ecs/verify-revision-is-deployed:
-                cluster-name: skole-cluster
-                service-name: skole-service
-                family: skole-task
-                <<: *verify-deployment
 
       # Staging deployment workflow
       - aws-ecr/build-and-push-image:
@@ -173,18 +153,3 @@ workflows:
           family: skole-staging-task
           <<: *update-service
           <<: *staging-branch
-          post-steps:
-            - run:
-                name: "Get latest task definition arn"
-                command: >
-                  TASK_DEFINITION_ARN=$(aws ecs describe-task-definition \
-                      --task-definition skole-staging-task \
-                      --output text \
-                      --query "taskDefinition.taskDefinitionArn")
-                  echo "export TASK_DEFINITION_ARN='${TASK_DEFINITION_ARN}'" >>
-                  $BASH_ENV
-            - aws-ecs/verify-revision-is-deployed:
-                cluster-name: skole-staging-cluster
-                service-name: skole-staging-service
-                family: skole-staging-task
-                <<: *verify-deployment
