@@ -1,0 +1,25 @@
+{
+  "cluster": "skole-staging-cluster",
+  "serviceName": "skole-staging-service",
+  "taskDefinition": "skole-staging-task",
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/backend-staging/2a41000d2ead688b",
+      "containerName": "backend",
+      "containerPort": 8000
+    },
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/frontend-staging/c017a78c1b1e512c",
+      "containerName": "frontend",
+      "containerPort": 3001
+    }
+  ],
+  "desiredCount": 1,
+  "deploymentController": {
+    "type": "ECS"
+  },
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 0
+  }
+}
