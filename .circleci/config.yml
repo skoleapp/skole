@@ -10,8 +10,6 @@ prod-branch: &prod-branch
     branches:
       only:
         - master
-    tags:
-      only: /.*/
 
 staging-branch: &staging-branch
   filters:
