@@ -44,8 +44,12 @@
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/ALLOWED_HOSTS"
         },
         {
-          "name": "EMAIL_URL",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_URL"
+          "name": "EMAIL_HOST_USER",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_HOST_USER"
+        },
+        {
+          "name": "EMAIL_HOST_PASSWORD",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_HOST_PASSWORD"
         },
         {
           "name": "AWS_SECRET_ACCESS_KEY",
