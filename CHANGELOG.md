@@ -18,11 +18,13 @@ Enter here all the changes made to the development version
 ### Fixed
 
 - Front end: Fix bug of `Edit Profile` button showing on other users' profiles
+- Back end: Fix existing translations
 
 ### Added
 
 - Front end: Add user avatar to bottom navbar
 - Back end: Add email configuration for contact form
+- Back end: Add model translations
 
 ### Removed
 
