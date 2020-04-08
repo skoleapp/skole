@@ -65,6 +65,15 @@ jobs:
             docker-compose -f docker-compose.circleci.yml
             run --rm frontend sh -c "yarn type-check && yarn lint"
 
+  check-submodules:
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - update-submodules
+      - run:
+          name: "Check submodule commit branches"
+          command: ./submodule_check_circleci.sh
+
 
 workflows:
   deploy:
@@ -153,3 +162,12 @@ workflows:
           family: skole-staging-task
           <<: *update-service
           <<: *staging-branch
+
+  check-submodules:
+    jobs:
+      - check-submodules:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
