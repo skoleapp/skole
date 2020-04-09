@@ -5,6 +5,8 @@ orbs:
   aws-ecs: circleci/aws-ecs@1.1.0
 
 
+# Custom YAML anchors
+
 prod-branch: &prod-branch
   filters:
     branches:
@@ -30,6 +32,8 @@ update-service: &update-service
   aws-region: $AWS_REGION
   container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
 
+
+# CicleCI's own sections
 
 commands:
   update-submodules:
@@ -76,9 +80,17 @@ jobs:
 
 
 workflows:
-  deploy:
+  check-submodules:
     jobs:
-      # Production deployment workflow
+      - check-submodules:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+
+  deploy-prod:
+    jobs:
       - test-backend:
           <<: *prod-branch
       - test-frontend:
@@ -124,7 +136,8 @@ workflows:
           <<: *update-service
           <<: *prod-branch
 
-      # Staging deployment workflow
+  deploy-staging:
+    jobs:
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
           dockerfile: Dockerfile.prod
@@ -162,12 +175,3 @@ workflows:
           family: skole-staging-task
           <<: *update-service
           <<: *staging-branch
-
-  check-submodules:
-    jobs:
-      - check-submodules:
-          filters:
-            branches:
-              ignore:
-                - master
-                - develop
