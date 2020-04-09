@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# CircleCI runs this script to check if the commits in both of the submoules
-# are coming from correct branches and not some random feature branch.
+# CircleCI runs this script to check if the commits pointing to the submodules
+# are merge commits coming from the correct branches and not just some random feature branch.
 
 set -e
 
@@ -10,10 +10,13 @@ declare -a submodules=("backend" "frontend")
 
 for module in "${submodules[@]}"
 do 
-    commit=$(git submodule status | grep "${module}" | awk '{print $1}' | sed 's/[^0-9a-f]//g')
-    (git -C "${module}" branch --contains "${commit}" | grep -q ${correct_branch} \
-            && echo "${module} commit ${commit} was correctly in ${correct_branch}") \
-    || (echo -e "${module} commit ${commit} was not in ${correct_branch}\nExiting with error." && exit 1)
+    commit=$(git submodule status | grep "${module}" | awk '{print $1}')
+
+    (git -C "${module}" name-rev "${commit}"| grep --quiet --regexp "^\S\+ ${correct_branch}$" \
+            && [ $(git -C "${module}" rev-list --parents --max-count 1 "${commit}" | wc -w) -gt 2 ] \
+            && echo "${module} commit ${commit} was correctly a merge commit from ${correct_branch}".) \
+        || (echo -e "${module} commit ${commit} was not a merge commit from ${correct_branch}!\nExiting with error!" \
+            && exit 1)
 done
 
-echo Submodule commits ok!
+echo Submodule commits ok.
