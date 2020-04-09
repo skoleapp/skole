@@ -10,11 +10,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - Translate initial data
+- Front-end: Improve PDF viewer
 
 ### Added
 
-- Front-end iOS pagination
-- Back-end health check API
+- Back-end: Add health check API
+
+### Fixed
+
+- Front-end: Fix iOS pagination
+- Front-end: Fix info modal creator info
 
 ## [0.2.0] - 2020-04-07
 
