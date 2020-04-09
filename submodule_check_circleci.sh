@@ -6,7 +6,7 @@
 set -e
 
 correct_branch=develop
-declare -a submodules=("frontend" "backend")
+declare -a submodules=("backend" "frontend")
 
 for module in "${submodules[@]}"
 do 
