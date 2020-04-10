@@ -12,7 +12,7 @@ for module in "${submodules[@]}"
 do 
     commit=$(git submodule status | grep "${module}" | awk '{print $1}')
 
-    (git -C "${module}" name-rev "${commit}"| grep --quiet --regexp "^\S\+ ${correct_branch}$" \
+    (git -C "${module}" name-rev "${commit}"| grep --quiet "${correct_branch}" \
             && [ $(git -C "${module}" rev-list --parents --max-count 1 "${commit}" | wc -w) -gt 2 ] \
             && echo "${module} commit ${commit} was correctly a merge commit from ${correct_branch}".) \
         || (echo -e "${module} commit ${commit} was not a merge commit from ${correct_branch}!\nExiting with error!" \
