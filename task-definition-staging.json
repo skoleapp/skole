@@ -100,7 +100,21 @@
           "awslogs-region": "eu-central-1"
         }
       },
-      "essential": true
+      "essential": true,
+      "secrets": [
+        {
+          "name": "API_URL",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_API_URL"
+        },
+        {
+          "name": "BACKEND_URL",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_BACKEND_URL"
+        },
+        {
+          "name": "CLOUDMERSIVE_API_KEY",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_CLOUDMERSIVE_API_KEY"
+        }
+      ]
     }
   ]
 }
