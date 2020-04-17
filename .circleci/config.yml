@@ -109,8 +109,6 @@ workflows:
           dockerfile: Dockerfile.prod
           path: frontend
           repo: frontend
-          context: frontend-prod-env
-          extra-build-args: &frontend-build-args "--build-arg API_URL --build-arg BACKEND_URL --build-arg CLOUDMERSIVE_API_KEY"
           <<: *build-image
           <<: *prod-branch
 
@@ -151,8 +149,6 @@ workflows:
           dockerfile: Dockerfile.prod
           path: frontend
           repo: frontend-staging
-          context: frontend-staging-env
-          extra-build-args: *frontend-build-args
           <<: *build-image
           <<: *staging-branch
 
