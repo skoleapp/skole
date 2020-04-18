@@ -5,13 +5,13 @@ orbs:
   aws-ecs: circleci/aws-ecs@1.1.0
 
 
+# Custom YAML anchors
+
 prod-branch: &prod-branch
   filters:
     branches:
       only:
         - master
-    tags:
-      only: /.*/
 
 staging-branch: &staging-branch
   filters:
@@ -32,6 +32,8 @@ update-service: &update-service
   aws-region: $AWS_REGION
   container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
 
+
+# CicleCI's own sections
 
 commands:
   update-submodules:
@@ -67,11 +69,28 @@ jobs:
             docker-compose -f docker-compose.circleci.yml
             run --rm frontend sh -c "yarn type-check && yarn lint"
 
+  check-submodules:
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - update-submodules
+      - run:
+          name: "Check submodule commit branches"
+          command: ./submodule_check_circleci.sh
+
 
 workflows:
-  deploy:
+  check-submodules:
     jobs:
-      # Production deployment workflow
+      - check-submodules:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+
+  deploy-prod:
+    jobs:
       - test-backend:
           <<: *prod-branch
       - test-frontend:
@@ -90,8 +109,6 @@ workflows:
           dockerfile: Dockerfile.prod
           path: frontend
           repo: frontend
-          context: frontend-prod-env
-          extra-build-args: &frontend-build-args "--build-arg API_URL --build-arg BACKEND_URL --build-arg CLOUDMERSIVE_API_KEY"
           <<: *build-image
           <<: *prod-branch
 
@@ -117,7 +134,8 @@ workflows:
           <<: *update-service
           <<: *prod-branch
 
-      # Staging deployment workflow
+  deploy-staging:
+    jobs:
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
           dockerfile: Dockerfile.prod
@@ -131,8 +149,6 @@ workflows:
           dockerfile: Dockerfile.prod
           path: frontend
           repo: frontend-staging
-          context: frontend-staging-env
-          extra-build-args: *frontend-build-args
           <<: *build-image
           <<: *staging-branch
 

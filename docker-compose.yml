@@ -10,16 +10,13 @@ services:
       - ./.env.dev
     volumes:
       - ./backend:/app
-    command: >
-      sh -c "python manage.py wait_for_db &&
-             python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     depends_on:
       - db
     restart: unless-stopped
   db:
     container_name: db
-    image: postgres:12.0-alpine
+    image: postgres:12.2-alpine
     ports:
       - "5432:5432"
     volumes:
@@ -38,7 +35,7 @@ services:
       - ./frontend:/app
       - /app/node_modules
       - /app/.next
-    command: "yarn dev"
+    command: ["yarn", "dev"]
     restart: unless-stopped
 
 volumes:
