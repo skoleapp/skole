@@ -1,19 +1,6 @@
 version: "3.7"
 
 services:
-  backend:
-    container_name: backend
-    build: ./backend
-    ports:
-      - "8000:8000"
-    env_file:
-      - ./.env.dev
-    volumes:
-      - ./backend:/app
-    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-    depends_on:
-      - db
-    restart: unless-stopped
   db:
     container_name: db
     image: postgres:12.2-alpine
@@ -24,18 +11,37 @@ services:
     env_file:
       - ./.env.dev
     restart: unless-stopped
+
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env.dev
+    volumes:
+      - ./backend:/home/user/app
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    restart: unless-stopped
+
   frontend:
     container_name: frontend
     ports:
       - "3001:3001"
     env_file:
       - ./.env.dev
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.next
-    command: ["yarn", "dev"]
+      - ./frontend:/home/node/app
+      - /home/node/app/node_modules
+      - /home/node/app/.next
+    command: yarn dev
     restart: unless-stopped
 
 volumes:
