@@ -4,7 +4,6 @@ orbs:
   aws-ecr: circleci/aws-ecr@6.7.1
   aws-ecs: circleci/aws-ecs@1.1.0
 
-
 # Custom YAML anchors
 
 prod-branch: &prod-branch
@@ -32,7 +31,6 @@ update-service: &update-service
   aws-region: $AWS_REGION
   container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
 
-
 # CicleCI's own sections
 
 commands:
@@ -43,11 +41,10 @@ commands:
           name: "Update submodules"
           command: git submodule update --init --recursive
 
-
 jobs:
   test-backend:
     machine:
-      image: ubuntu-1604:201903-01 
+      image: ubuntu-1604:201903-01
     steps:
       - update-submodules
       - run:
@@ -55,11 +52,11 @@ jobs:
           command: >
             cd backend &&
             docker-compose -f docker-compose.circleci.yml
-            run --rm backend sh -c "mypy . && pytest tests"
+            run --rm backend sh -c "mypy . && pytest skole/tests"
 
   test-frontend:
     machine:
-      image: ubuntu-1604:201903-01 
+      image: ubuntu-1604:201903-01
     steps:
       - update-submodules
       - run:
@@ -77,7 +74,6 @@ jobs:
       - run:
           name: "Check submodule commit branches"
           command: ./submodule_check_circleci.sh
-
 
 workflows:
   check-submodules:
