@@ -49,10 +49,7 @@ jobs:
       - update-submodules
       - run:
           name: "Run linter, type-check, and tests"
-          command: >
-            docker-compose -f docker-compose-circleci.yml run --rm backend sh -c "
-              black --check --exclude 'migrations/.*|schemas/resource.py' . && mypy . && pytest --verbose skole/tests
-            "
+          command: docker-compose -f docker-compose-circleci.yml up --abort-on-container-exit
 
   test-frontend:
     machine:
