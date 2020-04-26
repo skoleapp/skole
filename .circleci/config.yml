@@ -58,7 +58,7 @@ jobs:
       - update-submodules
       - run:
           name: "Run linter and type-check"
-          command: cd frontend && docker build -t frontend-circleci . && docker run frontend-circleci
+          command: cd frontend && docker build --target circleci --tag frontend . && docker run frontend
 
   check-submodules:
     machine:
