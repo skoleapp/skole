@@ -50,7 +50,7 @@ jobs:
       - run:
           name: "Run linter, type-check, and tests"
           command: >
-            docker-compose -f docker-compose.circleci.yml run --rm backend sh -c "
+            docker-compose -f docker-compose-circleci.yml run --rm backend sh -c "
               black --check --exclude 'migrations/.*|schemas/resource.py' . && mypy . && pytest --verbose skole/tests
             "
 
@@ -91,7 +91,7 @@ workflows:
 
       - aws-ecr/build-and-push-image:
           name: build-backend
-          dockerfile: Dockerfile.prod
+          dockerfile: Dockerfile-prod
           path: backend
           repo: backend
           <<: *build-image
@@ -99,7 +99,7 @@ workflows:
 
       - aws-ecr/build-and-push-image:
           name: build-frontend
-          dockerfile: Dockerfile.prod
+          dockerfile: Dockerfile-prod
           path: frontend
           repo: frontend
           <<: *build-image
@@ -131,7 +131,7 @@ workflows:
     jobs:
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
-          dockerfile: Dockerfile.prod
+          dockerfile: Dockerfile-prod
           path: backend
           repo: backend-staging
           <<: *build-image
@@ -139,7 +139,7 @@ workflows:
 
       - aws-ecr/build-and-push-image:
           name: build-staging-frontend
-          dockerfile: Dockerfile.prod
+          dockerfile: Dockerfile-prod
           path: frontend
           repo: frontend-staging
           <<: *build-image
