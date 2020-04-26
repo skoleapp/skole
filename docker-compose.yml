@@ -24,7 +24,6 @@ services:
       - ./.env.dev
     volumes:
       - ./backend:/home/user/app
-    command: python manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
     restart: unless-stopped
@@ -43,7 +42,6 @@ services:
       - ./frontend:/home/node/app
       - /home/node/app/node_modules
       - /home/node/app/.next
-    command: yarn dev
     restart: unless-stopped
 
 volumes:
