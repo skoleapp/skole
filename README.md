@@ -15,6 +15,7 @@
 - To migrate db, run: `yarn backend:migrate`.
 - To create superuser, run `yarn backend:create-superuser`.
 - To import test data, run `yarn backend:import-test-data`.
+- To run formatting in the backend, run `yarn backend:format`.
 - To run tests and type checks in the backend, run `yarn backend:test`.
 - To make messages in the backend, run `yarn backend:makemessages`.
 - To compile messages in the backend, run `yarn backend:compilemessages`.
