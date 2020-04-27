@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3] - 2020-04-27
+
+### Changed
+
+- Logging in with email or username is back
+- Improve Docker image security
+
+### Added
+
+- Add account verification via email
+- Add password reset via email
+
+### Fixed
+
+- Disable enter key sending for mobile devices
+- Fix switching between tabs after creating a new comment makes the comment disappear
+- Fix header overflow being too small on mobile
+- Don't always show the same file when opening a resource
+- Fix going back in resource view
+
 ## [0.2.4] - 2020-04-19
 
 ### Fixed
