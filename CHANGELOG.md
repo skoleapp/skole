@@ -5,12 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4] - 2020-05-02
+
+### Added
+
+- Add search navbar to search page
+- Add school and subject selection to user profile and register form
+- Back-end: Add badges and ranks for users
+
+### Changed
+
+- Improve profile page
+- Made graphql queries for non-user generated content public
+
+### Removed
+
+- Remove user listing page
+
+### Fixed
+
+- Fix form getting validated in back-end before authentication check was done
+
 ## [0.3] - 2020-04-27
 
 ### Changed
 
 - Logging in with email or username is back
-- Improve Docker image security
 
 ### Added
 
@@ -24,6 +44,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix header overflow being too small on mobile
 - Don't always show the same file when opening a resource
 - Fix going back in resource view
+
+### Security
+
+- Improve Docker security by using non-root users in containers
 
 ## [0.2.4] - 2020-04-19
 
