@@ -16,8 +16,9 @@
     "backend:import-test-data": "docker-compose run --rm backend sh -c 'python manage.py loaddata test-data.yaml'",
     "backend:format": "docker-compose run --no-deps --rm backend sh -c 'autoflake --recursive --in-place --remove-all-unused-imports --ignore-init-module-imports . && isort --recursive . && black --exclude migrations/.* .'",
     "backend:test": "docker-compose run --rm backend sh -c 'mypy . && pytest --verbose --cov-report html --cov=. skole/tests'",
-    "backend:makemessages": "docker-compose run --rm backend sh -c 'django-admin makemessages'",
-    "backend:compilemessages": "docker-compose run --rm backend sh -c 'django-admin compilemessages'",
-    "frontend:gen": "docker-compose run --rm frontend sh -c 'yarn gen'"
+    "backend:makemessages": "docker-compose run --rm backend sh -c 'python manage.py makemessages'",
+    "backend:compilemessages": "docker-compose run --rm backend sh -c 'python manage.py compilemessages'",
+    "frontend:gen": "docker-compose run --rm frontend sh -c 'yarn gen'",
+    "frontend:format": "docker-compose run --rm frontend sh -c 'yarn format'"
   }
 }
