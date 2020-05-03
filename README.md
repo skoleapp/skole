@@ -6,7 +6,26 @@
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/lang/en/)
 
-### Useful Monorepo Commands
+### Get the development environment up and running
+
+1. Clone this repository with: `git clone --recursive <link>`
+
+2. `cd skole`
+
+3. [Follow the instructions for environment variables](#environment-variables)
+
+4. Build the containers: `docker-compose build --parallel`
+
+5. Setup the back-end for development:
+
+       docker-compose run --rm backend sh -c \
+           'python manage.py migrate \
+            && python manage.py compilemessages \
+            && python manage.py loaddata test-data.yaml'
+           
+6. Run the app: `docker-compose up`
+
+### Useful Yarn commands
 
 - To build images, run `yarn build`.
 - To start containers in development, run `yarn start`.
@@ -21,13 +40,9 @@
 - To compile messages in the backend, run `yarn backend:compilemessages`.
 - To generate GraphQL code in the frontend, run `yarn frontend:gen`.
 
-### Notes
-
-- When cloning the repository, use `git clone --recursive <link>`
-
 ### Environment variables
 
-- To set up environment variables for development, copy the contents of env.template to a file called .env.dev and set the remaining variables accordingly.
+- Copy the template env file: `cp .env.template .env.dev` and add values for all the \<placeholder\> variables in the `.env.dev` file. 
 - For uploading files during development you need a Cloudmersive API key which you can get [here](https://www.cloudmersive.com/).
 
 ### Developing on your mobile device locally
@@ -35,4 +50,4 @@
 - Make sure your device and the server are on the same network, i.e. hotspot.
 - Make sure your computer has firewall not blocking incoming requests.
 - Check your WiFi inet address using ifconfig and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
-- Thats it, now you should be able to connect on the dev server locally with your device at http://<your_wifi_inet>:3001/.
+- That's it, now you should be able to connect on the dev server locally with your device at http://<your_wifi_inet>:3001/.
