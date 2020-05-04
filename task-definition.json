@@ -13,11 +13,6 @@
           "protocol": "tcp"
         }
       ],
-      "command": [
-        "sh",
-        "-c",
-        "python manage.py wait_for_db && python manage.py migrate && python manage.py collectstatic --noinput && python manage.py compilemessages && gunicorn --log-level info --access-logfile '-' --workers 3 --bind 0.0.0.0:8000 config.wsgi"
-      ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
@@ -28,10 +23,6 @@
       "essential": true,
       "secrets": [
         {
-          "name": "DEBUG",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DEBUG"
-        },
-        {
           "name": "SECRET_KEY",
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/SECRET_KEY"
         },
@@ -40,8 +31,28 @@
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DATABASE_URL"
         },
         {
+          "name": "DJANGO_SETTINGS_MODULE",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DJANGO_SETTINGS_MODULE"
+        },
+        {
+          "name": "DJANGO_SUPERUSER_USERNAME",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DJANGO_SUPERUSER_USERNAME"
+        },
+        {
+          "name": "DJANGO_SUPERUSER_EMAIL",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DJANGO_SUPERUSER_EMAIL"
+        },
+        {
+          "name": "DJANGO_SUPERUSER_PASSWORD",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DJANGO_SUPERUSER_PASSWORD"
+        },
+        {
           "name": "ALLOWED_HOSTS",
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/ALLOWED_HOSTS"
+        },
+        {
+          "name": "CORS_ORIGIN_WHITELIST",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/CORS_ORIGIN_WHITELIST"
         },
         {
           "name": "EMAIL_HOST_USER",
@@ -52,8 +63,16 @@
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_HOST_PASSWORD"
         },
         {
+          "name": "AWS_ACCESS_KEY_ID",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/ACCESS_KEY_ID"
+        },
+        {
           "name": "AWS_SECRET_ACCESS_KEY",
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/SECRET_ACCESS_KEY"
+        },
+        {
+          "name": "AWS_REGION",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/REGION"
         },
         {
           "name": "AWS_S3_BUCKET_NAME",
@@ -62,22 +81,6 @@
         {
           "name": "AWS_S3_BUCKET_NAME_STATIC",
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/S3_BUCKET_NAME_STATIC"
-        },
-        {
-          "name": "AWS_ACCESS_KEY_ID",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/ACCESS_KEY_ID"
-        },
-        {
-          "name": "AWS_REGION",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/REGION"
-        },
-        {
-          "name": "CORS_ORIGIN_WHITELIST",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/CORS_ORIGIN_WHITELIST"
-        },
-        {
-          "name": "DJANGO_SETTINGS_MODULE",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/DJANGO_SETTINGS_MODULE"
         }
       ]
     },
@@ -92,7 +95,6 @@
           "protocol": "tcp"
         }
       ],
-      "command": ["yarn", "start"],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
