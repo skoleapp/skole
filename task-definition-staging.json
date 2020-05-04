@@ -55,12 +55,12 @@
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_CORS_ORIGIN_WHITELIST"
         },
         {
-          "name": "EMAIL_HOST_USER",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_HOST_USER"
+          "name": "EMAIL_AUTH_FROM",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_AUTH_FROM"
         },
         {
-          "name": "EMAIL_HOST_PASSWORD",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_HOST_PASSWORD"
+          "name": "EMAIL_CONTACT_TO",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_CONTACT_TO"
         },
         {
           "name": "AWS_ACCESS_KEY_ID",
