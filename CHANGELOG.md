@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.8] - 2020-05-11
+
+## Added
+
+- Add FAQ page
+- Add monorepo scripts for frontend lint and type-check
+
+## Fixed
+
+- Fix typo in account verification
+- Fix persisting notification after page changes
+- Fix links from school detail
+- Fix auto complete fields with empty content
+- Fix search bar clearing on mobile when blurred
+- Fixed GraphQL code generation config
+
+## Changed
+
+- Disable votes, stars and comments for unverified users in frontend
+- Improve error message upon unsuccessful registration email
+- Don't show error when sharing menu is dismissed
+- Updated landing page design
+- Changed all frontend dependencies to strict versions
+
 ## [0.4.7] - 2020-05-04
 
 ### Changed
