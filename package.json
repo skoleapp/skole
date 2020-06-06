@@ -15,7 +15,7 @@
     "backend:create-superuser": "docker-compose run --rm backend sh -c 'python manage.py createsuperuser'",
     "backend:import-test-data": "docker-compose run --rm backend sh -c 'python manage.py loaddata test-data.yaml'",
     "backend:format": "docker-compose run --no-deps --rm backend sh -c 'autoflake --recursive --in-place --remove-all-unused-imports --ignore-init-module-imports . && isort --recursive . && docformatter --recursive --in-place --wrap-summaries=88 --wrap-descriptions=88 . && black . && python manage.py graphql_schema'",
-    "backend:test": "docker-compose run --rm backend sh -c 'flake8 . && mypy . && pytest --verbose --cov-report=html --cov=. skole/tests'",
+    "backend:test": "docker-compose run --rm backend sh -c 'mypy . && pytest --verbose --cov-report=html --cov=. . && flake8 .'",
     "backend:makemessages": "docker-compose run --rm backend sh -c 'python manage.py makemessages'",
     "backend:compilemessages": "docker-compose run --rm backend sh -c 'python manage.py compilemessages'",
     "frontend:gen": "docker-compose run --rm frontend sh -c 'yarn gen'",
