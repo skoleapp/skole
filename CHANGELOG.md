@@ -5,20 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2020-10-07
+
+### Fixed
+
+- Fix bug that prevented user from being actually logged out
+- Fix bug that occasionally prevented user from logging in and setting client-side cookies
+
+# Added
+
+- Add activity feed that shows notifications for comment replies, course and resource comments
+
 ## [0.5.0] - 2020-07-07
 
-## Fixed
+### Fixed
 
 - Fix authentication bug that led redirecting to login screen randomly
 - Fix miscellaneous spelling errors and translations
 - Fix bug of displaying duplicate comments in comment sections
 
-## Added
+### Added
 
 - Add attachment name to attachment viewer toolbar
 - Add draw mode to PDF viewer that allows user to take screenshots from document
 
-## Changed
+### Changed
 
 - Make complete re-implementation to PDF viewer, show all pages at once as a scrollable document
 - Update designs by using fewer different fonts, add different shades of theme colors, update modal designs
