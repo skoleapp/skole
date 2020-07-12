@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.1] - 2020-12-07
+
+### Fixed
+
+- Fix bug of displaying PDF viewer screenshot at incorrect size/cutting out areas
+- Fix bug of not centering horizontal scroll wheen zooming in/out on PDF viewer
+- Fix bug of not displaying correct cursor on PDF viewer when holding down CTRL key
+- Potentially fix CORS error related to printing PDF file
+
 ## [0.6.0] - 2020-10-07
 
 ### Fixed
