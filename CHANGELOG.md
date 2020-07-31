@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2020-31-07
+
+### Fixed
+
+- Fix sharing comments
+- Fix locale typos
+
+### Changed
+
+- Change all tabs to swipeable
+- Change course page and create course pages so that course now supports multiple subjects
+
+### Added
+
+- Add small resistance animation to swipeable views
+- Add get started page
+- Add logout page
+- Add confirm logout page when an authenticated user tries to access login/register pages
+- Add profile strength indicator to user profile
+
 ## [0.6.2] - 2020-13-07
 
 ### Fixed
