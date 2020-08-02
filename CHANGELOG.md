@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.7.0] - 2020-31-07
+## [0.7.1] - 2020-08-02
+
+### Fixed
+
+- Fix port issue which prevented frontend from starting at all
+
+## [0.7.0] - 2020-07-31
 
 ### Fixed
 
@@ -25,7 +31,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add confirm logout page when an authenticated user tries to access login/register pages
 - Add profile strength indicator to user profile
 
-## [0.6.2] - 2020-13-07
+## [0.6.2] - 2020-07-13
 
 ### Fixed
 
@@ -39,7 +45,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Added swipeable views for all tabs
 - Improve about page and add link to feedback
 
-## [0.6.1] - 2020-12-07
+## [0.6.1] - 2020-07-12
 
 ### Fixed
 
@@ -48,7 +54,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of not displaying correct cursor on PDF viewer when holding down CTRL key
 - Potentially fix CORS error related to printing PDF file
 
-## [0.6.0] - 2020-10-07
+## [0.6.0] - 2020-07-10
 
 ### Fixed
 

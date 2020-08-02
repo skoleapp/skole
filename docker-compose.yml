@@ -39,9 +39,9 @@ services:
       dockerfile: Dockerfile
       target: dev
     volumes:
-      - ./frontend:/home/node/app
-      - /home/node/app/node_modules
-      - /home/node/app/.next
+      - ./frontend:/home/user/app
+      - /home/user/app/node_modules
+      - /home/user/app/.next
     restart: unless-stopped
 
 volumes:

@@ -16,14 +16,17 @@
 
 4. Build the containers: `docker-compose build --parallel`
 
-5. Setup the back-end for development:
+5. Setup the backend for development:
 
        docker-compose run --rm backend sh -c \
            'python manage.py migrate \
             && python manage.py compilemessages \
             && python manage.py loaddata test-data.yaml'
-           
+
 6. Run the app: `docker-compose up`
+
+7. Access the application from <localhost:3001>, log in with username: `testuser2` password: `password`  
+   Access the admin panel from <localhost:8000/admin>, log in with username: `admin` password: `admin`
 
 ### Useful Yarn commands
 
