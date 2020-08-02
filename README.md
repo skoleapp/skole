@@ -25,8 +25,9 @@
 
 6. Run the app: `docker-compose up`
 
-7. Access the application from <localhost:3001>, log in with username: `testuser2` password: `password`  
-   Access the admin panel from <localhost:8000/admin>, log in with username: `admin` password: `admin`
+7. Access the application from [localhost:3001](http://localhost:3001), log in with username: `testuser2` password: `password`  
+   Access Django admin from [localhost:8000](http://localhost:8000), log in with username: `admin` password: `admin`  
+   Access GraphiQL from [localhost:8000/graphql](http://localhost:8000/graphql)
 
 ### Useful Yarn commands
 
@@ -48,9 +49,9 @@
 - Copy the template env file: `cp .env.template .env.dev` and add values for all the \<placeholder\> variables in the `.env.dev` file. 
 - For uploading files during development you need a Cloudmersive API key which you can get [here](https://www.cloudmersive.com/).
 
-### Developing on your mobile device locally
+### Developing locally on your mobile device
 
 - Make sure your device and the server are on the same network, i.e. hotspot.
 - Make sure your computer has firewall not blocking incoming requests.
-- Check your WiFi inet address using ifconfig and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
-- That's it, now you should be able to connect on the dev server locally with your device at http://<your_wifi_inet>:3001/.
+- Check your WiFi inet address using `ifconfig` and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
+- That's it, now you should be able to connect on the dev server locally with your device at http://<your_wifi_inet>:3001/
