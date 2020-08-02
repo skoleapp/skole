@@ -19,6 +19,7 @@ staging-branch: &staging-branch
         - develop
 
 build-image: &build-image
+  executor: machine-builder
   pre-steps:
     - update-submodules
   account-url: AWS_ECR_ACCOUNT_URL
@@ -33,6 +34,12 @@ update-service: &update-service
 
 # CicleCI's own sections
 
+executors:
+  machine-builder:
+    machine:
+      image: ubuntu-1604:201903-01
+      docker_layer_caching: true
+
 commands:
   update-submodules:
     steps:
@@ -43,8 +50,7 @@ commands:
 
 jobs:
   test-backend:
-    machine:
-      image: ubuntu-1604:201903-01
+    executor: machine-builder
     steps:
       - update-submodules
       - run:
@@ -52,8 +58,7 @@ jobs:
           command: cd backend && docker-compose -f docker-compose-circleci.yml up --abort-on-container-exit
 
   test-frontend:
-    machine:
-      image: ubuntu-1604:201903-01
+    executor: machine-builder
     steps:
       - update-submodules
       - run:
