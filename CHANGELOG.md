@@ -9,274 +9,273 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Fixed
 
-- Fix port issue which prevented frontend from starting at all
+- Fix port issue which prevented frontend from starting at all.
 
 ## [0.7.0] - 2020-07-31
 
-### Fixed
+### Added
 
-- Fix sharing comments
-- Fix locale typos
+- Add small resistance animation to swipeable views.
+- Add get started page.
+- Add logout page.
+- Add confirm logout page when an authenticated user tries to access login/register pages.
+- Add profile strength indicator to user profile.
 
 ### Changed
 
-- Change all tabs to swipeable
-- Change course page and create course pages so that course now supports multiple subjects
+- Change all tabs to swipeable.
+- Change course page and create course pages so that course now supports multiple subjects.
 
-### Added
+### Fixed
 
-- Add small resistance animation to swipeable views
-- Add get started page
-- Add logout page
-- Add confirm logout page when an authenticated user tries to access login/register pages
-- Add profile strength indicator to user profile
+- Fix sharing comments.
+- Fix locale typos.
 
 ## [0.6.2] - 2020-07-13
 
-### Fixed
-
-- Fix bug of displaying error after cancelling share
-- Fix loading icon lagginess
-- Fix bug of being able to see edit profile and starred item buttons on other user's profiles
-- Fixed authentication on all public setting pages
-
 ### Changed
 
-- Added swipeable views for all tabs
-- Improve about page and add link to feedback
+- Added swipeable views for all tabs.
+- Improve about page and add link to feedback.
+
+### Fixed
+
+- Fix bug of displaying error after cancelling share.
+- Fix loading icon lagginess.
+- Fix bug of being able to see edit profile and starred item buttons on other user's profiles.
+- Fixed authentication on all public setting pages.
 
 ## [0.6.1] - 2020-07-12
 
 ### Fixed
 
-- Fix bug of displaying PDF viewer screenshot at incorrect size/cutting out areas
-- Fix bug of not centering horizontal scroll wheen zooming in/out on PDF viewer
-- Fix bug of not displaying correct cursor on PDF viewer when holding down CTRL key
-- Potentially fix CORS error related to printing PDF file
+- Fix bug of displaying PDF viewer screenshot at incorrect size/cutting out areas.
+- Fix bug of not centering horizontal scroll wheen zooming in/out on PDF viewer.
+- Fix bug of not displaying correct cursor on PDF viewer when holding down CTRL key.
+- Potentially fix CORS error related to printing PDF file.
 
 ## [0.6.0] - 2020-07-10
 
+### Added
+
+- Add activity feed that shows notifications for comment replies, course and resource comments.
+
 ### Fixed
 
-- Fix bug that prevented user from being actually logged out
-- Fix bug that occasionally prevented user from logging in and setting client-side cookies
-
-# Added
-
-- Add activity feed that shows notifications for comment replies, course and resource comments
+- Fix bug that prevented user from being actually logged out.
+- Fix bug that occasionally prevented user from logging in and setting client-side cookies.
 
 ## [0.5.0] - 2020-07-07
 
 ### Fixed
 
-- Fix authentication bug that led redirecting to login screen randomly
-- Fix miscellaneous spelling errors and translations
-- Fix bug of displaying duplicate comments in comment sections
+- Fix authentication bug that led redirecting to login screen randomly.
+- Fix miscellaneous spelling errors and translations.
+- Fix bug of displaying duplicate comments in comment sections.
 
 ### Added
 
-- Add attachment name to attachment viewer toolbar
-- Add draw mode to PDF viewer that allows user to take screenshots from document
+- Add attachment name to attachment viewer toolbar.
+- Add draw mode to PDF viewer that allows user to take screenshots from document.
 
 ### Changed
 
-- Make complete re-implementation to PDF viewer, show all pages at once as a scrollable document
-- Update designs by using fewer different fonts, add different shades of theme colors, update modal designs
+- Make complete re-implementation to PDF viewer, show all pages at once as a scrollable document.
+- Update designs by using fewer different fonts, add different shades of theme colors, update modal designs.
 
 ## [0.4.10] - 2020-05-18
 
 ### Fixed
 
-- Fix contact form email sending
+- Fix contact form email sending.
 
 ## [0.4.9] - 2020-05-18
 
 ### Fixed
 
-- Fix user agent matching to fix layout prediction
+- Fix user agent matching to fix layout prediction.
 
 ## [0.4.9-rc.1] - 2020-05-16
 
 ### Fixed
 
-- Potentially fix authentication issues
+- Potentially fix authentication issues.
 
 ## [0.4.8] - 2020-05-11
 
 ### Added
 
-- Add FAQ page
-- Add monorepo scripts for frontend lint and type-check
-
-### Fixed
-
-- Fix typo in account verification
-- Fix persisting notification after page changes
-- Fix links from school detail
-- Fix auto complete fields with empty content
-- Fix search bar clearing on mobile when blurred
-- Fixed GraphQL code generation config
+- Add FAQ page.
+- Add monorepo scripts for frontend lint and type-check.
 
 ### Changed
 
-- Disable votes, stars and comments for unverified users in frontend
-- Improve error message upon unsuccessful registration email
-- Don't show error when sharing menu is dismissed
-- Updated landing page design
-- Changed all frontend dependencies to strict versions
+- Disable votes, stars and comments for unverified users in frontend.
+- Improve error message upon unsuccessful registration email.
+- Don't show error when sharing menu is dismissed.
+- Updated landing page design.
+- Changed all frontend dependencies to strict versions.
+
+### Fixed
+
+- Fix typo in account verification.
+- Fix persisting notification after page changes.
+- Fix links from school detail.
+- Fix auto complete fields with empty content.
+- Fix search bar clearing on mobile when blurred.
+- Fixed GraphQL code generation config.
 
 ## [0.4.7] - 2020-05-04
 
 ### Changed
 
-- Back-end AWS SES changes
+- Backend AWS SES changes.
 
 ## [0.4.6] - 2020-05-04
 
 ### Changed
 
-- Small AWS changes
+- Small AWS changes.
 
 ## [0.4.5] - 2020-05-03
 
 ### Fixed
 
-- Fix back-end SES configuration issue
+- Fix backend SES configuration issue.
 
 ## [0.4.4] - 2020-05-03
 
 ### Fixed
 
-- Send email through SES to avoid blocking issues
+- Send email through SES to avoid blocking issues.
 
 ## [0.4.3] - 2020-05-03
 
 ### Fixed
 
-- Use email host user for auth emails
+- Use email host user for auth emails.
 
 ## [0.4.2] - 2020-05-03
 
 ### Added
 
-- Prompt user about updated content and re-register service worker
+- Prompt user about updated content and re-register service worker.
 
 ## [0.4.1] - 2020-05-02
 
 ### Fixed
 
-- Back-end createsuperuser
-- Syntax error in initial data fixtures
+- Fix error in backend createsuperuser command.
+- Fix syntax error in initial data fixtures.
 
 ## [0.4] - 2020-05-02
 
 ### Added
 
-- Add search navbar to search page
-- Add school and subject selection to user profile and register form
-- Back-end: Add badges and ranks for users
+- Add search navbar to search page.
+- Add school and subject selection to user profile and register form.
+- Add badges and ranks for users.
 
 ### Changed
 
-- Improve profile page
-- Made graphql queries for non-user generated content public
+- Improve profile page.
+- Made graphql queries for non-user generated content public.
 
 ### Removed
 
-- Remove user listing page
+- Remove user listing page.
 
 ### Fixed
 
-- Fix form getting validated in back-end before authentication check was done
+- Fix form getting validated in back-end before authentication check was done.
 
 ## [0.3] - 2020-04-27
 
-### Changed
-
-- Logging in with email or username is back
-
 ### Added
 
-- Add account verification via email
-- Add password reset via email
+- Add account verification via email.
+- Add password reset via email.
+
+### Changed
+
+- Logging in with email or username is back.
 
 ### Fixed
 
-- Disable enter key sending for mobile devices
-- Fix switching between tabs after creating a new comment makes the comment disappear
-- Fix header overflow being too small on mobile
-- Don't always show the same file when opening a resource
-- Fix going back in resource view
+- Disable enter key sending for mobile devices.
+- Fix switching between tabs after creating a new comment makes the comment disappear.
+- Fix header overflow being too small on mobile.
+- Don't always show the same file when opening a resource.
+- Fix going back in resource view.
 
 ### Security
 
-- Improve Docker security by using non-root users in containers
+- Improve Docker security by using non-root users in containers.
 
 ## [0.2.4] - 2020-04-19
 
 ### Fixed
 
-- Front-end: Bug fixes from alpha users' feedback
+- General bug fixes from alpha users' feedback.
 
 ## [0.2.3] - 2020-04-18
 
 ### Fixed
 
-- Back-end: User profile update
-- Front-end: Misc improvements
+- User profile update.
+- Other misc improvements.
 
 ## [0.2.2] - 2020-04-10
 
-### Changed
-
-- Front-end: Improve profile page
-
 ### Added
 
-- Front-end: Add automatic user refresh every 25 minutes
-- Front-end: Improve avatar changing feature
+- Add automatic user refreshing every 25 minutes.
+- Improve avatar changing feature.
+
+### Changed
+
+- Improve profile page.
 
 ## [0.2.1] - 2020-04-09
 
-### Changed
-
-- Translate initial data
-- Front-end: Improve PDF viewer
-
 ### Added
 
-- Back-end: Add health check API
+- Add health check API.
+
+### Changed
+
+- Translate initial data.
+- Improve PDF viewer.
 
 ### Fixed
 
-- Front-end: Fix iOS pagination
-- Front-end: Fix info modal creator info
+- Fix iOS pagination.
+- Fix info modal creator info.
 
 ## [0.2.0] - 2020-04-07
 
-### Changed
-
-- Front-end: Store user information in local storage to reduce the amount of server requests
-- Back-end: Make email an optional field and do not require it when registering new account
-- Front-end: Make corresponding updates regarding email field on registration and profile update
-
-### Fixed
-
-- Front-end: Fix bug of `Edit Profile` button showing on other users' profiles
-- Back-end: Fix existing translations
-
 ### Added
 
-- Front-end: Add user avatar to bottom navbar
-- Back-end: Add email configuration for contact form
-- Back-end: Add model translations
+- Add user avatar to bottom navbar.
+- Add email configuration for contact form.
+- Add model translations.
+
+### Changed
+
+- Store user information in local storage to reduce the amount of server requests.
+- Make email an optional field and do not require it when registering new account and when updating profile.
 
 ### Removed
 
-- Front-end: Remove redundant dependencies and secondary PDF viewer
+- Remove redundant frontend dependencies and secondary PDF viewer.
+
+### Fixed
+
+- Fix bug of 'Edit Profile' button showing on other users' profiles.
+- Fixes to backend translations.
 
 ## [0.1.0] - 2020-04-05
 
 ### Added
 
-- Deploy initial version
+- Deploy initial version.
