@@ -55,7 +55,7 @@ jobs:
       - update-submodules
       - run:
           name: "Run linter, type-check, and tests"
-          command: cd backend && docker-compose -f docker-compose-circleci.yml up --abort-on-container-exit
+          command: cd backend && docker-compose --file docker-compose-circleci.yml up --build --abort-on-container-exit
 
   test-frontend:
     executor: machine-builder
