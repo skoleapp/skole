@@ -7,11 +7,6 @@
       "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/backend-staging/739342a91ca64b3c",
       "containerName": "backend",
       "containerPort": 8000
-    },
-    {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/frontend-staging/fdb44c22d44a3885",
-      "containerName": "frontend",
-      "containerPort": 3001
     }
   ],
   "desiredCount": 1,
