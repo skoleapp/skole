@@ -1,7 +1,7 @@
 {
   "family": "skole-staging-task",
   "executionRoleArn": "arn:aws:iam::630869177434:role/skole-ecs-execution-role",
-  "memory": 983,
+  "memory": "1GB",
   "containerDefinitions": [
     {
       "name": "backend",
