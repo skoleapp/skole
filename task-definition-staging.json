@@ -1,11 +1,11 @@
 {
   "family": "skole-staging-task",
   "executionRoleArn": "arn:aws:iam::630869177434:role/skole-ecs-execution-role",
-  "memory": "1GB",
   "containerDefinitions": [
     {
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend-staging:latest",
+      "memoryReservation": 491,
       "portMappings": [
         {
           "containerPort": 8000,
