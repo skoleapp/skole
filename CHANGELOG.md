@@ -5,23 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.1] - 2020-08-06
 ## [0.9.1-rc.3] - 2020-08-06
-
-### Fixed
-
-- Potentially fix AWS task definition issues.
-
 ## [0.9.1-rc.2] - 2020-08-06
-
-### Fixed
-
-- Potentially fix AWS task definition issues.
-
 ## [0.9.1-rc.1] - 2020-08-06
 
 ### Fixed
 
-- Potentially fix CircleCI pipeline errors.
+- Fix AWS task definition issues.
+- Fix CircleCI pipeline errors.
 
 ## [0.9.0] - 2020-08-06
 
