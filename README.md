@@ -14,7 +14,7 @@
 
 3. [Follow the instructions for environment variables](#environment-variables)
 
-4. Build the containers: `docker-compose build --parallel`
+4. Build the containers: `docker-compose build`
 
 5. Setup the backend for development:
 
