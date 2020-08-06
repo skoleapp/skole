@@ -1,7 +1,7 @@
 {
   "family": "skole-task",
   "executionRoleArn": "arn:aws:iam::630869177434:role/skole-ecs-execution-role",
-  "memory": 1991,
+  "memory": "2BG",
   "containerDefinitions": [
     {
       "name": "backend",
