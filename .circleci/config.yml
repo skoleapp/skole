@@ -20,7 +20,7 @@ staging-branch: &staging-branch
         - develop
 
 build-backend: &build-backend
-  executor: machine-builder
+  executor: machine-with-cache
   pre-steps:
     - update-submodules
   dockerfile: Dockerfile-prod
@@ -39,10 +39,15 @@ update-service: &update-service
 # CicleCI's own sections
 
 executors:
-  machine-builder:
+  machine-with-cache:
     machine:
       image: ubuntu-1604:201903-01
       docker_layer_caching: true
+
+  machine-no-cache:
+    machine:
+      image: ubuntu-1604:201903-01
+      docker_layer_caching: false
 
 commands:
   update-submodules:
@@ -54,7 +59,7 @@ commands:
 
 jobs:
   test-backend:
-    executor: machine-builder
+    executor: machine-with-cache
     steps:
       - update-submodules
       - run:
@@ -64,7 +69,7 @@ jobs:
             && docker-compose --file docker-compose-circleci.yml up --build --abort-on-container-exit
 
   test-frontend:
-    executor: machine-builder
+    executor: machine-with-cache
     steps:
       - update-submodules
       - run:
@@ -75,7 +80,7 @@ jobs:
             && docker run frontend
 
   build-frontend:
-    executor: machine-builder
+    executor: machine-with-cache
     steps:
       - update-submodules
       - run:
@@ -96,7 +101,7 @@ jobs:
             - out
 
   deploy-frontend:
-    executor: machine-builder
+    executor: machine-no-cache
     steps:
       - attach_workspace:
           at: /tmp/workspace
@@ -109,8 +114,7 @@ jobs:
           to: "s3://${FRONTEND_S3_BUCKET}"
 
   check-submodules:
-    machine:
-      image: ubuntu-1604:201903-01
+    executor: machine-no-cache
     steps:
       - update-submodules
       - run:
