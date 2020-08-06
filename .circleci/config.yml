@@ -59,7 +59,9 @@ jobs:
       - update-submodules
       - run:
           name: "Run linter, type-check, and tests"
-          command: cd backend && docker-compose --file docker-compose-circleci.yml up --build --abort-on-container-exit
+          command: >
+            cd backend
+            && docker-compose --file docker-compose-circleci.yml up --build --abort-on-container-exit
 
   test-frontend:
     executor: machine-builder
@@ -67,7 +69,10 @@ jobs:
       - update-submodules
       - run:
           name: "Run linter and type-check"
-          command: cd frontend && docker build --target circleci --tag frontend . && docker run frontend
+          command: >
+            cd frontend
+            && docker build --target circleci --tag frontend .
+            && docker run frontend
 
   build-frontend:
     executor: machine-builder
@@ -76,7 +81,7 @@ jobs:
       - run:
           name: "Build docker image"
           command: >
-            && cd frontend
+            cd frontend
             && docker build --file Dockerfile-prod --tag frontend --build-arg API_URL .
       - run:
           name: "Copy build files from container"
