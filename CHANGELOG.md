@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.3] - 2020-08-06
+
+### Security
+
+- Use different `CORS_ORIGIN_REGEX_WHITELIST` for prod and QA for extra security.
+
 ## [0.9.2] - 2020-08-06
 
 ### Changed

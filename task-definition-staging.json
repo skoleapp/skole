@@ -51,7 +51,7 @@
         },
         {
           "name": "CORS_ORIGIN_REGEX_WHITELIST",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/CORS_ORIGIN_REGEX_WHITELIST"
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_CORS_ORIGIN_REGEX_WHITELIST"
         },
         {
           "name": "EMAIL_AUTH_FROM",
