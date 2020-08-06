@@ -94,7 +94,7 @@ jobs:
             mkdir -p /tmp/workspace/out
             && container=$(docker create frontend)
             && docker cp "$container":/home/user/app/out/. /tmp/workspace/out
-            && docker rm -v "$container"
+            && docker rm "$container"
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
