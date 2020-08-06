@@ -5,8 +5,7 @@
     {
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend:latest",
-      "cpu": 1,
-      "memory": 2048,
+      "memory": 1991,
       "portMappings": [
         {
           "containerPort": 8000,
