@@ -5,29 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.10] - 2020-08-08
+
+### Fixed
+
+- Allow Vercel preview build to use backend JWT cookie.
+
 ## [0.9.9] - 2020-08-08
 
 ## Fixed
 
-- Fix service worker registration
+- Fix service worker registration.
 
 ## [0.9.8] - 2020-08-08
 
 ### Added
 
-- Add custom offline page for all pages that require communication with backend
-- Add "Back to profile" button in edit profile page
-- Add default title and description meta tags for pages
+- Add custom offline page for all pages that require communication with backend.
+- Add "Back to profile" button in edit profile page.
+- Add default title and description meta tags for pages.
 
 ### Changed
 
-- Change registration to three-step flow
-- Change PWA so that content is refreshed automatically
+- Change registration to three-step flow.
+- Change PWA so that content is refreshed automatically.
 
 ### Fixed
 
-- Fix meta tags for loading screens
-- Fix miscellaneous locales
+- Fix meta tags for loading screens.
+- Fix miscellaneous locales.
 
 ## [0.9.7] - 2020-08-07
 
