@@ -1,8 +1,9 @@
 version: 2.1
 
 orbs:
-  aws-ecr: circleci/aws-ecr@6.7.1
-  aws-ecs: circleci/aws-ecs@1.1.0
+  aws-ecr: circleci/aws-ecr@6.12.2
+  aws-ecs: circleci/aws-ecs@1.2.0
+  aws-s3: circleci/aws-s3@1.0.16
 
 # Custom YAML anchors
 
@@ -18,9 +19,12 @@ staging-branch: &staging-branch
       only:
         - develop
 
-build-image: &build-image
+build-backend: &build-backend
+  executor: machine-with-cache
   pre-steps:
     - update-submodules
+  dockerfile: Dockerfile-prod
+  path: backend
   account-url: AWS_ECR_ACCOUNT_URL
   aws-access-key-id: AWS_ACCESS_KEY_ID
   aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -28,10 +32,22 @@ build-image: &build-image
   tag: "${CIRCLE_SHA1}"
 
 update-service: &update-service
+  # Needs to have the dollar symbol even though the ones above do not.
   aws-region: $AWS_REGION
-  container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
+  container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1}"
 
 # CicleCI's own sections
+
+executors:
+  machine-with-cache:
+    machine:
+      image: ubuntu-1604:201903-01
+      docker_layer_caching: true
+
+  machine-no-cache:
+    machine:
+      image: ubuntu-1604:201903-01
+      docker_layer_caching: false
 
 commands:
   update-submodules:
@@ -43,26 +59,62 @@ commands:
 
 jobs:
   test-backend:
-    machine:
-      image: ubuntu-1604:201903-01
+    executor: machine-with-cache
     steps:
       - update-submodules
       - run:
           name: "Run linter, type-check, and tests"
-          command: cd backend && docker-compose -f docker-compose-circleci.yml up --abort-on-container-exit
+          command: >
+            cd backend
+            && docker-compose --file docker-compose-circleci.yml up --build --abort-on-container-exit
 
   test-frontend:
-    machine:
-      image: ubuntu-1604:201903-01
+    executor: machine-with-cache
     steps:
       - update-submodules
       - run:
           name: "Run linter and type-check"
-          command: cd frontend && docker build --target circleci --tag frontend . && docker run frontend
+          command: >
+            cd frontend
+            && docker build --target circleci --tag frontend .
+            && docker run frontend
+
+  build-frontend:
+    executor: machine-with-cache
+    steps:
+      - update-submodules
+      - run:
+          name: "Build docker image"
+          command: >
+            cd frontend
+            && docker build --file Dockerfile-prod --tag frontend --build-arg API_URL .
+      - run:
+          name: "Copy build files from container"
+          command: >
+            mkdir -p /tmp/workspace/out
+            && container=$(docker create frontend)
+            && docker cp "$container":/home/user/app/out/. /tmp/workspace/out
+            && docker rm "$container"
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - out
+
+  deploy-frontend:
+    executor: machine-no-cache
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - aws-s3/sync:
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: /tmp/workspace/out
+          overwrite: true
+          to: "s3://${FRONTEND_S3_BUCKET}"
 
   check-submodules:
-    machine:
-      image: ubuntu-1604:201903-01
+    executor: machine-no-cache
     steps:
       - update-submodules
       - run:
@@ -83,23 +135,19 @@ workflows:
     jobs:
       - test-backend:
           <<: *prod-branch
+
       - test-frontend:
           <<: *prod-branch
 
       - aws-ecr/build-and-push-image:
           name: build-backend
-          dockerfile: Dockerfile-prod
-          path: backend
           repo: backend
-          <<: *build-image
+          <<: *build-backend
           <<: *prod-branch
 
-      - aws-ecr/build-and-push-image:
+      - build-frontend:
           name: build-frontend
-          dockerfile: Dockerfile-prod
-          path: frontend
-          repo: frontend
-          <<: *build-image
+          context: prod
           <<: *prod-branch
 
       - aws-ecs/update-task-definition-from-json:
@@ -123,23 +171,25 @@ workflows:
           family: skole-task
           <<: *update-service
           <<: *prod-branch
+      
+      - deploy-frontend:
+          name: deploy-prod-frontend
+          context: prod
+          requires:
+            - update-prod-service
+          <<: *prod-branch
 
   deploy-staging:
     jobs:
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
-          dockerfile: Dockerfile-prod
-          path: backend
           repo: backend-staging
-          <<: *build-image
+          <<: *build-backend
           <<: *staging-branch
 
-      - aws-ecr/build-and-push-image:
+      - build-frontend:
           name: build-staging-frontend
-          dockerfile: Dockerfile-prod
-          path: frontend
-          repo: frontend-staging
-          <<: *build-image
+          context: staging
           <<: *staging-branch
 
       - aws-ecs/update-task-definition-from-json:
@@ -160,4 +210,11 @@ workflows:
           service-name: skole-staging-service
           family: skole-staging-task
           <<: *update-service
+          <<: *staging-branch
+
+      - deploy-frontend:
+          name: deploy-staging-frontend
+          context: staging
+          requires:
+            - update-staging-service
           <<: *staging-branch

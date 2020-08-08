@@ -5,8 +5,7 @@
     {
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend-staging:latest",
-      "cpu": 1,
-      "memoryReservation": 163,
+      "memoryReservation": 491,
       "portMappings": [
         {
           "containerPort": 8000,
@@ -51,12 +50,20 @@
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/ALLOWED_HOSTS"
         },
         {
-          "name": "CORS_ORIGIN_WHITELIST",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_CORS_ORIGIN_WHITELIST"
+          "name": "CORS_ORIGIN_REGEX_WHITELIST",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_CORS_ORIGIN_REGEX_WHITELIST"
+        },
+        {
+          "name": "JWT_COOKIE_SAMESITE",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_JWT_COOKIE_SAMESITE"
         },
         {
           "name": "EMAIL_AUTH_FROM",
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_AUTH_FROM"
+        },
+        {
+          "name": "EMAIL_CONTACT_FROM",
+          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/EMAIL_CONTACT_FROM"
         },
         {
           "name": "EMAIL_CONTACT_TO",
@@ -81,36 +88,6 @@
         {
           "name": "AWS_S3_BUCKET_NAME_STATIC",
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_S3_BUCKET_NAME_STATIC"
-        }
-      ]
-    },
-    {
-      "name": "frontend",
-      "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend-staging:latest",
-      "cpu": 2,
-      "memoryReservation": 328,
-      "portMappings": [
-        {
-          "containerPort": 3001,
-          "protocol": "tcp"
-        }
-      ],
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "frontend-staging-logs",
-          "awslogs-region": "eu-central-1"
-        }
-      },
-      "essential": true,
-      "secrets": [
-        {
-          "name": "API_URL",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_API_URL"
-        },
-        {
-          "name": "BACKEND_URL",
-          "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/STAGING_BACKEND_URL"
         },
         {
           "name": "CLOUDMERSIVE_API_KEY",

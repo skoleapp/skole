@@ -36,12 +36,9 @@ services:
       - ./.env.dev
     build:
       context: ./frontend
-      dockerfile: Dockerfile
-      target: dev
-    volumes:
-      - ./frontend:/home/user/app
-      - /home/user/app/node_modules
-      - /home/user/app/.next
+      dockerfile: Dockerfile-prod
+      args:
+        - API_URL=http://localhost:8000/
     restart: unless-stopped
 
 volumes:
