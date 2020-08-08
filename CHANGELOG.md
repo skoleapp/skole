@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.8] - 2020-08-08
+
+### Added
+
+- Add custom offline page for all pages that require communication with backend
+- Add "Back to profile" button in edit profile page
+- Add default title and description meta tags for pages
+
+### Changed
+
+- Change registration to three-step flow
+- Change PWA so that content is refreshed automatically
+
+### Fixed
+
+- Fix meta tags for loading screens
+- Fix miscellaneous locales
+
 ## [0.9.7] - 2020-08-07
 
 ### Fixed
@@ -12,7 +30,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug which prevented accessing Badge model from the admin.
 
 ## [0.9.6] - 2020-08-06
+
 ## [0.9.5] - 2020-08-06
+
 ## [0.9.4] - 2020-08-06
 
 ### Fixed
@@ -32,8 +52,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Use rolling backend updates for QA also.
 
 ## [0.9.1] - 2020-08-06
+
 ## [0.9.1-rc.3] - 2020-08-06
+
 ## [0.9.1-rc.2] - 2020-08-06
+
 ## [0.9.1-rc.1] - 2020-08-06
 
 ### Fixed
