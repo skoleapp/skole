@@ -153,7 +153,7 @@ workflows:
           repo: frontend-staging
           path: frontend
           <<: *build-image
-          <<: *prod-branch
+          <<: *staging-branch
 
       - aws-ecs/update-task-definition-from-json:
           name: update-staging-task-definition
