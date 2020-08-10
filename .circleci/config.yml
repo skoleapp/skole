@@ -114,6 +114,8 @@ workflows:
           name: build-frontend
           repo: frontend
           path: frontend
+          context: prod
+          extra-build-args: "--build-arg API_URL"
           <<: *build-image
           <<: *prod-branch
 
@@ -152,6 +154,8 @@ workflows:
           name: build-staging-frontend
           repo: frontend-staging
           path: frontend
+          context: staging
+          extra-build-args: "--build-arg API_URL"
           <<: *build-image
           <<: *staging-branch
 
