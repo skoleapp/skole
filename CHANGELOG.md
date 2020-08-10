@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.1] - 2020-08-09
+
+## [0.10.1-rc.1] - 2020-08-09
+
+### Fixed
+
+- Fix CircleCI pipeline errors.
+
+## [0.10.0] - 2020-08-09
+
+### Changed
+
+- Revert back to using a server for frontend hosting.
+- Improve the about page.
+- Improve meta tags.
+- Allow non-logged in users to view courses, resources, and user profiles.
+- Don't allow non-verified users to create resources or courses.
+
 ## [0.9.11] - 2020-08-08
 
 ### Security

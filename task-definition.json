@@ -5,7 +5,8 @@
     {
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend:latest",
-      "memoryReservation": 995,
+      "cpu": 2,
+      "memoryReservation": 332,
       "portMappings": [
         {
           "containerPort": 8000,
@@ -94,6 +95,26 @@
           "valueFrom": "arn:aws:ssm:eu-central-1:630869177434:parameter/CLOUDMERSIVE_API_KEY"
         }
       ]
+    },
+    {
+      "name": "frontend",
+      "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend:latest",
+      "cpu": 4,
+      "memoryReservation": 663,
+      "portMappings": [
+        {
+          "containerPort": 3001,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "frontend-logs",
+          "awslogs-region": "eu-central-1"
+        }
+      },
+      "essential": true
     }
   ]
 }

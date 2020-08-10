@@ -7,6 +7,11 @@
       "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/backend-staging/739342a91ca64b3c",
       "containerName": "backend",
       "containerPort": 8000
+    },
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:630869177434:targetgroup/frontend-staging/c99721b80931129f",
+      "containerName": "frontend",
+      "containerPort": 3001
     }
   ],
   "desiredCount": 1,
@@ -14,7 +19,7 @@
     "type": "ECS"
   },
   "deploymentConfiguration": {
-    "maximumPercent": 200,
-    "minimumHealthyPercent": 100
+    "maximumPercent": 100,
+    "minimumHealthyPercent": 0
   }
 }
