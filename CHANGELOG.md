@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0] - 2020-08-12
+
+### Added
+
+- Add "best" sorting option for courses, it's used by default.
+
+### Changed
+
+- Disable backend's spammy permission error logging.
+
+### Removed
+
+- Remove option to sort courses by ascending score.
+
+### Fixed
+
+- Fix error which prevented voting a course.
+- Fix error which prevented commenting to a course.
+
 ## [0.10.2] - 2020-08-10
 
 ### Fixed
