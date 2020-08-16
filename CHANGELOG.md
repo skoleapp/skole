@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.0] - 2020-08-16
+
+### Added
+
+- Add initial version of rich text editor for course and resource discussion
+
+### Changed
+
+- Disable offline functionality for home page
+- Change loading screen to take up full screen on desktop
+
 ## [0.11.0] - 2020-08-12
 
 ### Added
