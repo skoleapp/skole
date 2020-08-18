@@ -5,16 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.1] - 2020-08-17
+
+### Changed
+
+- Changed file input for mobile devices on upload resource page.
+
+### Fixed
+
+- Fix bug causing resource draw mode to clash with swipeable views.
+- Fix all file upload fields to allow uploads using either camera or device storage.
+- Fix bug causing edit profile page to crash when uploading new avatar.
+- Fix bug that caused other search params to disappear when entering course name on mobile search.
+- Fix bug that caused comment thread to open when voting on top-level comment.
+- Fix bug that caused comment thread to open when clicking on comment actions drawer.
+- Fix bug that caused incorrect tooltips to show in various places when user has not verified his account .
+- Fix incorrect score counts showing on course listing.
+
 ## [0.12.0] - 2020-08-16
 
 ### Added
 
-- Add initial version of rich text editor for course and resource discussion
+- Add initial version of rich text editor for course and resource discussion.
 
 ### Changed
 
-- Disable offline functionality for home page
-- Change loading screen to take up full screen on desktop
+- Disable offline functionality for home page.
+- Change loading screen to take up full screen on desktop.
 
 ## [0.11.0] - 2020-08-12
 
