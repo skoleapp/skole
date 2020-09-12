@@ -83,7 +83,7 @@ jobs:
       - update-submodules
       - run:
           name: "Check submodule commit branches"
-          command: ./submodule_check_circleci.sh
+          command: ./.circleci/check_submodules.sh
 
 workflows:
   check-submodules:
