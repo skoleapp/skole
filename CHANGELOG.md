@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.2] - 2020-09-12
+
+### Fixed
+
+- Correctly log out the session after an account deletion.
+- Fix rich text editor submit button.
+
 ## [0.12.1] - 2020-08-17
 
 ### Changed
