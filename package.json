@@ -1,7 +1,7 @@
 {
   "name": "skole-monorepo",
   "version": "1.0.0",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "author": "Skole Team",
   "scripts": {
     "start": "docker-compose up",
