@@ -5,7 +5,7 @@
     {
       "name": "backend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/backend:latest",
-      "cpu": 2,
+      "cpu": 170,
       "memoryReservation": 332,
       "portMappings": [
         {
@@ -99,7 +99,7 @@
     {
       "name": "frontend",
       "image": "630869177434.dkr.ecr.eu-central-1.amazonaws.com/frontend:latest",
-      "cpu": 4,
+      "cpu": 341,
       "memoryReservation": 663,
       "portMappings": [
         {
