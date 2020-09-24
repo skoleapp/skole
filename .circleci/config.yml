@@ -22,7 +22,7 @@ build-image: &build-image
   executor: machine-with-cache
   pre-steps:
     - update-submodules
-  dockerfile: Dockerfile-prod
+  dockerfile: Dockerfile.prod
   account-url: AWS_ECR_ACCOUNT_URL
   aws-access-key-id: AWS_ACCESS_KEY_ID
   aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -140,7 +140,7 @@ workflows:
           family: skole-task
           <<: *update-service
           <<: *prod-branch
-      
+
   deploy-staging:
     jobs:
       - aws-ecr/build-and-push-image:
