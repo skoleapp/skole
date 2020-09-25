@@ -5,6 +5,47 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.0-rc.1] - 2020-09-25
+
+### Added
+
+- Group resources by resource type in lists.
+
+### Changed
+
+- Improve developer documentation.
+- Restructure static assets (images).
+- Improve miscellaneous locales.
+- Make dialogs more responsive - no more side-opening drawers on desktop.
+- Remove redundant top-level dependencies.
+- Add labels to bottom navbar.
+- Create custom drop zone for file uploads.
+- Replace `formik-material-ui` with custom form fields.
+- Use MUI's built-in media queries instead of a custom solution.
+- Simplify layout for settings page other reusable templates.
+- Improve labels and placeholders for all form fields, remove redundant input adornments that look weird on iOS.
+- By default, show footer in viewport on desktop.
+- Improve "not found" screens with more descriptive texts, icons and call-to-action links.
+- Redesign and implement landing and home page.
+- Slightly redesign profile page, improve profile strength stepper (always show completed steps first).
+- Change theming with e.g. rounded corners and other misc. overrides to default MUI components.
+- Remove NProgress - show regular loading screen instead
+- Improve all tables for better compability and hover effects etc.
+- Replace `moment.js` with `day.js`.
+- Make most content pages public (home, search, course, resource).
+- Allow commenting for non-logged users but prevent them from adding resources.
+
+### Fixed
+
+- Fix client-side logout error
+- Fix bug that caused form error when logging in with different credentials as an existing user
+- Replace all styled-components styles with MUI's own CSS in JS
+- Fix error handling for all mutations with latest backend version
+- Fix status bar style on iOS
+- Fix various miscellaneous iOS bugs
+- Fix HTML lang-attribute
+- Fix create comment button positioning
+
 ## [0.12.2] - 2020-09-12
 
 ### Fixed
@@ -16,7 +57,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Changed file input for mobile devices on upload resource page.
+- Change file input for mobile devices on upload resource page.
 
 ### Fixed
 
@@ -26,7 +67,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug that caused other search params to disappear when entering course name on mobile search.
 - Fix bug that caused comment thread to open when voting on top-level comment.
 - Fix bug that caused comment thread to open when clicking on comment actions drawer.
-- Fix bug that caused incorrect tooltips to show in various places when user has not verified his account .
+- Fix bug that caused incorrect tooltips to show in various places when user has not verified his account.
 - Fix incorrect score counts showing on course listing.
 
 ## [0.12.0] - 2020-08-16

@@ -16,10 +16,10 @@
 
 5. Setup the backend for development:
 
-   docker-compose run --rm backend sh -c \
-    'python manage.py migrate \
-    && python manage.py compilemessages \
-    && python manage.py loaddata test-data.yaml'
+       docker-compose run --rm backend sh -c \
+           'python manage.py migrate \
+            && python manage.py compilemessages \
+            && python manage.py loaddata test-data.yaml'
 
 6. Run the app: `docker-compose up`
 
