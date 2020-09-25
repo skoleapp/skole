@@ -3,8 +3,6 @@
 ### Requirements
 
 - [Docker](https://www.docker.com/)
-- [Node](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/lang/en/)
 
 ### Get the development environment up and running
 
@@ -25,8 +23,8 @@
 
 6. Run the app: `docker-compose up`
 
-7. Access the application from [localhost:3001](http://localhost:3001), log in with username: `testuser2` password: `password`  
-   Access Django admin from [localhost:8000](http://localhost:8000), log in with username: `admin` password: `admin`  
+7. Access the application from [localhost:3001](http://localhost:3001), log in with username: `testuser2` password: `password`
+   Access Django admin from [localhost:8000](http://localhost:8000), log in with username: `admin` password: `admin`
    Access GraphiQL from [localhost:8000/graphql](http://localhost:8000/graphql)
 
 ### Useful Yarn commands
@@ -46,7 +44,7 @@
 
 ### Environment variables
 
-- Copy the template env file: `cp .env.template .env.dev` and add values for all the \<placeholder\> variables in the `.env.dev` file. 
+- Copy the template env file: `cp .env.template .env.dev` and add values for all the \<placeholder\> variables in the `.env.dev` file.
 - For uploading files during development you need a Cloudmersive API key which you can get [here](https://www.cloudmersive.com/).
 
 ### Developing locally on your mobile device
