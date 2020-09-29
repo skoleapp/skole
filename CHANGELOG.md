@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.0-rc.2] - 2020-09-29
+
+### Fixed
+
+- Fix bug of bottom navbar not showing not authenticated users.
+- Fix lang-attribute for HTML-document.
+- Use client-side data fetching for all dynamic pages - fix translation bug.
+- *Potentially* fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
+- Fix random locale typos.
+
 ## [0.13.0-rc.1] - 2020-09-25
 
 ### Added
