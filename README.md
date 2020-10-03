@@ -6,13 +6,13 @@
 
 ### Get the development environment up and running
 
-1. Clone this repository with: `git clone --recursive <link>`
+1. Clone this repository with: `git clone --recurse-submodules <link>`
 
 2. `cd skole`
 
 3. [Follow the instructions for environment variables](#environment-variables)
 
-4. Build the containers: `docker-compose build`
+4. Build the images: `docker-compose build`
 
 5. Setup the backend for development:
 
@@ -23,8 +23,8 @@
 
 6. Run the app: `docker-compose up`
 
-7. Access the application from [localhost:3001](http://localhost:3001), log in with username: `testuser2` password: `password`
-   Access Django admin from [localhost:8000](http://localhost:8000), log in with username: `admin` password: `admin`
+7. Access the application from [localhost:3001](http://localhost:3001), log in with username: `testuser2` password: `password`  
+   Access Django admin from [localhost:8000](http://localhost:8000), log in with username: `admin` password: `admin`  
    Access GraphiQL from [localhost:8000/graphql](http://localhost:8000/graphql)
 
 ### Useful Yarn commands
@@ -44,8 +44,9 @@
 
 ### Environment variables
 
-- Copy the template env file: `cp .env.template .env.dev` and add values for all the \<placeholder\> variables in the `.env.dev` file.
-- For uploading files during development you need a Cloudmersive API key which you can get [here](https://www.cloudmersive.com/).
+- Copy the template env file: `cp .env.template .env` and add values for the \<placeholder\> variables in the `.env` file.
+- If you want to test PDF file conversion during development, you will need a Cloudmersive API key, which you can get [here](https://www.cloudmersive.com/).  
+  Note that this is optional and the application will work fine without it.
 
 ### Developing locally on your mobile device
 
