@@ -49,7 +49,7 @@
 
 ### Developing locally on your mobile device
 
-- Make sure your device and the server are on the same network, i.e. hotspot.
-- Make sure your computer has firewall not blocking incoming requests.
-- Check your WiFi inet address using `ifconfig` and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
-- That's it, now you should be able to connect on the dev server locally with your device at http://<your_wifi_inet>:3001/
+- Make sure your computer and mobile device are in the same network.
+- Make sure your computer's firewall is not blocking incoming requests.
+- Check your WiFi inet address using e.g. `ipconfig getifaddr en0` and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
+- That's it, now you should be able to connect on the dev server locally with your mobile device at http://<your_wifi_inet>:3001/
