@@ -5,7 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.13.0-rc.2] - 2020-09-29
+## [0.13.0-rc3] - 2020-10-96
+
+### Changed
+
+- Prevent autocomplete fields from making massive queries. Instead, fetch initial data and re-fetch when user types in more characters.
+- Make headers slightly bigger.
+
+### Fixed
+
+- Fix miscellaneous UI bugs.
+- Fix translations on user profile by using client-side data fecthing.
+
+## [0.13.0-rc2] - 2020-09-29
 
 ### Fixed
 
@@ -15,7 +27,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - *Potentially* fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
 - Fix random locale typos.
 
-## [0.13.0-rc.1] - 2020-09-25
+## [0.13.0-rc1] - 2020-09-25
 
 ### Added
 
@@ -119,7 +131,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.10.1] - 2020-08-09
 
-## [0.10.1-rc.1] - 2020-08-09
+## [0.10.1-rc1] - 2020-08-09
 
 ### Fixed
 
@@ -201,11 +213,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.9.1] - 2020-08-06
 
-## [0.9.1-rc.3] - 2020-08-06
+## [0.9.1-rc3] - 2020-08-06
 
-## [0.9.1-rc.2] - 2020-08-06
+## [0.9.1-rc2] - 2020-08-06
 
-## [0.9.1-rc.1] - 2020-08-06
+## [0.9.1-rc1] - 2020-08-06
 
 ### Fixed
 
@@ -340,7 +352,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Fix user agent matching to fix layout prediction.
 
-## [0.4.9-rc.1] - 2020-05-16
+## [0.4.9-rc1] - 2020-05-16
 
 ### Fixed
 
