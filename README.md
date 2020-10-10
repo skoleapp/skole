@@ -1,5 +1,7 @@
 # Skole 🎓
 
+[![CircleCI build status](https://circleci.com/gh/ruohola/skole.svg?style=shield&circle-token=5cdb1313cb62a0ca8fa117cfd73db38db149774c)](https://circleci.com/gh/ruohola/skole)
+
 ## Requirements
 
 - [Docker](https://www.docker.com/)
