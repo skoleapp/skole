@@ -5,21 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.14.0] - 2020-10-10
+
+### Changed
+
+- Show comment and resource counts, and the creator of the course in all course lists.
+- Refine the border radius of all UI elements a bit.
+
+### Fixed
+
+- Fix showing user's starred courses and resources on starred page.
+
 ## [0.13.0] - 2020-10-10
 
 ## [0.13.0-rc4] - 2020-10-08
 
 ### Changed
 
-- Update Python version and other requirements in the backend
+- Update Python version and other requirements in the backend.
 
 ### Fixed
 
-- Fix miscellaneous locale typos
-- Fix avatar thumbnail sizing on mobile
-- Fix PDF viewer overflow issue preventing border radius from showing
-- Fix bugs of dialogs toggling on/off from random clicks
-- Fix school detail overflow issue
+- Fix miscellaneous locale typos.
+- Fix avatar thumbnail sizing on mobile.
+- Fix PDF viewer overflow issue preventing border radius from showing.
+- Fix bugs of dialogs toggling on/off from random clicks.
+- Fix school detail overflow issue.
 
 ## [0.13.0-rc3] - 2020-10-06
 
