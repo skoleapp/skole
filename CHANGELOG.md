@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.14.1] - 2020-10-12
+
+### Added
+
+- Add a login confirmation page that is shown to the user before automatically redirecting to login page
+
+### Changed
+
+- Add resource count to profile tab labels
+- Simplify tooltips for voting own content - use the same "You cannot vote on your own content" for courses, resources and comments
+- Disable draw mode feature temporarily - for mobile devices, hide the entire button
+- Use a lighter color for community user in comments
+- Remove success notification after creating a comment
+- Improve URL input for rich text editor
+- Hide attachment button for anonymous and non-verified users on mobile
+- Improve spacing and alignment for course table items
+- Hide profile strength stepper if all steps have been completed
+- Show course/resource count on profile tab labels
+- Make all icons and icon buttons slightly bigger
+- Bump max file size to 10Mb when uploading resources
+- Add option to navigate to home from logout and login/register pages
+
+### Fixed
+
+- Fix bug of created resources not showing in profile
+- Fix bug of anonymous users being able to click on vote/star buttons
+- Fix bug of confirmation modal not showing when deleting a comment
+- Fix spacing and overflow issues for rich text editor
+- Fix navigation logic to user profile from bottom nav bar when not logged in
+- Fix weird overflow issue occasionally present on mobile iOS, affecting entire container/layout
+- Fix overflow issue on profile username and title fields
+- Fix infinite loading state bug on some forms
+- Fix navigation on bottom nav bar for anonymous users
+- Fix layout on all settings pages
+- Fix reply comment button text
+
 ## [0.14.0] - 2020-10-10
 
 ### Changed
