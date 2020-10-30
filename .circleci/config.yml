@@ -22,7 +22,7 @@ build-image: &build-image
   executor: machine-with-cache
   pre-steps:
     - update-submodules
-  dockerfile: Dockerfile.prod
+  dockerfile: Dockerfile
   account-url: AWS_ECR_ACCOUNT_URL
   aws-access-key-id: AWS_ACCESS_KEY_ID
   aws-secret-access-key: AWS_SECRET_ACCESS_KEY
@@ -77,18 +77,21 @@ jobs:
             && docker build --target circleci --tag frontend .
             && docker run frontend
 
-  check-submodules:
+  check-commits:
     executor: machine-no-cache
     steps:
       - update-submodules
+      - run:
+          name: "Check commits of the PR branch"
+          command: ./.circleci/check_commits.sh
       - run:
           name: "Check submodule commit branches"
           command: ./.circleci/check_submodules.sh
 
 workflows:
-  check-submodules:
+  check-commits:
     jobs:
-      - check-submodules:
+      - check-commits:
           filters:
             branches:
               ignore:
