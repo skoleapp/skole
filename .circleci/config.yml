@@ -3,6 +3,8 @@ version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@6.12.2
   aws-ecs: circleci/aws-ecs@1.2.0
+  terraform: circleci/terraform@1.1.0
+
 
 # Custom YAML anchors
 
@@ -33,6 +35,7 @@ update-service: &update-service
   # Needs to have the dollar symbol even though the ones above do not.
   aws-region: $AWS_REGION
   container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
+
 
 # CicleCI's own sections
 
@@ -100,6 +103,11 @@ workflows:
 
   deploy-prod:
     jobs:
+      - terraform/apply:
+          name: deploy-infra
+          checkout: true
+          <<: *prod-branch
+
       - test-backend:
           <<: *prod-branch
 
@@ -110,6 +118,8 @@ workflows:
           name: build-backend
           repo: backend
           path: backend
+          requires:
+            - deploy-infra
           <<: *build-image
           <<: *prod-branch
 
@@ -119,25 +129,18 @@ workflows:
           path: frontend
           context: prod
           extra-build-args: "--build-arg API_URL"
-          <<: *build-image
-          <<: *prod-branch
-
-      - aws-ecs/update-task-definition-from-json:
-          name: update-prod-task-definition
           requires:
-            - test-backend
-            - test-frontend
-            - build-backend
-            - build-frontend
-          pre-steps:
-            - checkout
-          task-definition-json: task-definition.json
+            - deploy-infra
+          <<: *build-image
           <<: *prod-branch
 
       - aws-ecs/deploy-service-update:
           name: update-prod-service
           requires:
-            - update-prod-task-definition
+            - test-backend
+            - test-frontend
+            - build-backend
+            - build-frontend
           cluster-name: skole-cluster
           service-name: skole-service
           family: skole-task
@@ -146,10 +149,17 @@ workflows:
 
   deploy-staging:
     jobs:
+      - terraform/apply:
+          name: deploy-infra
+          checkout: true
+          <<: *staging-branch
+
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
           repo: backend-staging
           path: backend
+          requires:
+            - deploy-infra
           <<: *build-image
           <<: *staging-branch
 
@@ -159,23 +169,16 @@ workflows:
           path: frontend
           context: staging
           extra-build-args: "--build-arg API_URL"
-          <<: *build-image
-          <<: *staging-branch
-
-      - aws-ecs/update-task-definition-from-json:
-          name: update-staging-task-definition
           requires:
-            - build-staging-backend
-            - build-staging-frontend
-          pre-steps:
-            - checkout
-          task-definition-json: task-definition-staging.json
+            - deploy-infra
+          <<: *build-image
           <<: *staging-branch
 
       - aws-ecs/deploy-service-update:
           name: update-staging-service
           requires:
-            - update-staging-task-definition
+            - build-staging-backend
+            - build-staging-frontend
           cluster-name: skole-staging-cluster
           service-name: skole-staging-service
           family: skole-staging-task
