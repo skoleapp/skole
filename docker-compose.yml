@@ -26,6 +26,8 @@ services:
       - ./backend:/home/user/app
     depends_on:
       - db
+    stdin_open: true
+    tty: true
     restart: unless-stopped
 
   frontend:
