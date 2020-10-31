@@ -31,11 +31,6 @@ build-image: &build-image
   region: AWS_REGION
   tag: "${CIRCLE_SHA1}"
 
-update-service: &update-service
-  # Needs to have the dollar symbol even though the ones above do not.
-  aws-region: $AWS_REGION
-  container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
-
 
 # CicleCI's own sections
 
@@ -145,7 +140,8 @@ workflows:
           cluster-name: skole-cluster
           service-name: skole-service
           family: skole-task
-          <<: *update-service
+          aws-region: $AWS_REGION
+          container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
           <<: *prod-branch
 
   deploy-staging:
@@ -184,5 +180,6 @@ workflows:
           cluster-name: skole-staging-cluster
           service-name: skole-staging-service
           family: skole-staging-task
-          <<: *update-service
+          aws-region: $AWS_REGION
+          container-image-name-updates: "container=backend_staging,tag=${CIRCLE_SHA1},container=frontend_staging,tag=${CIRCLE_SHA1}"
           <<: *staging-branch
