@@ -54,27 +54,6 @@ commands:
           command: git submodule update --init --recursive
 
 jobs:
-  test-backend:
-    executor: machine-with-cache
-    steps:
-      - update-submodules
-      - run:
-          name: "Run linter, type-check, and tests"
-          command: >
-            cd backend
-            && docker-compose --file docker-compose-circleci.yml up --build --abort-on-container-exit
-
-  test-frontend:
-    executor: machine-with-cache
-    steps:
-      - update-submodules
-      - run:
-          name: "Run linter and type-check"
-          command: >
-            cd frontend
-            && docker build --target circleci --tag frontend .
-            && docker run frontend
-
   check-commits:
     executor: machine-no-cache
     steps:
@@ -104,12 +83,6 @@ workflows:
           path: infra
           <<: *prod-branch
 
-      - test-backend:
-          <<: *prod-branch
-
-      - test-frontend:
-          <<: *prod-branch
-
       - aws-ecr/build-and-push-image:
           name: build-backend
           repo: backend
@@ -133,8 +106,6 @@ workflows:
       - aws-ecs/deploy-service-update:
           name: update-prod-service
           requires:
-            - test-backend
-            - test-frontend
             - build-backend
             - build-frontend
           cluster-name: skole-cluster
