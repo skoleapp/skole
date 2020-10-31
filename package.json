@@ -1,7 +1,7 @@
 {
   "name": "skole-monorepo",
   "version": "1.0.0",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "author": "Skole Team",
   "scripts": {
     "start": "docker-compose up",
@@ -14,7 +14,7 @@
     "backend:migrate": "docker-compose run --rm backend sh -c 'python manage.py migrate'",
     "backend:create-superuser": "docker-compose run --rm backend sh -c 'python manage.py createsuperuser'",
     "backend:import-test-data": "docker-compose run --rm backend sh -c 'python manage.py loaddata test-data.yaml'",
-    "backend:format": "docker-compose run --no-deps --rm backend sh -c 'autoflake --recursive --in-place --remove-all-unused-imports --ignore-init-module-imports . && isort . && docformatter --recursive --in-place --wrap-summaries=88 --wrap-descriptions=88 . && black . && python manage.py graphql_schema'",
+    "backend:format": "docker-compose run --no-deps --rm backend sh -c 'autoflake --recursive --in-place --remove-all-unused-imports --ignore-init-module-imports . && isort . && docformatter --recursive --in-place --wrap-summaries=88 --wrap-descriptions=88 --pre-summary-newline . && black . && python manage.py graphql_schema'",
     "backend:test": "docker-compose run --rm backend sh -c 'mypy . && pytest --verbose --cov-report=html --cov=. . && flake8 .'",
     "backend:makemessages": "docker-compose run --rm backend sh -c 'python manage.py makemessages'",
     "backend:compilemessages": "docker-compose run --rm backend sh -c 'python manage.py compilemessages'",

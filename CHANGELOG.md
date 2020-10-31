@@ -5,6 +5,193 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.15.0] - 2020-10-31
+
+### Changed
+
+- Deploy and manage the whole AWS infra with terraform.
+- Clean the metadata of all uploaded files.
+
+## [0.14.1] - 2020-10-12
+
+### Added
+
+- Add a login confirmation page that is shown to the user before automatically redirecting to login page.
+
+### Changed
+
+- Add resource count to profile tab labels.
+- Simplify tooltips for voting own content - use the same "You cannot vote on your own content" for courses, resources and comments.
+- Disable draw mode feature temporarily - for mobile devices, hide the entire button.
+- Use a lighter color for community user in comments.
+- Remove success notification after creating a comment.
+- Improve URL input for rich text editor.
+- Hide attachment button for anonymous and non-verified users on mobile.
+- Improve spacing and alignment for course table items.
+- Hide profile strength stepper if all steps have been completed.
+- Show course/resource count on profile tab labels.
+- Make all icons and icon buttons slightly bigger.
+- Bump max file size to 10Mb when uploading resources.
+- Add option to navigate to home from logout and login/register pages.
+
+### Fixed
+
+- Fix bug of created resources not showing in profile.
+- Fix bug of anonymous users being able to click on vote/star buttons.
+- Fix bug of confirmation modal not showing when deleting a comment.
+- Fix spacing and overflow issues for rich text editor.
+- Fix navigation logic to user profile from bottom nav bar when not logged in.
+- Fix weird overflow issue occasionally present on mobile iOS, affecting entire container/layout.
+- Fix overflow issue on profile username and title fields.
+- Fix infinite loading state bug on some forms.
+- Fix navigation on bottom nav bar for anonymous users.
+- Fix layout on all settings pages.
+- Fix reply comment button text.
+
+## [0.14.0] - 2020-10-10
+
+### Changed
+
+- Show comment and resource counts, and the creator of the course in all course lists.
+- Refine the border radius of all UI elements a bit.
+
+### Fixed
+
+- Fix showing user's starred courses and resources on starred page.
+
+## [0.13.0] - 2020-10-10
+
+## [0.13.0-rc4] - 2020-10-08
+
+### Changed
+
+- Update Python version and other requirements in the backend.
+
+### Fixed
+
+- Fix miscellaneous locale typos.
+- Fix avatar thumbnail sizing on mobile.
+- Fix PDF viewer overflow issue preventing border radius from showing.
+- Fix bugs of dialogs toggling on/off from random clicks.
+- Fix school detail overflow issue.
+
+## [0.13.0-rc3] - 2020-10-06
+
+### Changed
+
+- Prevent autocomplete fields from making massive queries. Instead, fetch initial data and re-fetch when user types in more characters.
+- Make headers slightly bigger.
+
+### Fixed
+
+- Fix miscellaneous UI bugs.
+- Fix translations on user profile by using client-side data fecthing.
+
+## [0.13.0-rc2] - 2020-09-29
+
+### Fixed
+
+- Fix bug of bottom navbar not showing not authenticated users.
+- Fix lang-attribute for HTML-document.
+- Use client-side data fetching for all dynamic pages - fix translation bug.
+- *Potentially* fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
+- Fix random locale typos.
+
+## [0.13.0-rc1] - 2020-09-25
+
+### Added
+
+- Group resources by resource type in lists.
+
+### Changed
+
+- Improve developer documentation.
+- Restructure static assets (images).
+- Improve miscellaneous locales.
+- Make dialogs more responsive - no more side-opening drawers on desktop.
+- Remove redundant top-level dependencies.
+- Add labels to bottom navbar.
+- Create custom drop zone for file uploads.
+- Replace `formik-material-ui` with custom form fields.
+- Use MUI's built-in media queries instead of a custom solution.
+- Simplify layout for settings page other reusable templates.
+- Improve labels and placeholders for all form fields, remove redundant input adornments that look weird on iOS.
+- By default, show footer in viewport on desktop.
+- Improve "not found" screens with more descriptive texts, icons and call-to-action links.
+- Redesign and implement landing and home page.
+- Slightly redesign profile page, improve profile strength stepper (always show completed steps first).
+- Change theming with e.g. rounded corners and other misc. overrides to default MUI components.
+- Remove NProgress - show regular loading screen instead
+- Improve all tables for better compability and hover effects etc.
+- Replace `moment.js` with `day.js`.
+- Make most content pages public (home, search, course, resource).
+- Allow commenting for non-logged users but prevent them from adding resources.
+
+### Fixed
+
+- Fix client-side logout error
+- Fix bug that caused form error when logging in with different credentials as an existing user
+- Replace all styled-components styles with MUI's own CSS in JS
+- Fix error handling for all mutations with latest backend version
+- Fix status bar style on iOS
+- Fix various miscellaneous iOS bugs
+- Fix HTML lang-attribute
+- Fix create comment button positioning
+
+## [0.12.2] - 2020-09-12
+
+### Fixed
+
+- Correctly log out the session after an account deletion.
+- Fix rich text editor submit button.
+
+## [0.12.1] - 2020-08-17
+
+### Changed
+
+- Change file input for mobile devices on upload resource page.
+
+### Fixed
+
+- Fix bug causing resource draw mode to clash with swipeable views.
+- Fix all file upload fields to allow uploads using either camera or device storage.
+- Fix bug causing edit profile page to crash when uploading new avatar.
+- Fix bug that caused other search params to disappear when entering course name on mobile search.
+- Fix bug that caused comment thread to open when voting on top-level comment.
+- Fix bug that caused comment thread to open when clicking on comment actions drawer.
+- Fix bug that caused incorrect tooltips to show in various places when user has not verified his account.
+- Fix incorrect score counts showing on course listing.
+
+## [0.12.0] - 2020-08-16
+
+### Added
+
+- Add initial version of rich text editor for course and resource discussion.
+
+### Changed
+
+- Disable offline functionality for home page.
+- Change loading screen to take up full screen on desktop.
+
+## [0.11.0] - 2020-08-12
+
+### Added
+
+- Add "best" sorting option for courses, it's used by default.
+
+### Changed
+
+- Disable backend's spammy permission error logging.
+
+### Removed
+
+- Remove option to sort courses by ascending score.
+
+### Fixed
+
+- Fix error which prevented voting a course.
+- Fix error which prevented commenting to a course.
+
 ## [0.10.2] - 2020-08-10
 
 ### Fixed
@@ -14,7 +201,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.10.1] - 2020-08-09
 
-## [0.10.1-rc.1] - 2020-08-09
+## [0.10.1-rc1] - 2020-08-09
 
 ### Fixed
 
@@ -96,11 +283,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.9.1] - 2020-08-06
 
-## [0.9.1-rc.3] - 2020-08-06
+## [0.9.1-rc3] - 2020-08-06
 
-## [0.9.1-rc.2] - 2020-08-06
+## [0.9.1-rc2] - 2020-08-06
 
-## [0.9.1-rc.1] - 2020-08-06
+## [0.9.1-rc1] - 2020-08-06
 
 ### Fixed
 
@@ -235,7 +422,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Fix user agent matching to fix layout prediction.
 
-## [0.4.9-rc.1] - 2020-05-16
+## [0.4.9-rc1] - 2020-05-16
 
 ### Fixed
 

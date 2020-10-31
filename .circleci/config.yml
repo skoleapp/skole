@@ -3,6 +3,8 @@ version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@6.12.2
   aws-ecs: circleci/aws-ecs@1.2.0
+  terraform: circleci/terraform@1.1.0
+
 
 # Custom YAML anchors
 
@@ -22,17 +24,13 @@ build-image: &build-image
   executor: machine-with-cache
   pre-steps:
     - update-submodules
-  dockerfile: Dockerfile-prod
+  dockerfile: Dockerfile
   account-url: AWS_ECR_ACCOUNT_URL
   aws-access-key-id: AWS_ACCESS_KEY_ID
   aws-secret-access-key: AWS_SECRET_ACCESS_KEY
   region: AWS_REGION
   tag: "${CIRCLE_SHA1}"
 
-update-service: &update-service
-  # Needs to have the dollar symbol even though the ones above do not.
-  aws-region: $AWS_REGION
-  container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
 
 # CicleCI's own sections
 
@@ -77,18 +75,21 @@ jobs:
             && docker build --target circleci --tag frontend .
             && docker run frontend
 
-  check-submodules:
+  check-commits:
     executor: machine-no-cache
     steps:
       - update-submodules
       - run:
+          name: "Check commits of the PR branch"
+          command: ./.circleci/check_commits.sh
+      - run:
           name: "Check submodule commit branches"
-          command: ./submodule_check_circleci.sh
+          command: ./.circleci/check_submodules.sh
 
 workflows:
-  check-submodules:
+  check-commits:
     jobs:
-      - check-submodules:
+      - check-commits:
           filters:
             branches:
               ignore:
@@ -97,6 +98,12 @@ workflows:
 
   deploy-prod:
     jobs:
+      - terraform/apply:
+          name: deploy-infra
+          checkout: true
+          path: infra
+          <<: *prod-branch
+
       - test-backend:
           <<: *prod-branch
 
@@ -107,6 +114,8 @@ workflows:
           name: build-backend
           repo: backend
           path: backend
+          requires:
+            - deploy-infra
           <<: *build-image
           <<: *prod-branch
 
@@ -116,37 +125,39 @@ workflows:
           path: frontend
           context: prod
           extra-build-args: "--build-arg API_URL"
-          <<: *build-image
-          <<: *prod-branch
-
-      - aws-ecs/update-task-definition-from-json:
-          name: update-prod-task-definition
           requires:
-            - test-backend
-            - test-frontend
-            - build-backend
-            - build-frontend
-          pre-steps:
-            - checkout
-          task-definition-json: task-definition.json
+            - deploy-infra
+          <<: *build-image
           <<: *prod-branch
 
       - aws-ecs/deploy-service-update:
           name: update-prod-service
           requires:
-            - update-prod-task-definition
+            - test-backend
+            - test-frontend
+            - build-backend
+            - build-frontend
           cluster-name: skole-cluster
           service-name: skole-service
           family: skole-task
-          <<: *update-service
+          aws-region: $AWS_REGION
+          container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
           <<: *prod-branch
-      
+
   deploy-staging:
     jobs:
+      - terraform/apply:
+          name: deploy-infra
+          checkout: true
+          path: infra
+          <<: *staging-branch
+
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
           repo: backend-staging
           path: backend
+          requires:
+            - deploy-infra
           <<: *build-image
           <<: *staging-branch
 
@@ -156,25 +167,19 @@ workflows:
           path: frontend
           context: staging
           extra-build-args: "--build-arg API_URL"
-          <<: *build-image
-          <<: *staging-branch
-
-      - aws-ecs/update-task-definition-from-json:
-          name: update-staging-task-definition
           requires:
-            - build-staging-backend
-            - build-staging-frontend
-          pre-steps:
-            - checkout
-          task-definition-json: task-definition-staging.json
+            - deploy-infra
+          <<: *build-image
           <<: *staging-branch
 
       - aws-ecs/deploy-service-update:
           name: update-staging-service
           requires:
-            - update-staging-task-definition
+            - build-staging-backend
+            - build-staging-frontend
           cluster-name: skole-staging-cluster
           service-name: skole-staging-service
           family: skole-staging-task
-          <<: *update-service
+          aws-region: $AWS_REGION
+          container-image-name-updates: "container=backend_staging,tag=${CIRCLE_SHA1},container=frontend_staging,tag=${CIRCLE_SHA1}"
           <<: *staging-branch
