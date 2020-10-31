@@ -36,7 +36,7 @@ EOF
 # Data
 
 data "template_file" "container_definitions" {
-  template = file("container-definitions.json")
+  template = file("infra/container-definitions.json")
 
   vars = {
     BACKEND_ECR  = replace(aws_ecr_repository.backend.repository_url, "https://", "")
@@ -45,7 +45,7 @@ data "template_file" "container_definitions" {
 }
 
 data "template_file" "container_definitions_staging" {
-  template = file("container-definitions-staging.json")
+  template = file("infra/container-definitions-staging.json")
 
   vars = {
     BACKEND_STAGING_ECR  = replace(aws_ecr_repository.backend_staging.repository_url, "https://", "")
