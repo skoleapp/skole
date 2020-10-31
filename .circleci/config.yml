@@ -106,6 +106,7 @@ workflows:
       - terraform/apply:
           name: deploy-infra
           checkout: true
+          path: infra
           <<: *prod-branch
 
       - test-backend:
@@ -152,6 +153,7 @@ workflows:
       - terraform/apply:
           name: deploy-infra
           checkout: true
+          path: infra
           <<: *staging-branch
 
       - aws-ecr/build-and-push-image:
