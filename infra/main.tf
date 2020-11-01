@@ -717,16 +717,28 @@ resource "aws_acm_certificate_validation" "skole_io" {
 resource "aws_route53_zone" "skoleapp_com" {
   name              = "skoleapp.com"
   delegation_set_id = aws_route53_delegation_set.this.id
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_route53_zone" "skole_fi" {
   name              = "skole.fi"
   delegation_set_id = aws_route53_delegation_set.this.id
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_route53_zone" "skole_io" {
   name              = "skole.io"
   delegation_set_id = aws_route53_delegation_set.this.id
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 
