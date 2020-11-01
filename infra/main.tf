@@ -717,16 +717,28 @@ resource "aws_acm_certificate_validation" "skole_io" {
 resource "aws_route53_zone" "skoleapp_com" {
   name              = "skoleapp.com"
   delegation_set_id = aws_route53_delegation_set.this.id
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_route53_zone" "skole_fi" {
   name              = "skole.fi"
   delegation_set_id = aws_route53_delegation_set.this.id
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_route53_zone" "skole_io" {
   name              = "skole.io"
   delegation_set_id = aws_route53_delegation_set.this.id
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 
@@ -874,6 +886,15 @@ resource "aws_route53_record" "skoleapp_com_ses" {
   ttl     = 600
   records = [aws_ses_domain_identity.skoleapp_com.verification_token]
 }
+
+resource "aws_route53_record" "skoleapp_com_github_verification" {
+  zone_id = aws_route53_record.skoleapp_com.zone_id
+  name    = "_github-challenge-skole-inc.www.skoleapp.com."
+  type    = "TXT"
+  ttl     = 600
+  records = ["bf7719f874"]
+}
+
 
 resource "aws_route53_health_check" "skoleapp_com" {
   fqdn              = "skoleapp.com"
