@@ -875,6 +875,15 @@ resource "aws_route53_record" "skoleapp_com_ses" {
   records = [aws_ses_domain_identity.skoleapp_com.verification_token]
 }
 
+resource "aws_route53_record" "skoleapp_com_github_verification" {
+  zone_id = aws_route53_record.skoleapp_com.zone_id
+  name    = "_github-challenge-skole-inc.www.skoleapp.com."
+  type    = "TXT"
+  ttl     = 600
+  records = ["bf7719f874"]
+}
+
+
 resource "aws_route53_health_check" "skoleapp_com" {
   fqdn              = "skoleapp.com"
   port              = 443
