@@ -4,6 +4,9 @@
 [submodule "frontend"]
 	path = frontend
 	url = git@github.com:ruohola/skole-frontend.git
+[submodule "infra"]
+	path = infra
+	url = git@github.com:ruohola/skole-infra.git
 [submodule "scripts"]
 	path = scripts
 	url = git@github.com:ruohola/skole-scripts.git

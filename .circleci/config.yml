@@ -3,7 +3,6 @@ version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@6.12.2
   aws-ecs: circleci/aws-ecs@1.2.0
-  terraform: circleci/terraform@1.1.0
 
 
 # Custom YAML anchors
@@ -77,18 +76,10 @@ workflows:
 
   deploy-prod:
     jobs:
-      - terraform/apply:
-          name: deploy-infra
-          checkout: true
-          path: infra
-          <<: *prod-branch
-
       - aws-ecr/build-and-push-image:
           name: build-backend
           repo: backend
           path: backend
-          requires:
-            - deploy-infra
           <<: *build-image
           <<: *prod-branch
 
@@ -98,13 +89,11 @@ workflows:
           path: frontend
           context: prod
           extra-build-args: "--build-arg API_URL"
-          requires:
-            - deploy-infra
           <<: *build-image
           <<: *prod-branch
 
       - aws-ecs/deploy-service-update:
-          name: update-prod-service
+          name: update-service
           requires:
             - build-backend
             - build-frontend
@@ -117,18 +106,10 @@ workflows:
 
   deploy-staging:
     jobs:
-      - terraform/apply:
-          name: deploy-infra
-          checkout: true
-          path: infra
-          <<: *staging-branch
-
       - aws-ecr/build-and-push-image:
           name: build-staging-backend
           repo: backend-staging
           path: backend
-          requires:
-            - deploy-infra
           <<: *build-image
           <<: *staging-branch
 
@@ -138,8 +119,6 @@ workflows:
           path: frontend
           context: staging
           extra-build-args: "--build-arg API_URL"
-          requires:
-            - deploy-infra
           <<: *build-image
           <<: *staging-branch
 
