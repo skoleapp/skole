@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.0] - 2020-11-06
+
+### Added
+
+- Add pagination to all lists that display courses, resources or subjects.
+- Add social media links in the footer.
+- Add helper text for the title field in the upload resource form.
+
+### Changed
+
+- Change the designs for landing and home pages
+- Re-implement translations with a lighter `next-translate` library and built-in next.js localised routing.
+- Use a dedicated query for the activity preview menu.
+- Use nprogress instead of the default loading screen for page transitions.
+- Refactor misc. typings for cleaner code.
+- Update Next.js to latest v10.0.1 version, implement the new `next/image` component for most images.
+- Improve GraphQL API documentation shown in GraphiQL.
+
+### Fixed
+
+- Fix bug that prevented submitting the register form.
+- Fix layout issues in resource page and some of the settings pages.
+
 ## [0.15.1] - 2020-11-01
 
 - Fix CircleCI pipeline errors.
