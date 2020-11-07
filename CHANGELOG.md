@@ -22,11 +22,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Refactor misc. typings for cleaner code.
 - Update Next.js to latest v10.0.1 version, implement the new `next/image` component for most images.
 - Improve GraphQL API documentation shown in GraphiQL.
+- Make comment cards more reasonably sized.
+- Move the link to delete account button to edit profile page.
 
 ### Fixed
 
 - Fix bug that prevented submitting the register form.
 - Fix layout issues in resource page and some of the settings pages.
+- Fix bottom navbar navigation and Finnish translations when not authenticated.
+- Potentially fix bug of top-level comments not being reset when changing routes.
 
 ## [0.15.1] - 2020-11-01
 
