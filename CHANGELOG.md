@@ -31,6 +31,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix layout issues in resource page and some of the settings pages.
 - Fix bottom navbar navigation and Finnish translations when not authenticated.
 - Potentially fix bug of top-level comments not being reset when changing routes.
+- Fix mutation payloads according to the lastest backend schema.
+- Fix layout for user profile when viewing other users' profiles.
 
 ## [0.15.1] - 2020-11-01
 
