@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.16.1] - 202011-08
+## [0.16.2] - 2020-11-09
+
+### Fixed
+
+- Prevent the API from allowing comment attachments from non-verified users.
+- Fix comment deletion for non-verified users.
+- Fix bug of account verification page being blank for verified users.
+
+## [0.16.1] - 2020-11-08
 
 ### Added
 
