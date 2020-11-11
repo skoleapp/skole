@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.3] - 2020-11-11
+
+### Changed
+
+- Allow navigating back from "confirm login/logout" pages.
+- Remove error handling for logging out.
+
+### Fixed
+
+- Fix loading states between automatic redirects to prevent pages from flashing.
+- Fix bug of user profile not being reset after logging out.
+
 ## [0.16.2] - 2020-11-09
 
 ### Fixed
