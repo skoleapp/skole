@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.4] - 2020-12-11
+
+### Changed
+
+- Change overall scrolling behaviour and scrolling logic for tables.
+- Make rich text editor buttons smaller.
+- Improve typings for PDF related components.
+
+### Fixed
+
+- Fix paths for link-tags in the HTML head.
+- Fix positioning for nprogress bar.
+- Fix positioning for dialogs and backdrops.
+
 ## [0.16.3] - 2020-11-11
 
 ### Changed
