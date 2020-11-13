@@ -46,8 +46,6 @@ services:
       - ./frontend:/home/user/app
       - /home/user/app/node_modules
       - /home/user/app/.next
-    depends_on:
-      - backend
     restart: unless-stopped
 
 volumes:
