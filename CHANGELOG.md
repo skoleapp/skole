@@ -5,7 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.16.4] - 2020-12-11
+## [0.16.5] - 2020-11-13
+
+### Changed
+
+- Use global loading screen in fewer places and use smaller loading indicators for individual components instead.
+- Add animated logo to the global loading screen.
+- Update social media links to be only text.
+- Enable search box in the nav bar for anonymous users.
+
+### Fixed
+
+- Fix activities caused by anonymous user comments.
+
+## [0.16.4] - 2020-11-12
 
 ### Changed
 
