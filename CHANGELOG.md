@@ -18,6 +18,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Fix activities caused by anonymous user comments.
 
+### Security
+
+- Add protection against CSRF attacks.
+
 ## [0.16.4] - 2020-11-12
 
 ### Changed
