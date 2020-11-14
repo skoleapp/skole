@@ -16,6 +16,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Fixed
 
+- Fix name label on contact form.
+- Fix bug of user profile form not updating.
+- Fix delete course menu item icon clicking not working.
+- Fix upload resource form link to contact.
+- Fix school detail URL.
 - Fix activities caused by anonymous user comments.
 
 ### Security
