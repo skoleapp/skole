@@ -18,7 +18,6 @@
     "backend:test": "docker-compose run --rm backend sh -c 'mypy . && pytest --verbose --cov-report=html --cov=. . && flake8 .'",
     "backend:makemessages": "docker-compose run --rm backend sh -c 'python manage.py makemessages --all'",
     "backend:compilemessages": "docker-compose run --rm backend sh -c 'python manage.py compilemessages'",
-    "frontend:gen": "docker-compose run --rm frontend sh -c 'yarn gen'",
     "frontend:type-check": "docker-compose run --rm frontend sh -c 'yarn type-check'",
     "frontend:lint": "docker-compose run --rm frontend sh -c 'yarn lint'",
     "frontend:format": "docker-compose run --rm frontend sh -c 'yarn format'"

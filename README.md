@@ -42,7 +42,6 @@
 - To run tests and type checks in the backend, run `yarn backend:test`.
 - To make messages in the backend, run `yarn backend:makemessages`.
 - To compile messages in the backend, run `yarn backend:compilemessages`.
-- To generate GraphQL code in the frontend, run `yarn frontend:gen`.
 
 ## Environment variables
 
