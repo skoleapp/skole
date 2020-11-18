@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add animated logo to the global loading screen.
 - Update social media links to be only text.
 - Enable search box in the nav bar for anonymous users.
+- Allow selecting text from PDF files.
 
 ### Fixed
 
@@ -22,6 +23,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix upload resource form link to contact.
 - Fix school detail URL.
 - Fix activities caused by anonymous user comments.
+- Fix bug of rich text editor omitting last character from comments.
+- Fix links not being clickable in account verification and password reset emails.
 
 ### Security
 
@@ -189,7 +192,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of bottom navbar not showing not authenticated users.
 - Fix lang-attribute for HTML-document.
 - Use client-side data fetching for all dynamic pages - fix translation bug.
-- *Potentially* fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
+- Fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
 - Fix random locale typos.
 
 ## [0.13.0-rc1] - 2020-09-25
