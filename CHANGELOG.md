@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.16.5] - 2020-11-13
+## [0.16.5] - 2020-11-19
 
 ### Changed
 
@@ -159,44 +159,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.13.0] - 2020-10-10
 
-## [0.13.0-rc4] - 2020-10-08
-
-### Changed
-
-- Update Python version and other requirements in the backend.
-
-### Fixed
-
-- Fix miscellaneous locale typos.
-- Fix avatar thumbnail sizing on mobile.
-- Fix PDF viewer overflow issue preventing border radius from showing.
-- Fix bugs of dialogs toggling on/off from random clicks.
-- Fix school detail overflow issue.
-
-## [0.13.0-rc3] - 2020-10-06
-
-### Changed
-
-- Prevent autocomplete fields from making massive queries. Instead, fetch initial data and re-fetch when user types in more characters.
-- Make headers slightly bigger.
-
-### Fixed
-
-- Fix miscellaneous UI bugs.
-- Fix translations on user profile by using client-side data fecthing.
-
-## [0.13.0-rc2] - 2020-09-29
-
-### Fixed
-
-- Fix bug of bottom navbar not showing not authenticated users.
-- Fix lang-attribute for HTML-document.
-- Use client-side data fetching for all dynamic pages - fix translation bug.
-- Fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
-- Fix random locale typos.
-
-## [0.13.0-rc1] - 2020-09-25
-
 ### Added
 
 - Group resources by resource type in lists.
@@ -224,17 +186,30 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Replace `moment.js` with `day.js`.
 - Make most content pages public (home, search, course, resource).
 - Allow commenting for non-logged users but prevent them from adding resources.
+- Prevent autocomplete fields from making massive queries. Instead, fetch initial data and re-fetch when user types in more characters.
+- Make headers slightly bigger.
 
 ### Fixed
 
-- Fix client-side logout error
-- Fix bug that caused form error when logging in with different credentials as an existing user
-- Replace all styled-components styles with MUI's own CSS in JS
-- Fix error handling for all mutations with latest backend version
-- Fix status bar style on iOS
-- Fix various miscellaneous iOS bugs
-- Fix HTML lang-attribute
-- Fix create comment button positioning
+- Fix client-side logout error.
+- Fix bug that caused form error when logging in with different credentials as an existing user.
+- Replace all styled-components styles with MUI's own CSS in JS.
+- Fix error handling for all mutations with latest backend version.
+- Fix status bar style on iOS.
+- Fix miscellaneous iOS bugs.
+- Fix HTML lang-attribute.
+- Fix create comment button positioning.
+- Fix bug of bottom navbar not showing not authenticated users..
+- Fix lang-attribute for HTML-document.
+- Use client-side data fetching for all dynamic pages - fix translation bug.
+- Fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
+- Fix miscellaneous UI bugs.
+- Fix translations on user profile by using client-side data fecthing.
+- Fix miscellaneous locale typos.
+- Fix avatar thumbnail sizing on mobile.
+- Fix PDF viewer overflow issue preventing border radius from showing.
+- Fix bugs of dialogs toggling on/off from random clicks.
+- Fix school detail overflow issue.
 
 ## [0.12.2] - 2020-09-12
 
@@ -298,8 +273,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix frontend CircleCI env variables.
 
 ## [0.10.1] - 2020-08-09
-
-## [0.10.1-rc1] - 2020-08-09
 
 ### Fixed
 
@@ -380,12 +353,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Use rolling backend updates for QA also.
 
 ## [0.9.1] - 2020-08-06
-
-## [0.9.1-rc3] - 2020-08-06
-
-## [0.9.1-rc2] - 2020-08-06
-
-## [0.9.1-rc1] - 2020-08-06
 
 ### Fixed
 
@@ -519,12 +486,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fix user agent matching to fix layout prediction.
-
-## [0.4.9-rc1] - 2020-05-16
-
-### Fixed
-
-- Potentially fix authentication issues.
+- Fix authentication issues.
 
 ## [0.4.8] - 2020-05-11
 
