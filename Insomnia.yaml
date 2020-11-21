@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2020-11-15T20:12:58.719Z
+__export_date: 2020-11-21T15:27:49.728Z
 __export_source: insomnia.desktop.app:v2020.4.2
 resources:
   - _id: req_7c6f02a65e1045c69de7425ab279061e
@@ -86,7 +86,7 @@ resources:
     _type: request
   - _id: req_5f1623679d134ef0b532c18d886bc70b
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470951562
+    modified: 1605968321732
     created: 1605256574902
     url: localhost:8000/graphql/
     name: schema
@@ -133,7 +133,7 @@ resources:
     _type: request_group
   - _id: req_fe0904311402495a97a7351b455fe25b
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470958413
+    modified: 1605968325641
     created: 1605258015605
     url: localhost:8000/graphql/
     name: type
@@ -160,7 +160,7 @@ resources:
     _type: request
   - _id: req_97356d5617eb456599276a8e5062077a
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470963295
+    modified: 1605968328842
     created: 1586889845733
     url: localhost:8000/graphql/
     name: recursive introspection
@@ -369,7 +369,7 @@ resources:
     _type: request
   - _id: req_48f7a2b83d1444e58a46c03c03f02ce1
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470965598
+    modified: 1605968331524
     created: 1575994847111
     url: localhost:8000/graphql/
     name: user
@@ -399,7 +399,7 @@ resources:
     _type: request
   - _id: req_d88c61ac0cbc4d019982b9353278f30e
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470970626
+    modified: 1605968334258
     created: 1576006763453
     url: localhost:8000/graphql/
     name: course
@@ -426,7 +426,7 @@ resources:
     _type: request
   - _id: req_05475a3b07014a2ea1234582553df27d
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470974045
+    modified: 1605968336944
     created: 1576158963279
     url: localhost:8000/graphql/
     name: courses
@@ -461,7 +461,7 @@ resources:
     _type: request
   - _id: req_12ac271819214f50b4e1a26a05a3b7de
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470977991
+    modified: 1605968633241
     created: 1579861964524
     url: localhost:8000/graphql/
     name: school
@@ -490,7 +490,7 @@ resources:
     _type: request
   - _id: req_168b583936de463c908a87d28b749b18
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470981352
+    modified: 1605968633886
     created: 1579974549119
     url: localhost:8000/graphql/
     name: resource
@@ -602,7 +602,7 @@ resources:
     _type: request
   - _id: req_ab0284dfd44e48b5875b074886c17f90
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470994530
+    modified: 1605972451483
     created: 1586209186016
     url: localhost:8000/graphql/
     name: autocompleteCountries
@@ -678,7 +678,7 @@ resources:
     _type: request_group
   - _id: req_53d402cfcc3f44cc81341357271dafdd
     parentId: fld_a1b421d41c314243a61734cf68561dfa
-    modified: 1605471007706
+    modified: 1605972451903
     created: 1576008756424
     url: localhost:8000/graphql/
     name: register
@@ -726,7 +726,7 @@ resources:
     _type: request_group
   - _id: req_13586913f22d4224bc8495f8ef9521e7
     parentId: fld_a1b421d41c314243a61734cf68561dfa
-    modified: 1605471011278
+    modified: 1605968635948
     created: 1576009357639
     url: localhost:8000/graphql/
     name: login (testuser2)
@@ -759,7 +759,7 @@ resources:
     _type: request
   - _id: req_109140d15a034334903020603aea414f
     parentId: fld_a1b421d41c314243a61734cf68561dfa
-    modified: 1605471014656
+    modified: 1605515728278
     created: 1580434140292
     url: localhost:8000/graphql/
     name: login (testuser3)
@@ -817,7 +817,7 @@ resources:
     _type: request
   - _id: req_408d9d39fab74e49849c8e9a182992fb
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471026392
+    modified: 1605969400257
     created: 1600022676663
     url: localhost:8000/graphql/
     name: logout
@@ -864,7 +864,7 @@ resources:
     _type: request_group
   - _id: req_2730ea57f5dc43a69be091c9ee5ca2a6
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471030698
+    modified: 1605972452616
     created: 1600023415177
     url: localhost:8000/graphql/
     name: verifyAccount
@@ -901,7 +901,7 @@ resources:
     _type: request
   - _id: req_e3f6a69ff8624ff4856bf9291dfdc83b
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471034051
+    modified: 1605804626330
     created: 1576705599160
     url: localhost:8000/graphql/
     name: updateUser
@@ -912,7 +912,7 @@ resources:
       text: '{"query":"mutation ($input: UpdateUserMutationInput!)
         {\n  updateUser(input: $input) {\n    errors
         {\n      field\n      messages\n    }\n    user
-        {\n      id\n      username\n      email\n      title\n      bio\n      avatar\n      score\n    }\n  }\n}\n","variables":{"input":{"username":"testuser2","email":"testuser2@test.com","bio":"new
+        {\n      id\n      username\n      email\n      title\n      bio\n      avatar\n      score\n      dd\n    }\n  }\n}\n","variables":{"input":{"username":"testuser2","email":"testuser2@test.com","bio":"new
         bio text here","avatar":""}}}'
     parameters: []
     headers:
