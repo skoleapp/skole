@@ -1,3 +1,5 @@
+.DS_Store
+.env
 .idea
 .vscode
-.env
+.serverless

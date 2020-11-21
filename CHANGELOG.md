@@ -5,6 +5,101 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.5] - 2020-11-19
+
+### Changed
+
+- Use global loading screen in fewer places and use smaller loading indicators for individual components instead.
+- Add animated logo to the global loading screen.
+- Update social media links to be only text.
+- Enable search box in the nav bar for anonymous users.
+- Allow selecting text from PDF files.
+
+### Fixed
+
+- Fix name label on contact form.
+- Fix bug of user profile form not updating.
+- Fix delete course menu item icon clicking not working.
+- Fix upload resource form link to contact.
+- Fix school detail URL.
+- Fix activities caused by anonymous user comments.
+- Fix bug of rich text editor omitting last character from comments.
+- Fix links not being clickable in account verification and password reset emails.
+- Fix error which occurred when uploading any files.
+
+### Security
+
+- Add protection against CSRF attacks.
+
+## [0.16.4] - 2020-11-12
+
+### Changed
+
+- Change overall scrolling behaviour and scrolling logic for tables.
+- Make rich text editor buttons smaller.
+- Improve typings for PDF related components.
+
+### Fixed
+
+- Fix paths for link-tags in the HTML head.
+- Fix positioning for nprogress bar.
+- Fix positioning for dialogs and backdrops.
+
+## [0.16.3] - 2020-11-11
+
+### Changed
+
+- Allow navigating back from "confirm login/logout" pages.
+- Remove error handling for logging out.
+
+### Fixed
+
+- Fix loading states between automatic redirects to prevent pages from flashing.
+- Fix bug of user profile not being reset after logging out.
+
+## [0.16.2] - 2020-11-09
+
+### Fixed
+
+- Prevent the API from allowing comment attachments from non-verified users.
+- Fix comment deletion for non-verified users.
+- Fix bug of account verification page being blank for verified users.
+
+## [0.16.1] - 2020-11-08
+
+### Added
+
+- Display number of downloads for resources.
+
+## [0.16.0] - 2020-11-06
+
+### Added
+
+- Add pagination to all lists that display courses, resources or subjects.
+- Add social media links in the footer.
+- Add helper text for the title field in the upload resource form.
+
+### Changed
+
+- Change the designs for landing and home pages
+- Re-implement translations with a lighter `next-translate` library and built-in next.js localised routing.
+- Use a dedicated query for the activity preview menu.
+- Use nprogress instead of the default loading screen for page transitions.
+- Refactor misc. typings for cleaner code.
+- Update Next.js to latest v10.0.1 version, implement the new `next/image` component for most images.
+- Improve GraphQL API documentation shown in GraphiQL.
+- Make comment cards more reasonably sized.
+- Move the link to delete account button to edit profile page.
+
+### Fixed
+
+- Fix bug that prevented submitting the register form.
+- Fix layout issues in resource page and some of the settings pages.
+- Fix bottom navbar navigation and Finnish translations when not authenticated.
+- Potentially fix bug of top-level comments not being reset when changing routes.
+- Fix mutation payloads according to the lastest backend schema.
+- Fix layout for user profile when viewing other users' profiles.
+
 ## [0.15.1] - 2020-11-01
 
 - Fix CircleCI pipeline errors.
@@ -65,44 +160,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.13.0] - 2020-10-10
 
-## [0.13.0-rc4] - 2020-10-08
-
-### Changed
-
-- Update Python version and other requirements in the backend.
-
-### Fixed
-
-- Fix miscellaneous locale typos.
-- Fix avatar thumbnail sizing on mobile.
-- Fix PDF viewer overflow issue preventing border radius from showing.
-- Fix bugs of dialogs toggling on/off from random clicks.
-- Fix school detail overflow issue.
-
-## [0.13.0-rc3] - 2020-10-06
-
-### Changed
-
-- Prevent autocomplete fields from making massive queries. Instead, fetch initial data and re-fetch when user types in more characters.
-- Make headers slightly bigger.
-
-### Fixed
-
-- Fix miscellaneous UI bugs.
-- Fix translations on user profile by using client-side data fecthing.
-
-## [0.13.0-rc2] - 2020-09-29
-
-### Fixed
-
-- Fix bug of bottom navbar not showing not authenticated users.
-- Fix lang-attribute for HTML-document.
-- Use client-side data fetching for all dynamic pages - fix translation bug.
-- *Potentially* fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
-- Fix random locale typos.
-
-## [0.13.0-rc1] - 2020-09-25
-
 ### Added
 
 - Group resources by resource type in lists.
@@ -130,17 +187,30 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Replace `moment.js` with `day.js`.
 - Make most content pages public (home, search, course, resource).
 - Allow commenting for non-logged users but prevent them from adding resources.
+- Prevent autocomplete fields from making massive queries. Instead, fetch initial data and re-fetch when user types in more characters.
+- Make headers slightly bigger.
 
 ### Fixed
 
-- Fix client-side logout error
-- Fix bug that caused form error when logging in with different credentials as an existing user
-- Replace all styled-components styles with MUI's own CSS in JS
-- Fix error handling for all mutations with latest backend version
-- Fix status bar style on iOS
-- Fix various miscellaneous iOS bugs
-- Fix HTML lang-attribute
-- Fix create comment button positioning
+- Fix client-side logout error.
+- Fix bug that caused form error when logging in with different credentials as an existing user.
+- Replace all styled-components styles with MUI's own CSS in JS.
+- Fix error handling for all mutations with latest backend version.
+- Fix status bar style on iOS.
+- Fix miscellaneous iOS bugs.
+- Fix HTML lang-attribute.
+- Fix create comment button positioning.
+- Fix bug of bottom navbar not showing not authenticated users..
+- Fix lang-attribute for HTML-document.
+- Use client-side data fetching for all dynamic pages - fix translation bug.
+- Fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
+- Fix miscellaneous UI bugs.
+- Fix translations on user profile by using client-side data fecthing.
+- Fix miscellaneous locale typos.
+- Fix avatar thumbnail sizing on mobile.
+- Fix PDF viewer overflow issue preventing border radius from showing.
+- Fix bugs of dialogs toggling on/off from random clicks.
+- Fix school detail overflow issue.
 
 ## [0.12.2] - 2020-09-12
 
@@ -204,8 +274,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix frontend CircleCI env variables.
 
 ## [0.10.1] - 2020-08-09
-
-## [0.10.1-rc1] - 2020-08-09
 
 ### Fixed
 
@@ -286,12 +354,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Use rolling backend updates for QA also.
 
 ## [0.9.1] - 2020-08-06
-
-## [0.9.1-rc3] - 2020-08-06
-
-## [0.9.1-rc2] - 2020-08-06
-
-## [0.9.1-rc1] - 2020-08-06
 
 ### Fixed
 
@@ -425,12 +487,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fix user agent matching to fix layout prediction.
-
-## [0.4.9-rc1] - 2020-05-16
-
-### Fixed
-
-- Potentially fix authentication issues.
+- Fix authentication issues.
 
 ## [0.4.8] - 2020-05-11
 
