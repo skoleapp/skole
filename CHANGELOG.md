@@ -25,6 +25,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix activities caused by anonymous user comments.
 - Fix bug of rich text editor omitting last character from comments.
 - Fix links not being clickable in account verification and password reset emails.
+- Fix error which occurred when uploading any files.
 
 ### Security
 
