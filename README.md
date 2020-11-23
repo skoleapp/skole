@@ -34,14 +34,16 @@
 - To build images, run `yarn build`.
 - To start containers in development, run `yarn start`.
 - To start containers in production, run `yarn prod`.
-- To make migrations, run `yarn backend:make-migrations`.
+- To make migrations, run `yarn backend:makemigrations`.
 - To migrate db, run: `yarn backend:migrate`.
 - To create superuser, run `yarn backend:create-superuser`.
 - To import test data, run `yarn backend:import-test-data`.
-- To run formatting in the backend, run `yarn backend:format`.
-- To run tests and type checks in the backend, run `yarn backend:test`.
 - To make messages in the backend, run `yarn backend:makemessages`.
 - To compile messages in the backend, run `yarn backend:compilemessages`.
+- To run tests and type checks in the backend, run `yarn backend:test`.
+- To run type-checking in the backend, run `yarn backend:type-check`.
+- To run linting in the backend, run `yarn backend:lint`.
+- To run formatting in the backend, run `yarn backend:format`.
 
 ## Environment variables
 
