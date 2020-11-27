@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.16.5] - 2020-11-19
+## [0.16.5] - 2020-11-27
 
 ### Changed
 
@@ -14,6 +14,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update social media links to be only text.
 - Enable search box in the nav bar for anonymous users.
 - Allow selecting text from PDF files.
+- Move gray background lower on home page
 
 ### Fixed
 
@@ -26,10 +27,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of rich text editor omitting last character from comments.
 - Fix links not being clickable in account verification and password reset emails.
 - Fix error which occurred when uploading any files.
+- Improve frontend translations.
 
 ### Security
 
 - Add protection against CSRF attacks.
+- Remove exception details from backend responses.
 
 ## [0.16.4] - 2020-11-12
 
