@@ -14,7 +14,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update social media links to be only text.
 - Enable search box in the nav bar for anonymous users.
 - Allow selecting text from PDF files.
-- Move gray background lower on home page
+- Move gray background lower on home page.
+- Disable grouping by resource type in resource lists.
+- Show the type of every resoruce in resource lists.
+
+### Removed
+
+- Remove FAQ page.
+- Remove About page.
 
 ### Fixed
 
@@ -28,6 +35,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix links not being clickable in account verification and password reset emails.
 - Fix error which occurred when uploading any files.
 - Improve frontend translations.
+- Fix attachment preview stretching the images.
 
 ### Security
 
