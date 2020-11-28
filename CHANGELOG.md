@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.6] - 2020-11-28
+
+### Changed
+
+- Update miscellaneous texts and translations.
+- Use markdown for rendering comments and bio field in user profile.
+- Change layout to show the desktop layout for all devices 960px wide.
+- Disable search field for 500/offline pages.
+- Only pre-fill users selected school in search page.
+
+### Fixed
+
+- Fix overflowing texts of comments.
+- Fix bug of top-level comments not being updated after sending reply comments.
+- Fix bugs regarding the form initialization on search page, upload resource page and possible on other pages too.
+- Fix bug of static assets such favicon not working on other pages except the home page.
+
 ## [0.16.5] - 2020-11-27
 
 ### Changed
