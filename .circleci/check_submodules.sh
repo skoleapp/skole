@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # CircleCI runs this script to check if the commits pointing to the submodules
 # are merge commits coming from the correct branches and not just some random feature branch.
