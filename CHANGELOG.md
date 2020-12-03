@@ -5,7 +5,53 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.16.5] - 2020-11-19
+## [0.16.8] - 2020-12-03
+
+### Fixed
+
+- Miscellaneous UI fixes.
+
+## [0.16.7] - 2020-12-03
+
+### Added
+
+- Add miscellaneous helper texts for form fields.
+
+### Changed
+
+- Use SVG icons for language flags.
+- Instead of showing disabled vote and star buttons for anonymous/unverified users in course/resource pages, completely hide the buttons on mobile.
+- Disable "mark all as read" action in activity page if user has no actives.
+- Improve miscellaneous locales and helper texts.
+- Make all forms a bit wider on extra wide screens.
+- Remove placeholder notification settings from edit profile page.
+- Change the resource upload form flow to the following:
+  - By default, only show the following fields: title, type, school, file
+  - After school field is populated, collapse in the course field under the school field. Note that this field already contains only options filtered for the selected school. This way we can force the user to pick the course from only one school at a time.
+
+### Fixed
+
+- Fix bug of being able to select duplicate values for auto complete fields that allow selecting multiple values.
+- Fix bug of comment modal not opening manually, if clicking on an activity in the activity preview modal and users already in the destination page.
+
+## [0.16.6] - 2020-11-28
+
+### Changed
+
+- Update miscellaneous texts and translations.
+- Use markdown for rendering comments and bio field in user profile.
+- Change layout to show the desktop layout for all devices 960px wide.
+- Disable search field for 500/offline pages.
+- Only pre-fill users selected school in search page.
+
+### Fixed
+
+- Fix overflowing texts of comments.
+- Fix bug of top-level comments not being updated after sending reply comments.
+- Fix bugs regarding the form initialization on search page, upload resource page and possible on other pages too.
+- Fix bug of static assets such favicon not working on other pages except the home page.
+
+## [0.16.5] - 2020-11-27
 
 ### Changed
 
@@ -14,6 +60,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update social media links to be only text.
 - Enable search box in the nav bar for anonymous users.
 - Allow selecting text from PDF files.
+- Move gray background lower on home page.
+- Disable grouping by resource type in resource lists.
+- Show the type of every resoruce in resource lists.
+
+### Removed
+
+- Remove FAQ page.
+- Remove About page.
 
 ### Fixed
 
@@ -26,10 +80,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of rich text editor omitting last character from comments.
 - Fix links not being clickable in account verification and password reset emails.
 - Fix error which occurred when uploading any files.
+- Improve frontend translations.
+- Fix attachment preview stretching the images.
 
 ### Security
 
 - Add protection against CSRF attacks.
+- Remove exception details from backend responses.
 
 ## [0.16.4] - 2020-11-12
 
