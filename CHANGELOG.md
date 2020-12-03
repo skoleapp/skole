@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.7] - 2020-12-03
+
+### Added
+
+- Add miscellaneous helper texts for form fields.
+
+### Changed
+
+- Use SVG icons for language flags.
+- Instead of showing disabled vote and star buttons for anonymous/unverified users in course/resource pages, completely hide the buttons on mobile.
+- Disable "mark all as read" action in activity page if user has no actives.
+- Improve miscellaneous locales and helper texts.
+- Make all forms a bit wider on extra wide screens.
+- Remove placeholder notification settings from edit profile page.
+- Change the resource upload form flow to the following:
+  - By default, only show the following fields: title, type, school, file
+  - After school field is populated, collapse in the course field under the school field. Note that this field already contains only options filtered for the selected school. This way we can force the user to pick the course from only one school at a time.
+
+### Fixed
+
+- Fix bug of being able to select duplicate values for auto complete fields that allow selecting multiple values.
+- Fix bug of comment modal not opening manually, if clicking on an activity in the activity preview modal and users already in the destination page.
+
 ## [0.16.6] - 2020-11-28
 
 ### Changed
