@@ -10,3 +10,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = git@github.com:ruohola/skole-scripts.git
+[submodule "native"]
+	path = native
+	url = git@github.com:ruohola/skole-native.git
