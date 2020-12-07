@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.17.0] - 2020-12-07
+
+### Added
+
+- Add custom Instagram-like sharing menu for more user-friendly sharing options.
+- Add option for authenticated users to post as anonymous users.
+- The the username and avatar of the account making the comment in the comment creation form.
+- Add keywords and Twitter meta tags to improve SEO.
+
+### Changed
+
+- Improve sharing titles and texts.
+- Make bottom border of a top-comment of a thread slightly narrower.
+- Make avatar thumbnails slightly smaller.
+- On top comments in threads, show the reply count directly in the comment like in all the top-level comments.
+- Align vote-buttons of comments vertically always on center like in Model.
+- Make the max height of the rich text editor more responsive.
+- Change the layout for all dialog headers to a bit denser so that the center content has more space.
+- Hide top nav bar search field for 404 page.
+- Change uncompleted profile strength steps into clickable links.
+
+### Fixed
+
+- Fix bug of rich text editor pushing itself away from the viewport when stretching against the comment attachment.
+
 ## [0.16.8] - 2020-12-03
 
 ### Fixed
