@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.17.1] - 2020-12-10
+
+### Changed
+
+- Add content on privacy policy and terms pages.
+- Show wider text content on terms and privacy pages.
+- Update spacings for comment buttons.
+- Translate all emails.
+
+### Fixed
+
+- Fix email sharing link.
+- Miscellaneous locale fixes.
+- Fix issue with long texts of comments overflowing.
+
 ## [0.17.0] - 2020-12-07
 
 ### Added
