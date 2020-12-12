@@ -88,7 +88,7 @@ workflows:
           repo: frontend
           path: frontend
           context: prod
-          extra-build-args: "--build-arg API_URL"
+          extra-build-args: "--build-arg API_URL --build-arg FRONTEND_URL --build-arg SA_URL"
           <<: *build-image
           <<: *prod-branch
 
