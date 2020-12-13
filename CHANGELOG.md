@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2020-12-12
+
+### Added
+
+- Add `account/my-data` page for GDPR user data requests.
+
+### Changed
+
+- Update privacy policy.
+- Make any object deletion be completely permanent.
+- Change Google Analytics to Simple Analytics.
+- Change URL for course creation page to `/add-course`.
+- Improve rendering of long form field errors.
+- Change password minimum length to 10 characters.
+- Don't allow too common passwords.
+- Don't allow entirely numeric passwords.
+- Don't allow passwords that are too similar to user's username or email.
+- Sort subjects and schools alphabetically.
+- Improve miscellaneous translations.
+
+### Removed
+
+- Don't show the 'see all' share option button when on Desktop.
+
+### Fixed
+
+- Fix issue where autocomplete fields could return duplicate results.
+
 ## [0.17.1] - 2020-12-10
 
 ### Changed

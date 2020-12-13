@@ -1,8 +1,63 @@
 _type: export
 __export_format: 4
-__export_date: 2020-11-15T20:12:58.719Z
-__export_source: insomnia.desktop.app:v2020.4.2
+__export_date: 2020-12-12T21:58:04.825Z
+__export_source: insomnia.desktop.app:v2020.5.2
 resources:
+  - _id: req_7c4b81c4bd664de3864fad87a00c3abf
+    parentId: fld_62f57f28cd0144558343e7f716ed9c06
+    modified: 1607810237575
+    created: 1606564883040
+    url: https://api.cloudmersive.com/convert/autodetect/to/pdf
+    name: cloudmersive
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - description: ""
+          disabled: false
+          fileName: /Users/eero/Downloads/IMG_9469.jpeg
+          id: pair_4cff79d4ff6a4d8cb76b54c20a98d33d
+          name: files
+          type: file
+          value: ""
+    parameters: []
+    headers:
+      - id: pair_d3ecbf212959474da4f672981cab6244
+        name: Content-Type
+        value: multipart/form-data
+      - disabled: false
+        id: pair_242231deb131471fa7eac1ad5c1b7124
+        name: Apikey
+        value: 809bc4b1-ff8f-4e42-af69-c8896c1f58b0
+    authentication: {}
+    metaSortKey: -1586364741988
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_62f57f28cd0144558343e7f716ed9c06
+    parentId: wrk_a08eec5933a744babfdcadbcf3636df9
+    modified: 1607810235361
+    created: 1607810235361
+    name: external
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1607810235361
+    _type: request_group
+  - _id: wrk_a08eec5933a744babfdcadbcf3636df9
+    parentId: null
+    modified: 1576010197508
+    created: 1574718948288
+    name: skole
+    description: ""
+    scope: null
+    _type: workspace
   - _id: req_7c6f02a65e1045c69de7425ab279061e
     parentId: fld_a9163bffa9904acfa8e51a1d2f25c355
     modified: 1586519493960
@@ -34,14 +89,6 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1586364741938
     _type: request_group
-  - _id: wrk_a08eec5933a744babfdcadbcf3636df9
-    parentId: null
-    modified: 1576010197508
-    created: 1574718948288
-    name: skole
-    description: ""
-    scope: null
-    _type: workspace
   - _id: req_82aed88a8c0a43b8939397c9026cbf20
     parentId: fld_a9163bffa9904acfa8e51a1d2f25c355
     modified: 1605282367065
@@ -86,7 +133,7 @@ resources:
     _type: request
   - _id: req_5f1623679d134ef0b532c18d886bc70b
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470951562
+    modified: 1606421061331
     created: 1605256574902
     url: localhost:8000/graphql/
     name: schema
@@ -133,7 +180,7 @@ resources:
     _type: request_group
   - _id: req_fe0904311402495a97a7351b455fe25b
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470958413
+    modified: 1605968325641
     created: 1605258015605
     url: localhost:8000/graphql/
     name: type
@@ -160,7 +207,7 @@ resources:
     _type: request
   - _id: req_97356d5617eb456599276a8e5062077a
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470963295
+    modified: 1605968328842
     created: 1586889845733
     url: localhost:8000/graphql/
     name: recursive introspection
@@ -369,7 +416,7 @@ resources:
     _type: request
   - _id: req_48f7a2b83d1444e58a46c03c03f02ce1
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470965598
+    modified: 1607674591423
     created: 1575994847111
     url: localhost:8000/graphql/
     name: user
@@ -399,7 +446,7 @@ resources:
     _type: request
   - _id: req_d88c61ac0cbc4d019982b9353278f30e
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470970626
+    modified: 1607674691101
     created: 1576006763453
     url: localhost:8000/graphql/
     name: course
@@ -426,7 +473,7 @@ resources:
     _type: request
   - _id: req_05475a3b07014a2ea1234582553df27d
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470974045
+    modified: 1607674698830
     created: 1576158963279
     url: localhost:8000/graphql/
     name: courses
@@ -443,7 +490,7 @@ resources:
         {\n    page\n    pages\n    count\n    objects
         {\n      id\n      name\n      score\n      resources
         {\n        id\n      }\n      comments
-        {\n        id\n      }\n    }\n  }\n}\n","operationName":"Courses"}'
+        {\n        id\n      }\n    }\n  }\n}\n","variables":{"courseName":"test"},"operationName":"Courses"}'
     parameters: []
     headers:
       - id: pair_d3ecbf212959474da4f672981cab6244
@@ -461,7 +508,7 @@ resources:
     _type: request
   - _id: req_12ac271819214f50b4e1a26a05a3b7de
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470977991
+    modified: 1607674579177
     created: 1579861964524
     url: localhost:8000/graphql/
     name: school
@@ -490,7 +537,7 @@ resources:
     _type: request
   - _id: req_168b583936de463c908a87d28b749b18
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470981352
+    modified: 1607674582381
     created: 1579974549119
     url: localhost:8000/graphql/
     name: resource
@@ -519,7 +566,7 @@ resources:
     _type: request
   - _id: req_914b113e70a544499113626fc1d64d90
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470984826
+    modified: 1607623722898
     created: 1579861996751
     url: localhost:8000/graphql/
     name: autocompleteSchools
@@ -543,9 +590,37 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_c7515bdc0cee4a409c827869eb1beda7
+    parentId: fld_78601cb821124a789353bc6243fda754
+    modified: 1607674091015
+    created: 1607623690225
+    url: localhost:8000/graphql/
+    name: autocompleteSubjects
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query AutocompleteSubjects($name: String)
+        {\n  autocompleteSubjects(name: $name)
+        {\n    id\n    name\n  }\n}\n","variables":{"name":""},"operationName":"AutocompleteSubjects"}'
+    parameters: []
+    headers:
+      - id: pair_d3ecbf212959474da4f672981cab6244
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1576078003188
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_1a0000b4e0934dd28ddc1d742cc7cb0a
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470988006
+    modified: 1607104796181
     created: 1579862026877
     url: localhost:8000/graphql/
     name: autocompleteSchoolTypes
@@ -576,7 +651,7 @@ resources:
     _type: request
   - _id: req_38e6309882b24edab283840dc1147010
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470991407
+    modified: 1607104795651
     created: 1586209808019
     url: localhost:8000/graphql/
     name: autocompleteCities
@@ -602,7 +677,7 @@ resources:
     _type: request
   - _id: req_ab0284dfd44e48b5875b074886c17f90
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605470994530
+    modified: 1607104795106
     created: 1586209186016
     url: localhost:8000/graphql/
     name: autocompleteCountries
@@ -633,7 +708,7 @@ resources:
     _type: request
   - _id: req_682113388da4490196515346ea9b0c70
     parentId: fld_27a8fb9d8aca44e79cccf9b2843015fa
-    modified: 1605470998534
+    modified: 1607262305617
     created: 1579959775614
     url: localhost:8000/graphql/
     name: userMe
@@ -641,7 +716,8 @@ resources:
     method: POST
     body:
       mimeType: application/graphql
-      text: '{"query":"{\n  userMe {\n    id\n    username\n  }\n}\n"}'
+      text: '{"query":"{\n  userMe {\n    id\n    username\n    badges
+        {\n      id\n      name\n    }\n  }\n}\n"}'
     parameters: []
     headers:
       - id: pair_d3ecbf212959474da4f672981cab6244
@@ -678,7 +754,7 @@ resources:
     _type: request_group
   - _id: req_53d402cfcc3f44cc81341357271dafdd
     parentId: fld_a1b421d41c314243a61734cf68561dfa
-    modified: 1605471007706
+    modified: 1607810266708
     created: 1576008756424
     url: localhost:8000/graphql/
     name: register
@@ -688,7 +764,7 @@ resources:
       mimeType: application/graphql
       text: '{"query":"mutation Register($input: RegisterMutationInput!)
         {\n  register(input: $input) {\n    errors
-        {\n      field\n      messages\n    }\n    successMessage\n  }\n}\n","variables":{"input":{"username":"testuser231","email":"fkdlsajfal@falfsk.com","password":"password"}},"operationName":"Register"}'
+        {\n      field\n      messages\n    }\n    successMessage\n  }\n}\n","variables":{"input":{"username":"123456890","email":"lol@mail.com","password":"123456890"}},"operationName":"Register"}'
     parameters: []
     headers:
       - id: pair_d3ecbf212959474da4f672981cab6244
@@ -726,7 +802,7 @@ resources:
     _type: request_group
   - _id: req_13586913f22d4224bc8495f8ef9521e7
     parentId: fld_a1b421d41c314243a61734cf68561dfa
-    modified: 1605471011278
+    modified: 1607279361685
     created: 1576009357639
     url: localhost:8000/graphql/
     name: login (testuser2)
@@ -759,7 +835,7 @@ resources:
     _type: request
   - _id: req_109140d15a034334903020603aea414f
     parentId: fld_a1b421d41c314243a61734cf68561dfa
-    modified: 1605471014656
+    modified: 1607692682369
     created: 1580434140292
     url: localhost:8000/graphql/
     name: login (testuser3)
@@ -777,6 +853,38 @@ resources:
         value: application/json
     authentication: {}
     metaSortKey: -1576422596998.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_408d9d39fab74e49849c8e9a182992fb
+    parentId: fld_a1b421d41c314243a61734cf68561dfa
+    modified: 1607299459660
+    created: 1600022676663
+    url: localhost:8000/graphql/
+    name: logout
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation Logout {\n  logout
+        {\n    deleted\n  }\n}\n","variables":{"input":{"username":"testuser2","email":"testuser2@test.com","bio":"new
+        bio text here","avatar":""}},"operationName":"Logout"}'
+    parameters: []
+    headers:
+      - id: pair_d3ecbf212959474da4f672981cab6244
+        name: Content-Type
+        value: application/json
+      - description: ""
+        id: pair_ad6f9e9f47de45478a4f53c946e5d4a9
+        name: Accept-Language
+        value: fi
+    authentication: {}
+    metaSortKey: -1576365164790.5
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -815,35 +923,37 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_408d9d39fab74e49849c8e9a182992fb
+  - _id: req_cc0c379cad9b428ca1c67e3ff865a567
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471026392
-    created: 1600022676663
+    modified: 1607810194581
+    created: 1607087062822
     url: localhost:8000/graphql/
-    name: logout
+    name: myData
     description: ""
     method: POST
     body:
       mimeType: application/graphql
-      text: '{"query":"mutation Logout {\n  logout
-        {\n    deleted\n  }\n}\n","variables":{"input":{"username":"testuser2","email":"testuser2@test.com","bio":"new
-        bio text here","avatar":""}},"operationName":"Logout"}'
+      text: '{"query":"mutation MyData {\n  myData {\n    successMessage\n    errors
+        {\n      field\n      messages\n    }\n  }\n}\n","operationName":"MyData"}'
     parameters: []
     headers:
       - id: pair_d3ecbf212959474da4f672981cab6244
         name: Content-Type
         value: application/json
-      - disabled: false
-        id: pair_242231deb131471fa7eac1ad5c1b7124
-        name: Authorization
+        disabled: false
+      - name: Authorization
         value: JWT
           eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImV4cCI6MTU5MDk0MDMwOSwib3JpZ0lhdCI6MTU5MDMzNTUwOX0.YB9C4JJX2AA4veck1rpnPMVklYOMel9zVRtrdx-vqHc
-      - description: ""
-        id: pair_ad6f9e9f47de45478a4f53c946e5d4a9
-        name: Accept-Language
+        description: ""
+        id: pair_0d32cef549c94b0b8bfbbed72b6d6781
+        disabled: false
+      - name: Accept-Language
         value: fi
+        description: ""
+        id: pair_07ada760366344f5833b7ca5327440b7
+        disabled: true
     authentication: {}
-    metaSortKey: -1575994846998.5
+    metaSortKey: -1575994847048.5
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -864,7 +974,7 @@ resources:
     _type: request_group
   - _id: req_2730ea57f5dc43a69be091c9ee5ca2a6
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471030698
+    modified: 1607692689658
     created: 1600023415177
     url: localhost:8000/graphql/
     name: verifyAccount
@@ -899,9 +1009,46 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_d88e832efed34e6db2808614c6e53d6c
+    parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
+    modified: 1607692694871
+    created: 1607692669167
+    url: localhost:8000/graphql/
+    name: resendVerificationEmail
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation ResendVerificationEmail {\n  resendVerificationEmail
+        {\n    successMessage\n    errors
+        {\n      field\n      messages\n    }\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - id: pair_d3ecbf212959474da4f672981cab6244
+        name: Content-Type
+        value: application/json
+      - disabled: false
+        id: pair_242231deb131471fa7eac1ad5c1b7124
+        name: Authorization
+        value: JWT
+          eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMyIsImV4cCI6MTYwODI5NzQ4Mywib3JpZ0lhdCI6MTYwNzY5MjY4M30.eUv7ZhSA5h2JmtqCz_iL2k3XNoUfUo4Ga3G9Hxz7dVY
+      - description: ""
+        id: pair_ad6f9e9f47de45478a4f53c946e5d4a9
+        name: Accept-Language
+        value: fi
+    authentication: {}
+    metaSortKey: -1575994846970.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_e3f6a69ff8624ff4856bf9291dfdc83b
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471034051
+    modified: 1605804626330
     created: 1576705599160
     url: localhost:8000/graphql/
     name: updateUser
@@ -912,7 +1059,7 @@ resources:
       text: '{"query":"mutation ($input: UpdateUserMutationInput!)
         {\n  updateUser(input: $input) {\n    errors
         {\n      field\n      messages\n    }\n    user
-        {\n      id\n      username\n      email\n      title\n      bio\n      avatar\n      score\n    }\n  }\n}\n","variables":{"input":{"username":"testuser2","email":"testuser2@test.com","bio":"new
+        {\n      id\n      username\n      email\n      title\n      bio\n      avatar\n      score\n      dd\n    }\n  }\n}\n","variables":{"input":{"username":"testuser2","email":"testuser2@test.com","bio":"new
         bio text here","avatar":""}}}'
     parameters: []
     headers:
@@ -940,7 +1087,7 @@ resources:
     _type: request
   - _id: req_f53ac82e1dc64f91b0b68c40da98592e
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471038754
+    modified: 1607255474500
     created: 1576524803428
     url: localhost:8000/graphql/
     name: performVote
@@ -980,7 +1127,7 @@ resources:
     _type: request
   - _id: req_b60a4b47421c4c3eb636df97752acf03
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471042170
+    modified: 1607262301531
     created: 1576536804164
     url: localhost:8000/graphql/
     name: createComment
@@ -1023,7 +1170,7 @@ resources:
     _type: request
   - _id: req_5678166686bd43348056d3127a72fbeb
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471046271
+    modified: 1607255473943
     created: 1576663592417
     url: localhost:8000/graphql/
     name: updateComment
@@ -1092,7 +1239,7 @@ resources:
     _type: request
   - _id: req_fc2d68a83054472a9696687812e5337b
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471052616
+    modified: 1606421917526
     created: 1590339520890
     url: localhost:8000/graphql/
     name: createResource multipart
@@ -1116,7 +1263,7 @@ resources:
           value: '{"1":["variables.input.file"]}'
         - description: ""
           disabled: false
-          fileName: /Users/eero/Documents/files/avatar.jpeg
+          fileName: /Users/eero/Documents/skole/taustapuoli_eeroruohola.pdf
           id: pair_4cff79d4ff6a4d8cb76b54c20a98d33d
           name: "1"
           type: file
@@ -1143,7 +1290,7 @@ resources:
     _type: request
   - _id: req_48bc5bdbac7341a69ee5d61d805dfc46
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1605471057733
+    modified: 1606421657540
     created: 1579974449216
     url: localhost:8000/graphql/
     name: updateResource
@@ -1227,22 +1374,23 @@ resources:
     _type: environment
   - _id: jar_6537441026a5296cd80b949cd740eb1c85ba2d34
     parentId: wrk_a08eec5933a744babfdcadbcf3636df9
-    modified: 1605471078055
+    modified: 1607692683706
     created: 1574718948363
     name: Default Jar
     cookies:
-      - key: csrftoken
-        value: QlNd85yFMuT2YfMyTr382c7ptBwhNjMBRilrcXm9KNpXo5O4dvQQCuuKSfmk7NY6
-        expires: 2021-11-14T20:11:18.000Z
-        maxAge: 31449600
+      - key: JWT
+        value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMyIsImV4cCI6MTYwODI5NzQ4Mywib3JpZ0lhdCI6MTYwNzY5MjY4M30.eUv7ZhSA5h2JmtqCz_iL2k3XNoUfUo4Ga3G9Hxz7dVY
+        expires: 2020-12-18T13:18:03.000Z
+        maxAge: 604800
         domain: localhost
         path: /
+        httpOnly: true
         extensions:
           - SameSite=Lax
         hostOnly: true
-        creation: 2020-11-15T20:11:18.055Z
-        lastAccessed: 2020-11-15T20:11:18.055Z
-        id: "4600331823298909"
+        creation: 2020-12-07T00:05:08.339Z
+        lastAccessed: 2020-12-11T13:18:03.700Z
+        id: "27055944087723804"
     _type: cookie_jar
   - _id: spc_7c89d94a08804042be19b47668e4aa9b
     parentId: wrk_a08eec5933a744babfdcadbcf3636df9
