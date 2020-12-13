@@ -77,15 +77,15 @@ workflows:
   deploy-prod:
     jobs:
       - aws-ecr/build-and-push-image:
-          name: build-backend
-          repo: backend
+          name: build-prod-backend
+          repo: backend-prod
           path: backend
           <<: *build-image
           <<: *prod-branch
 
       - aws-ecr/build-and-push-image:
-          name: build-frontend
-          repo: frontend
+          name: build-prod-frontend
+          repo: frontend-prod
           path: frontend
           context: prod
           extra-build-args: "--build-arg API_URL --build-arg FRONTEND_URL --build-arg SA_URL"
@@ -93,15 +93,15 @@ workflows:
           <<: *prod-branch
 
       - aws-ecs/deploy-service-update:
-          name: update-service
+          name: update-prod-service
           requires:
-            - build-backend
-            - build-frontend
-          cluster-name: skole-cluster
-          service-name: skole-service
-          family: skole-task
+            - build-prod-backend
+            - build-prod-frontend
+          cluster-name: skole-prod-cluster
+          service-name: skole-prod-service
+          family: skole-prod-task
           aws-region: $AWS_REGION
-          container-image-name-updates: "container=backend,tag=${CIRCLE_SHA1},container=frontend,tag=${CIRCLE_SHA1}"
+          container-image-name-updates: "container=backend_prod,tag=${CIRCLE_SHA1},container=frontend_prod,tag=${CIRCLE_SHA1}"
           <<: *prod-branch
 
   deploy-staging:

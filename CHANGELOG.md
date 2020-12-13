@@ -32,6 +32,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fix issue where autocomplete fields could return duplicate results.
+- Fix resource type field not showing any choices on first load of upload-resource page.
 
 ## [0.17.1] - 2020-12-10
 
