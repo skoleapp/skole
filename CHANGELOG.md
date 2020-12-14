@@ -5,6 +5,75 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2020-12-12
+
+### Added
+
+- Add `account/my-data` page for GDPR user data requests.
+
+### Changed
+
+- Update privacy policy.
+- Make any object deletion be completely permanent.
+- Change Google Analytics to Simple Analytics.
+- Change URL for course creation page to `/add-course`.
+- Improve rendering of long form field errors.
+- Change password minimum length to 10 characters.
+- Don't allow too common passwords.
+- Don't allow entirely numeric passwords.
+- Don't allow passwords that are too similar to user's username or email.
+- Sort subjects and schools alphabetically.
+- Improve miscellaneous translations.
+
+### Removed
+
+- Don't show the 'see all' share option button when on Desktop.
+
+### Fixed
+
+- Fix issue where autocomplete fields could return duplicate results.
+- Fix resource type field not showing any choices on first load of upload-resource page.
+
+## [0.17.1] - 2020-12-10
+
+### Changed
+
+- Add content on privacy policy and terms pages.
+- Show wider text content on terms and privacy pages.
+- Update spacings for comment buttons.
+- Translate all emails.
+
+### Fixed
+
+- Fix email sharing link.
+- Miscellaneous locale fixes.
+- Fix issue with long texts of comments overflowing.
+
+## [0.17.0] - 2020-12-07
+
+### Added
+
+- Add custom Instagram-like sharing menu for more user-friendly sharing options.
+- Add option for authenticated users to post as anonymous users.
+- The the username and avatar of the account making the comment in the comment creation form.
+- Add keywords and Twitter meta tags to improve SEO.
+
+### Changed
+
+- Improve sharing titles and texts.
+- Make bottom border of a top-comment of a thread slightly narrower.
+- Make avatar thumbnails slightly smaller.
+- On top comments in threads, show the reply count directly in the comment like in all the top-level comments.
+- Align vote-buttons of comments vertically always on center like in Model.
+- Make the max height of the rich text editor more responsive.
+- Change the layout for all dialog headers to a bit denser so that the center content has more space.
+- Hide top nav bar search field for 404 page.
+- Change uncompleted profile strength steps into clickable links.
+
+### Fixed
+
+- Fix bug of rich text editor pushing itself away from the viewport when stretching against the comment attachment.
+
 ## [0.16.8] - 2020-12-03
 
 ### Fixed
