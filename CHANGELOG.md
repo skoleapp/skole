@@ -5,11 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2020-12-12
+## [1.0.0] - 2020-12-14
 
 ### Added
 
 - Add `account/my-data` page for GDPR user data requests.
+- Add labels for rank and badges on profile page.
 
 ### Changed
 
@@ -24,15 +25,37 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Don't allow passwords that are too similar to user's username or email.
 - Sort subjects and schools alphabetically.
 - Improve miscellaneous translations.
+- Prevent compressing attachment and avatar images that are smaller than the allowed limit.
+- Make comment author selection into a clickable button.
+- Make rich text editor icon button sizes match the sizes of comment icon buttons.
+- Fix translation for error message of password being too similar to the email.
+- Don't require a verification for sending a password reset email or resetting password.
+- Don't allow special characters in usernames.
+- Update font weight, color and spacing for completed profile strength steps.
+- Add more spacing between the texts on profile page.
+- Don't use 'noreply' email addresses, instead encourage users to reply to emails.
 
 ### Removed
 
 - Don't show the 'see all' share option button when on Desktop.
+- Remove code-block option from the rich text editor.
 
 ### Fixed
 
 - Fix issue where autocomplete fields could return duplicate results.
 - Fix resource type field not showing any choices on first load of upload-resource page.
+- Fix inconsistent spacing of message info icons and buttons.
+- Fix bug of share menu's copy link action not working.
+- Fix bug of resource creator not showing in user profile under the created resources.
+- Fix bug of subject and course lists not being rendered on school page.
+- Fix issue where course, resource, and comment deletion would not delete the object properly.
+- Fix issue where uploaded resource files could lose almost all of their text.
+- Fix text alignment of dialogs on desktop.
+- Fix overflow issue of rendering profile badges.
+- Fix spacing issue of profile strength steps etc. on profile page on mobile.
+- Fix sharing locales for resource page.
+- Fix rendering quotes in comments.
+- Fix rendering strike through in comments.
 
 ## [0.17.1] - 2020-12-10
 

@@ -57,3 +57,12 @@
 - Make sure your computer's firewall is not blocking incoming requests.
 - Check your WiFi inet address using e.g. `ipconfig getifaddr en0` and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
 - That's it, now you should be able to connect on the dev server locally with your mobile device at http://<your_wifi_inet>:3001/
+
+## Using the production site
+
+We use [Simple Analytics](https://simpleanalytics.com) with a [custom subdomain](https://docs.simpleanalytics.com/bypass-ad-blockers#setup-a-custom-subdomain) in the production site.
+Since we don't want our own visits to show up there, add this entry to your `/etc/hosts` file to block those requests:
+
+```
+127.0.0.1	sa.skoleapp.com
+```

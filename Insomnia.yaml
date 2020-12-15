@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2020-12-12T21:58:04.825Z
+__export_date: 2020-12-14T20:29:45.374Z
 __export_source: insomnia.desktop.app:v2020.5.2
 resources:
   - _id: req_7c4b81c4bd664de3864fad87a00c3abf
@@ -754,7 +754,7 @@ resources:
     _type: request_group
   - _id: req_53d402cfcc3f44cc81341357271dafdd
     parentId: fld_a1b421d41c314243a61734cf68561dfa
-    modified: 1607810266708
+    modified: 1607939119225
     created: 1576008756424
     url: localhost:8000/graphql/
     name: register
@@ -1127,7 +1127,7 @@ resources:
     _type: request
   - _id: req_b60a4b47421c4c3eb636df97752acf03
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1607262301531
+    modified: 1607948269850
     created: 1576536804164
     url: localhost:8000/graphql/
     name: createComment
@@ -1139,11 +1139,10 @@ resources:
         CreateCommentMutationInput!){\n  createComment(input: $input)
         {\n    errors {\n      field\n      messages\n    }\n    comment
         {\n      id\n      text\n      user {\n        id\n        subject
-        {\n          id\n        }\n        school {\n          city
-        {\n            name\n          }\n        }\n      }\n      attachment\n      course
-        {\n        id\n      }\n      resource {\n        id\n        course
-        {\n          id\n          name\n          subjects
-        {\n            id\n            name\n          }\n        }\n      }\n      comment
+        {\n          name\n        }\n        school
+        {\n          name\n        }\n      }\n      attachment\n      course
+        {\n        id\n      }\n      resource
+        {\n        id\n      }\n      comment
         {\n        id\n      }\n      modified\n      created\n      replyComments
         {\n        id\n      }\n      score\n      vote
         {\n        id\n        status\n      }\n    }\n  }\n}\n","variables":{"input":{"text":"some
@@ -1160,6 +1159,58 @@ resources:
           eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImV4cCI6MTU4ODk3MDU2MSwib3JpZ0lhdCI6MTU4ODM2NTc2MX0.Rx3TFszhMWUI5yoHSW9usOxO_WezwYJLIsRMxFO6ccw
     authentication: {}
     metaSortKey: -1575994846698.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_efa7b0e15bf64ba58e7db186eeec3464
+    parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
+    modified: 1607948010089
+    created: 1607945484557
+    url: localhost:8000/graphql/
+    name: createComment multipart
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_5930b1f92fd943c68f4f4f11c2d7f448
+          multiline: false
+          name: operations
+          type: text
+          value: '{"query": "mutation CreateComment($input: CreateCommentMutationInput!){
+            createComment(input: $input) { errors { field messages } comment {
+            id text user { id subject { name } school { name } } attachment
+            course { id } resource { id } comment { id } modified created
+            replyComments { id } score vote { id status } } } }", "variables":{
+            "input": { "text": "some text", "attachment": "", "comment": 1 } }}'
+        - description: ""
+          id: pair_fdad0a21e0cf4f919953f157ff52ee3d
+          name: map
+          value: '{"1":["variables.input.attachment"]}'
+        - description: ""
+          disabled: false
+          fileName: /Users/eero/skole/backend/media/uploads/attachments/test_attachment.png
+          id: pair_4cff79d4ff6a4d8cb76b54c20a98d33d
+          name: "1"
+          type: file
+          value: ""
+    parameters: []
+    headers:
+      - id: pair_d3ecbf212959474da4f672981cab6244
+        name: Content-Type
+        value: multipart/form-data
+      - disabled: false
+        id: pair_242231deb131471fa7eac1ad5c1b7124
+        name: Authorization
+        value: JWT
+          eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMiIsImV4cCI6MTU4NjgwNjIzNywib3JpZ0lhdCI6MTU4NjIwMTQzN30.2Wy4ng1cNA-N3Ey4aq9t2pBYMi3Fb2h-N5UZZDd0v7c
+    authentication: {}
+    metaSortKey: -1575994846673.5
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
