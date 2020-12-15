@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Added
 
 - Add `account/my-data` page for GDPR user data requests.
+- Add labels for rank and badges on profile page.
 
 ### Changed
 
@@ -30,10 +31,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix translation for error message of password being too similar to the email.
 - Don't require a verification for sending a password reset email or resetting password.
 - Don't allow special characters in usernames.
+- Update font weight, color and spacing for completed profile strength steps.
+- Add more spacing between the texts on profile page.
+- Don't use 'noreply' email addresses, instead encourage users to reply to emails.
 
 ### Removed
 
 - Don't show the 'see all' share option button when on Desktop.
+- Remove code-block option from the rich text editor.
 
 ### Fixed
 
@@ -45,6 +50,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of subject and course lists not being rendered on school page.
 - Fix issue where course, resource, and comment deletion would not delete the object properly.
 - Fix issue where uploaded resource files could lose almost all of their text.
+- Fix text alignment of dialogs on desktop.
+- Fix overflow issue of rendering profile badges.
+- Fix spacing issue of profile strength steps etc. on profile page on mobile.
+- Fix sharing locales for resource page.
+- Fix rendering quotes in comments.
+- Fix rendering strike through in comments.
 
 ## [0.17.1] - 2020-12-10
 
