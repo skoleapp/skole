@@ -60,6 +60,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of resource creator not showing on course page.
 - Fix bug of bio not showing on desktop at all.
 - Fix bug of some profile info labels having capital casing and incorrect spacing on some screen sizes.
+- Fix slogan text on get started page.
 
 ## [0.17.1] - 2020-12-10
 
