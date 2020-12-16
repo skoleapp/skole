@@ -34,6 +34,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update font weight, color and spacing for completed profile strength steps.
 - Add more spacing between the texts on profile page.
 - Don't use 'noreply' email addresses, instead encourage users to reply to emails.
+- Prevent submitting comments from return key on mobile/tablet.
 
 ### Removed
 
@@ -56,6 +57,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix sharing locales for resource page.
 - Fix rendering quotes in comments.
 - Fix rendering strike through in comments.
+- Fix bug of resource creator not showing on course page.
 
 ## [0.17.1] - 2020-12-10
 
