@@ -11,6 +11,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Add `account/my-data` page for GDPR user data requests.
 - Add labels for rank and badges on profile page.
+- Make verification and password reset URLs link to translated pages.
+- Allow uploading files and selecting images on mobile Safari.
 
 ### Changed
 
@@ -63,6 +65,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix slogan text on get started page.
 - Fix avatar dialog buttons not working correctly.
 - Fix main background image stretching weirdly.
+- Fix overflow issues on footer links.
+- Fix Telegram sharing URL.
 
 ## [0.17.1] - 2020-12-10
 
