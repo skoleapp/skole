@@ -31,7 +31,7 @@ build-image: &build-image
   tag: "${CIRCLE_SHA1}"
 
 
-# CicleCI's own sections
+# CircleCI's own sections
 
 executors:
   machine-with-cache:
@@ -39,10 +39,10 @@ executors:
       image: ubuntu-1604:201903-01
       docker_layer_caching: true
 
-  machine-no-cache:
-    machine:
-      image: ubuntu-1604:201903-01
-      docker_layer_caching: false
+  docker-no-cache:
+    docker:
+      - image: cimg/base:2020.01
+    resource_class: small
 
 commands:
   update-submodules:
@@ -54,7 +54,7 @@ commands:
 
 jobs:
   check-commits:
-    executor: machine-no-cache
+    executor: docker-no-cache
     steps:
       - update-submodules
       - run:
