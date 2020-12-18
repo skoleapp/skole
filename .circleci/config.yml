@@ -30,6 +30,11 @@ build-image: &build-image
   region: AWS_REGION
   tag: "${CIRCLE_SHA1}"
 
+verify-deployment: &verify-deployment
+   max-poll-attempts: 90
+   poll-interval: 10
+   task-definition-arn: "${TASK_DEFINITION_ARN}"
+
 
 # CircleCI's own sections
 
@@ -103,6 +108,21 @@ workflows:
           aws-region: $AWS_REGION
           container-image-name-updates: "container=backend_prod,tag=${CIRCLE_SHA1},container=frontend_prod,tag=${CIRCLE_SHA1}"
           <<: *prod-branch
+          post-steps:
+            - run:
+                name: "Get latest task definition arn"
+                command: >
+                  TASK_DEFINITION_ARN=$(aws ecs describe-task-definition \
+                      --task-definition skole-prod-task \
+                      --output text \
+                      --query "taskDefinition.taskDefinitionArn")
+                  echo "export TASK_DEFINITION_ARN='${TASK_DEFINITION_ARN}'" >>
+                  $BASH_ENV
+            - aws-ecs/verify-revision-is-deployed:
+                cluster-name: skole-prod-cluster
+                service-name: skole-prod-service
+                family: skole-prod-task
+                <<: *verify-deployment
 
   deploy-staging:
     jobs:
@@ -133,3 +153,18 @@ workflows:
           aws-region: $AWS_REGION
           container-image-name-updates: "container=backend_staging,tag=${CIRCLE_SHA1},container=frontend_staging,tag=${CIRCLE_SHA1}"
           <<: *staging-branch
+          post-steps:
+            - run:
+                name: "Get latest task definition arn"
+                command: >
+                  TASK_DEFINITION_ARN=$(aws ecs describe-task-definition \
+                      --task-definition skole-staging-task \
+                      --output text \
+                      --query "taskDefinition.taskDefinitionArn")
+                  echo "export TASK_DEFINITION_ARN='${TASK_DEFINITION_ARN}'" >>
+                  $BASH_ENV
+            - aws-ecs/verify-revision-is-deployed:
+                cluster-name: skole-staging-cluster
+                service-name: skole-staging-service
+                family: skole-staging-task
+                <<: *verify-deployment
