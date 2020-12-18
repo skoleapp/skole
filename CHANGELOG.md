@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add labels for rank and badges on profile page.
 - Make verification and password reset URLs link to translated pages.
 - Allow uploading files and selecting images on mobile Safari.
+- Add short pitch section about Skole on landing page.
 
 ### Changed
 
@@ -42,6 +43,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Don't show the 'see all' share option button when on Desktop.
 - Remove code-block option from the rich text editor.
+- Hide top navbar search on landing page.
 
 ### Fixed
 
@@ -66,7 +68,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix avatar dialog buttons not working correctly.
 - Fix main background image stretching weirdly.
 - Fix overflow issues on footer links.
-- Fix Telegram sharing URL.
+- Fix sharing links to WhatsApp and Telegram.
 
 ## [0.17.1] - 2020-12-10
 
