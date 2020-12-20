@@ -35,6 +35,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix z-index issue for bottom nav bar causing some elements to overlap it.
 - Make sure school page header is centered.
 - Fix positioning for create comment button on mobile.
+- Fix downloaded my data json having user's created and modified values being swapped.
 
 ## [1.0.0] - 2020-12-18
 
