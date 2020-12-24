@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.1.0] - 2020-12-19
+## [1.1.0] - 2020-12-24
 
 
 ### Added
@@ -14,6 +14,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add contact us links to register form, add course form, search form and home page.
 - Slightly modify miscellaneous helper texts and locales.
 - Improve error messages by adding dedicated locales for error messages of unstar and vote removal actions.
+- Add every single country of the world to the country selections.
+- Add a `sitemap.xml` and a `robots.txt`.
 
 ### Changed
 
@@ -47,6 +49,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Allow more space for all dialogs that are not full screen.
 - Update locales for all confirmation modal texts.
 - Reorder resource menu actions.
+- Add a minimum height and increase padding for the not found element.
 
 ### Fixed
 
@@ -61,6 +64,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix typo in landing page.
 - Fix scrolling behavior on tables.
 - Fix bug of having double scroll bars on some tables and discussion tab at least on Safari mobile.
+- Fix vertical alignment for no comments text.
+- Fix home page sharing menu header.
 
 ## [1.0.0] - 2020-12-18
 
