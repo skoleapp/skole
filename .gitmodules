@@ -1,15 +1,15 @@
 [submodule "backend"]
 	path = backend
-	url = git@github.com:ruohola/skole-backend.git
+	url = git@github.com:skoleapp/skole-backend.git
 [submodule "frontend"]
 	path = frontend
-	url = git@github.com:ruohola/skole-frontend.git
+	url = git@github.com:skoleapp/skole-frontend.git
 [submodule "infra"]
 	path = infra
-	url = git@github.com:ruohola/skole-infra.git
+	url = git@github.com:skoleapp/skole-infra.git
 [submodule "native"]
 	path = native
-	url = git@github.com:ruohola/skole-native.git
+	url = git@github.com:skoleapp/skole-native.git
 [submodule "scripts"]
 	path = scripts
-	url = git@github.com:ruohola/skole-scripts.git
+	url = git@github.com:skoleapp/skole-scripts.git
