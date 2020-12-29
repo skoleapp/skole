@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2020-12-14T20:29:45.374Z
+__export_date: 2020-12-29T21:27:42.268Z
 __export_source: insomnia.desktop.app:v2020.5.2
 resources:
   - _id: req_7c4b81c4bd664de3864fad87a00c3abf
@@ -58,6 +58,58 @@ resources:
     description: ""
     scope: null
     _type: workspace
+  - _id: req_8336c55d77ed4b07b9d8d0e924debe69
+    parentId: fld_122f287f47e4405aa75599c564fbd067
+    modified: 1608766207979
+    created: 1608766090455
+    url: http://localhost:3001/sitemap.xml
+    name: sitemap.xml
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1608766186429
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_122f287f47e4405aa75599c564fbd067
+    parentId: wrk_a08eec5933a744babfdcadbcf3636df9
+    modified: 1608766223595
+    created: 1608766189553
+    name: frontend
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1597087488649.5
+    _type: request_group
+  - _id: req_b88b299663b945cb822d2bf7812a3d99
+    parentId: fld_122f287f47e4405aa75599c564fbd067
+    modified: 1608769543936
+    created: 1608769479090
+    url: http://localhost:3001/robots.txt
+    name: robots.txt
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1608766186379
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_7c6f02a65e1045c69de7425ab279061e
     parentId: fld_a9163bffa9904acfa8e51a1d2f25c355
     modified: 1586519493960
@@ -180,7 +232,7 @@ resources:
     _type: request_group
   - _id: req_fe0904311402495a97a7351b455fe25b
     parentId: fld_78601cb821124a789353bc6243fda754
-    modified: 1605968325641
+    modified: 1608759653898
     created: 1605258015605
     url: localhost:8000/graphql/
     name: type
@@ -406,6 +458,36 @@ resources:
         value: application/json
     authentication: {}
     metaSortKey: -1576078003763
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6d8f411f232d46df812fad91f17bacf3
+    parentId: fld_78601cb821124a789353bc6243fda754
+    modified: 1608766826126
+    created: 1608759657498
+    url: localhost:8000/graphql/
+    name: sitemap
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query Sitemap {\n  sitemap {\n    courses
+        {\n      id\n      modified  \n    }\n    resources
+        {\n      id\n      modified\n    }\n    schools
+        {\n      id\n      modified\n    }\n    users
+        {\n      id\n      modified\n    }\n  }\n}\n","operationName":"Sitemap"}'
+    parameters: []
+    headers:
+      - id: pair_d3ecbf212959474da4f672981cab6244
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1576078003738
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -974,7 +1056,7 @@ resources:
     _type: request_group
   - _id: req_2730ea57f5dc43a69be091c9ee5ca2a6
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1607692689658
+    modified: 1608063968560
     created: 1600023415177
     url: localhost:8000/graphql/
     name: verifyAccount
@@ -1011,7 +1093,7 @@ resources:
     _type: request
   - _id: req_d88e832efed34e6db2808614c6e53d6c
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1607692694871
+    modified: 1608757159293
     created: 1607692669167
     url: localhost:8000/graphql/
     name: resendVerificationEmail
@@ -1021,7 +1103,7 @@ resources:
       mimeType: application/graphql
       text: '{"query":"mutation ResendVerificationEmail {\n  resendVerificationEmail
         {\n    successMessage\n    errors
-        {\n      field\n      messages\n    }\n  }\n}\n"}'
+        {\n      field\n      messages\n    }\n  }\n}\n","operationName":"ResendVerificationEmail"}'
     parameters: []
     headers:
       - id: pair_d3ecbf212959474da4f672981cab6244
@@ -1035,7 +1117,7 @@ resources:
       - description: ""
         id: pair_ad6f9e9f47de45478a4f53c946e5d4a9
         name: Accept-Language
-        value: fi
+        value: sv
     authentication: {}
     metaSortKey: -1575994846970.375
     isPrivate: false
@@ -1290,7 +1372,7 @@ resources:
     _type: request
   - _id: req_fc2d68a83054472a9696687812e5337b
     parentId: fld_3136d44c3cb045a1bcb8c3c525b1cf18
-    modified: 1606421917526
+    modified: 1609277235823
     created: 1590339520890
     url: localhost:8000/graphql/
     name: createResource multipart
@@ -1314,7 +1396,7 @@ resources:
           value: '{"1":["variables.input.file"]}'
         - description: ""
           disabled: false
-          fileName: /Users/eero/Documents/skole/taustapuoli_eeroruohola.pdf
+          fileName: /Users/eero/skole/backend/media/uploads/resources/test_resource.pdf
           id: pair_4cff79d4ff6a4d8cb76b54c20a98d33d
           name: "1"
           type: file
