@@ -1,6 +1,6 @@
 # Skole 🎓
 
-[![CircleCI build status](https://circleci.com/gh/ruohola/skole.svg?style=shield&circle-token=5cdb1313cb62a0ca8fa117cfd73db38db149774c)](https://circleci.com/gh/ruohola/skole)
+[![CircleCI build status](https://circleci.com/gh/skoleapp/skole.svg?style=shield&circle-token=5cdb1313cb62a0ca8fa117cfd73db38db149774c)](https://circleci.com/gh/skoleapp/skole)
 
 ## Requirements
 
@@ -8,7 +8,7 @@
 
 ## Get the development environment up and running
 
-1. Clone this repository with: `git clone --recurse-submodules <link>`
+1. Clone this repository with: `git clone --recurse-submodules git@github.com:skoleapp/skole.git`
 
 2. `cd skole`
 

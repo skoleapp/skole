@@ -5,7 +5,69 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2020-12-14
+## [1.1.0] - 2021-01-01
+
+
+### Added
+
+- Add "next steps" section to home page.
+- Add contact us links to register form, add course form, search form and home page.
+- Slightly modify miscellaneous helper texts and locales.
+- Improve error messages by adding dedicated locales for error messages of unstar and vote removal actions.
+- Add every single country of the world to the country selections.
+- Add a `sitemap.xml` and a `robots.txt`.
+
+### Changed
+
+- Use regular tab panels instead of swipeable views for all tab views.
+- Add more detailed header texts for info dialogs of course, resource and school pages.
+- Improve PDF viewer's pinch gestures which had an offset to the left. Now the pinch gesture works perfectly.
+- Move PDF page number input under the PDF viewer.
+- Show default bottom nav bar for non-verified users on course page.
+- On mobile, do not render the "add course to this school" button on course page at all.
+- Bump PDF viewer's max zoom to 5.
+- Implement a regular text/markdown editor instead of using draft.js editor.
+- Make avatars on comment cards bigger.
+- Fix all other avatar thumbnails so that they match with all other icons in size.
+- Show comments that scroll under the comment reply button on mobile.
+- Unify spacings of several headers and dialog headers.
+- Change the layout for course and resource pages slightly to allow more space for the discussion card.
+- Make all card headers slightly smaller.
+- Show send button on top-right corner of comment creation modal.
+- Add slight borders around scroll containers to distinguish them better.
+- Remove extra padding from the left of resource table body.
+- Improve miscellaneous locales.
+- Add tooltips for removing upvotes/downvotes.
+- Hide rotate button on mobile when on discussion tab on resource page.
+- Use consistent borders in all card headers.
+- Allow all forms to have slightly wider fields.
+- Allow submitting comments with enter key on desktop.
+- Move submit button for sending comment next to the text field on mobile.
+- Make avatar on author selection button larger.
+- Make spacings for all dialog headers more consistent with other spacings on the app.
+- Enable text selection on desktop.
+- Allow more space for all dialogs that are not full screen.
+- Update locales for all confirmation modal texts.
+- Reorder resource menu actions.
+- Add a minimum height and increase padding for the not found element.
+
+### Fixed
+
+- Fix vote indicators not showing own vote's status on course and resource pages.
+- Fix positioning for comment actions button on reply comments without attachments.
+- Fix positioning for create comment button on mobile.
+- Fix z-index issue for bottom nav bar causing some elements to overlap it.
+- Make sure school page header is centered.
+- Fix positioning for create comment button on mobile.
+- Fix downloaded my data json having user's created and modified values being swapped.
+- Fix remaining overflow issues for PDF viewer.
+- Fix typo in landing page.
+- Fix scrolling behavior on tables.
+- Fix bug of having double scroll bars on some tables and discussion tab at least on Safari mobile.
+- Fix vertical alignment for no comments text.
+- Fix home page sharing menu header.
+
+## [1.0.0] - 2020-12-18
 
 ### Added
 

@@ -5,6 +5,7 @@
   "author": "Skole Team",
   "scripts": {
     "start": "docker-compose up",
+    "start:renew-volumes": "yarn start --renew-anon-volumes",
     "build": "docker-compose build",
     "build:backend": "yarn build backend",
     "build:frontend": "yarn build frontend",
