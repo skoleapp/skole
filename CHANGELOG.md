@@ -5,6 +5,61 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [1.2.0] - 2021-01-07
+
+### Added
+
+- Add link to landing page in the footer.
+- Add new "next step" item with dynamic content on home page based on the actions the user has taken.
+- Add star count to course and resource info dialogs.
+- Add back button for desktop layout of search, course, resource, school, add course, upload resource, login, register, reset password, verify account, privacy, terms and starred pages.
+- Add landing page for educators.
+- Add handling for an edge case when user navigates to verify account page as not logged in and without token.
+- Add a next step item on home page for adding school and subcject.
+- Update left column header on footer and add a link to "for educators" page.
+- Add indicator for unread notifications on both mobile and desktop.
+- Add initial versions/drafts for score reference, company values and community guideline pages.
+- Add footer links for the new pages.
+- Add Software Engineering subject.
+
+### Changed
+
+- Prevent redirection to landing page from pages that do not require authentication.
+- Enable drawing mode on PDF viewer.
+- Rename "draw mode" to "drawing mode" in PDF viewer.
+- Use shared "unexpected error" notification for all edge cases such as voting errors etc.
+- Change casing for words in quotes in terms and conditions.
+- Refactor terms and privacy pages to static pages generated from Markdown at build time.
+- Change link style in all markdown pages and comments to consistent red.
+- Change spacings for all dialogs that are lists such as settings, sharing dialogs etc.
+- Hide settings toolbar from pages that have nothing to do with settings such as starred, terms and privacy pages.
+- Use more descriptive title for discussion header to indicate the amount of comments on desktop.
+- Change all autocomplete fields to re-fetch the data on every key stroke.
+- On resource page on mobile, instead of a blank bottom nav bar for non-verified users on discussion tab, show the default bottom nav bar instead.
+- Update helper text for register form's username field.
+- Update texts for landing page.
+- Update next steps texts on home page.
+- Change layout for all pages that were previously using the settings layout except for edit profile, change password, my data and delete account pages.
+- Hide terms, privacy and contact links from the settings menu on desktop.
+- Make avatar bigger on user profile on desktop.
+- Change activity tooltip to show the amount of unread activities.
+- Move language button from footer to alway be on top-right corner on desktop.
+- Update Swedish locale for for educators page.
+- Make content of all static markdown pages slightly narrower.
+- Make bottom and top nav bars slightly thicker on mobile mostly in order to have more space for the unread activity indicator.
+
+### Fixed
+
+- Fix the misaligned screenshots in drawing mode.
+- Fix bug of comment count not showing on course and resource pages.
+- Fix sharing link for comments.
+- FIx links for next steps on home page.
+- Fix bug of back button having incorrect color on mobile.
+- Fix bug of activities not updating correctly after marking them all as read.
+- Fix bug of bottom nav bar not showing on home page.
+- Fix bug of activity menu button not showing on activity page on mobile.
+
 ## [1.1.1] - 2021-01-02
 
 ### Changed
