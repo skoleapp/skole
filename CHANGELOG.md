@@ -26,6 +26,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add date field to upload resource form.
 - On upload resource page, show email link to send materials manually as a batch via email.
 - Redirect authenticated users from landing page to home page.
+- Prefill user's school on upload resource and add course pages if no other school is provided as a query parameter.
 
 ### Changed
 
@@ -64,11 +65,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Show "file selected" text in the middle of the drop zone and as the file selection button text on mobile.
 - To save space in the top nav bar, show login/register buttons only up from 960px.
 - Hide get started button for authenticated users in footer.
+- Change all error layouts (server error, offline, 404) to have a responsive and consistent layout.
+- Change locales for all error pages and layouts to shorter ones that they fit well on mobile screens.
+- Use dynamic  URL for back button of starred page.
+- Change URL for reset password page from `/account/reset-password` to `/reset-password`.
+- Add reset password page to indexable pages.
 
 ### Removed
 
 - Remove confirm login and confirm logout pages.
 - Remove all automatic redirects on on landing page and login etc.
+- Remove description meta tag texts from all pages that are not indexed.
 
 ### Fixed
 
@@ -84,6 +91,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix language button size on mobile.
 - Fix authentication synchronization so that logging out from all tabs works from all pages.
 - Fix navbar positioning on search page on Safari mobile.
+- Fix invalid date errors for date picker field on upload resource form.
+- Fix Finnish locales for min and max date error messages of date picker field that were mixed.
+- Fix bug of activity page header not showing on mobile.
 
 ## [1.1.1] - 2021-01-02
 
