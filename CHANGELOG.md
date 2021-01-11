@@ -5,7 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-
 ## [1.2.0] - 2021-01-07
 
 ### Added
@@ -22,6 +21,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add initial versions/drafts for score reference, company values and community guideline pages.
 - Add footer links for the new pages.
 - Add Software Engineering subject.
+- Add links to guidelines in course creation and resource upload pages.
+- Add link to send materials via email on upload resource page.
+- Add date field to upload resource form.
+- On upload resource page, show email link to send materials manually as a batch via email.
+- Redirect authenticated users from landing page to home page.
 
 ### Changed
 
@@ -48,6 +52,23 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update Swedish locale for for educators page.
 - Make content of all static markdown pages slightly narrower.
 - Make bottom and top nav bars slightly thicker on mobile mostly in order to have more space for the unread activity indicator.
+- Render "login required" and "logout" content directly on pages and remove redirection to another page.
+- Improve buttons and button texts register and login pages.
+- Rename "for educators" to "for teachers".
+- Add pitch for anonymous feedback on for teachers page.
+- Change landing page URL to the root of the site and home home page under `/home` URL.
+- Change the marketing description to even shorter one.
+- Show custom content for anonymous users on add course and upload resource pages.
+- On mobile, show language button on top-right corner for all pages that do not have custom content there.
+- On home page, on mobile, for anonymous users, show a small launch icon button on the top-left corner that takes the user to the landing page.
+- Show "file selected" text in the middle of the drop zone and as the file selection button text on mobile.
+- To save space in the top nav bar, show login/register buttons only up from 960px.
+- Hide get started button for authenticated users in footer.
+
+### Removed
+
+- Remove confirm login and confirm logout pages.
+- Remove all automatic redirects on on landing page and login etc.
 
 ### Fixed
 
@@ -59,6 +80,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of activities not updating correctly after marking them all as read.
 - Fix bug of bottom nav bar not showing on home page.
 - Fix bug of activity menu button not showing on activity page on mobile.
+- Fix bug of backend file errors not showing on upload resource form.
+- Fix language button size on mobile.
+- Fix authentication synchronization so that logging out from all tabs works from all pages.
+- Fix navbar positioning on search page on Safari mobile.
 
 ## [1.1.1] - 2021-01-02
 
