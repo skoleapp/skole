@@ -12,7 +12,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add link to landing page in the footer.
 - Add new "next step" item with dynamic content on home page based on the actions the user has taken.
 - Add star count to course and resource info dialogs.
-- Add back button for desktop layout of search, course, resource, school, add course, upload resource, login, register, reset password, verify account, privacy, terms and starred pages.
+- Add back buttons for basically all pages both on desktop and mobile.
 - Add landing page for educators.
 - Add handling for an edge case when user navigates to verify account page as not logged in and without token.
 - Add a next step item on home page for adding school and subcject.
@@ -55,11 +55,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Make bottom and top nav bars slightly thicker on mobile mostly in order to have more space for the unread activity indicator.
 - Render "login required" and "logout" content directly on pages and remove redirection to another page.
 - Improve buttons and button texts register and login pages.
-- Rename "for educators" to "for teachers".
-- Add pitch for anonymous feedback on for teachers page.
 - Change landing page URL to the root of the site and home home page under `/home` URL.
 - Change the marketing description to even shorter one.
-- Show custom content for anonymous users on add course and upload resource pages.
 - On mobile, show language button on top-right corner for all pages that do not have custom content there.
 - On home page, on mobile, for anonymous users, show a small launch icon button on the top-left corner that takes the user to the landing page.
 - Show "file selected" text in the middle of the drop zone and as the file selection button text on mobile.
@@ -67,7 +64,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Hide get started button for authenticated users in footer.
 - Change all error layouts (server error, offline, 404) to have a responsive and consistent layout.
 - Change locales for all error pages and layouts to shorter ones that they fit well on mobile screens.
-- Use dynamic  URL for back button of starred page.
 - Change URL for reset password page from `/account/reset-password` to `/reset-password`.
 - Add reset password page to indexable pages.
 
@@ -76,6 +72,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Remove confirm login and confirm logout pages.
 - Remove all automatic redirects on on landing page and login etc.
 - Remove description meta tag texts from all pages that are not indexed.
+- Hide logo on student landing page on mobile.
+- On logout page, show login, register, get started and for teachers button after logout.
+- Show login button on register page on top right corner on desktop.
+- Show register button on login page on top right corner on desktop.
+- Show dynamic texts (course name, resource title, school name) as info dialog headers on course, resource and school pages and remove those infos from the actual dialog content.
 
 ### Fixed
 
@@ -83,17 +84,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of comment count not showing on course and resource pages.
 - Fix sharing link for comments.
 - FIx links for next steps on home page.
-- Fix bug of back button having incorrect color on mobile.
-- Fix bug of activities not updating correctly after marking them all as read.
+- Fix bug of back buttons having incorrect color on mobile.
 - Fix bug of bottom nav bar not showing on home page.
 - Fix bug of activity menu button not showing on activity page on mobile.
 - Fix bug of backend file errors not showing on upload resource form.
 - Fix language button size on mobile.
 - Fix authentication synchronization so that logging out from all tabs works from all pages.
 - Fix navbar positioning on search page on Safari mobile.
-- Fix invalid date errors for date picker field on upload resource form.
-- Fix Finnish locales for min and max date error messages of date picker field that were mixed.
 - Fix bug of activity page header not showing on mobile.
+- Fix bug of UI indicating that the user is still logged in on logout page (could be noticed only on mobile).
 
 ## [1.1.1] - 2021-01-02
 
