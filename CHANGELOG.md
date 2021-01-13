@@ -66,6 +66,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Change locales for all error pages and layouts to shorter ones that they fit well on mobile screens.
 - Change URL for reset password page from `/account/reset-password` to `/reset-password`.
 - Add reset password page to indexable pages.
+- Always use English headers for privacy and terms pages.
+- Change mail address in privacy page to link.
 
 ### Removed
 
