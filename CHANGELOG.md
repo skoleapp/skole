@@ -5,6 +5,98 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2021-01-07
+
+### Added
+
+- Add link to landing page in the footer.
+- Add new "next step" item with dynamic content on home page based on the actions the user has taken.
+- Add star count to course and resource info dialogs.
+- Add back buttons for basically all pages both on desktop and mobile.
+- Add landing page for educators.
+- Add handling for an edge case when user navigates to verify account page as not logged in and without token.
+- Add a next step item on home page for adding school and subcject.
+- Update left column header on footer and add a link to "for educators" page.
+- Add indicator for unread notifications on both mobile and desktop.
+- Add initial versions/drafts for score reference, company values and community guideline pages.
+- Add footer links for the new pages.
+- Add Software Engineering subject.
+- Add links to guidelines in course creation and resource upload pages.
+- Add link to send materials via email on upload resource page.
+- Add date field to upload resource form.
+- On upload resource page, show email link to send materials manually as a batch via email.
+- Redirect authenticated users from landing page to home page.
+- Prefill user's school on upload resource and add course pages if no other school is provided as a query parameter.
+
+### Changed
+
+- Prevent redirection to landing page from pages that do not require authentication.
+- Enable drawing mode on PDF viewer.
+- Rename "draw mode" to "drawing mode" in PDF viewer.
+- Use shared "unexpected error" notification for all edge cases such as voting errors etc.
+- Change casing for words in quotes in terms and conditions.
+- Refactor terms and privacy pages to static pages generated from Markdown at build time.
+- Change link style in all markdown pages and comments to consistent red.
+- Change spacings for all dialogs that are lists such as settings, sharing dialogs etc.
+- Hide settings toolbar from pages that have nothing to do with settings such as starred, terms and privacy pages.
+- Use more descriptive title for discussion header to indicate the amount of comments on desktop.
+- Change all autocomplete fields to re-fetch the data on every key stroke.
+- On resource page on mobile, instead of a blank bottom nav bar for non-verified users on discussion tab, show the default bottom nav bar instead.
+- Update helper text for register form's username field.
+- Update texts for landing page.
+- Update next steps texts on home page.
+- Change layout for all pages that were previously using the settings layout except for edit profile, change password, my data and delete account pages.
+- Hide terms, privacy and contact links from the settings menu on desktop.
+- Make avatar bigger on user profile on desktop.
+- Change activity tooltip to show the amount of unread activities.
+- Move language button from footer to alway be on top-right corner on desktop.
+- Update Swedish locale for for educators page.
+- Make content of all static markdown pages slightly narrower.
+- Make bottom and top nav bars slightly thicker on mobile mostly in order to have more space for the unread activity indicator.
+- Render "login required" and "logout" content directly on pages and remove redirection to another page.
+- Improve buttons and button texts register and login pages.
+- Change landing page URL to the root of the site and home home page under `/home` URL.
+- Change the marketing description to even shorter one.
+- On mobile, show language button on top-right corner for all pages that do not have custom content there.
+- On home page, on mobile, for anonymous users, show a small launch icon button on the top-left corner that takes the user to the landing page.
+- Show "file selected" text in the middle of the drop zone and as the file selection button text on mobile.
+- To save space in the top nav bar, show login/register buttons only up from 960px.
+- Hide get started button for authenticated users in footer.
+- Change all error layouts (server error, offline, 404) to have a responsive and consistent layout.
+- Change locales for all error pages and layouts to shorter ones that they fit well on mobile screens.
+- Change URL for reset password page from `/account/reset-password` to `/reset-password`.
+- Add reset password page to indexable pages.
+- Always use English headers for privacy and terms pages.
+- Change mail address in privacy page to link.
+
+### Removed
+
+- Remove confirm login and confirm logout pages.
+- Remove all automatic redirects on on landing page and login etc.
+- Remove description meta tag texts from all pages that are not indexed.
+- Hide logo on student landing page on mobile.
+- On logout page, show login, register, get started and for teachers button after logout.
+- Show login button on register page on top right corner on desktop.
+- Show register button on login page on top right corner on desktop.
+- Show dynamic texts (course name, resource title, school name) as info dialog headers on course, resource and school pages and remove those infos from the actual dialog content.
+
+### Fixed
+
+- Fix the misaligned screenshots in drawing mode.
+- Fix bug of comment count not showing on course and resource pages.
+- Fix sharing link for comments.
+- FIx links for next steps on home page.
+- Fix bug of back buttons having incorrect color on mobile.
+- Fix bug of bottom nav bar not showing on home page.
+- Fix bug of activity menu button not showing on activity page on mobile.
+- Fix bug of backend file errors not showing on upload resource form.
+- Fix language button size on mobile.
+- Fix authentication synchronization so that logging out from all tabs works from all pages.
+- Fix navbar positioning on search page on Safari mobile.
+- Fix bug of activity page header not showing on mobile.
+- Fix bug of UI indicating that the user is still logged in on logout page (could be noticed only on mobile).
+- Fix avatar thumbnail not showing.
+
 ## [1.1.1] - 2021-01-02
 
 ### Changed
