@@ -95,6 +95,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix navbar positioning on search page on Safari mobile.
 - Fix bug of activity page header not showing on mobile.
 - Fix bug of UI indicating that the user is still logged in on logout page (could be noticed only on mobile).
+- Fix avatar thumbnail not showing.
 
 ## [1.1.1] - 2021-01-02
 
