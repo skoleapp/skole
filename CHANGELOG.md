@@ -5,11 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.1] - 2021-01-14
+## [1.2.1] - 2021-01-15
+
+### Changed
+
+- Use custom back buttons in login/register pages when navigating from landing page.
+- Update marketing descriptions.
 
 ### Fixed
 
 - Fix course and resource scores not getting calculated correctly.
+- Fix bug of author selection avatar not updating when choosing to comment as anonymous.
+- Fix sharing links when current route has query params.
+- Fix bug of back buttons missing on course and resource pages on mobile.
+- Add support for disabling app store badges on native app.
+- Fix paddings on bottom of the landing page on iOS PWA and native apps.
+- Fix paddings on bottom of the for teachers page on iOS PWA and native apps.
 
 ## [1.2.0] - 2021-01-14
 
