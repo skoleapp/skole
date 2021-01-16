@@ -5,12 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.1] - 2021-01-15
+## [1.2.1] - 2021-01-16
+
+### Added
+
+- Add all courses and subjects from TUAS (=Turun AMK).
 
 ### Changed
 
 - Use custom back buttons in login/register pages when navigating from landing page.
 - Update marketing descriptions.
+- Change all dialog header texts to H6 to save a bit more space.
 
 ### Fixed
 
@@ -21,6 +26,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add support for disabling app store badges on native app.
 - Fix paddings on bottom of the landing page on iOS PWA and native apps.
 - Fix paddings on bottom of the for teachers page on iOS PWA and native apps.
+- Fix text overflow for dialog headers.
+- Fix spacings for backdrops so that they fill the entire screen.
+- Fix inconsistent font size on Safari.
 
 ## [1.2.0] - 2021-01-14
 
