@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add app store links to teacher landing page too.
 - Add blogging system and first blog about app store releases.
 - Add about page that contains links to all info pages etc. (for teachers, contact, guidelines, score, values, blog, terms and privacy)
+- Show back button on all settings pages on desktop.
 
 ### Changed
 
@@ -25,6 +26,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update texts for teacher landing page.
 - Enable app store links in landing page.
 - Change href for Markdown reference link.
+- Make back button always behave like the browsers back button.
+- Make translations for "Hot Topics" more compact.
+- Send my-data downloads as links in the email instead of attachments.
 
 ### Removed
 
@@ -36,6 +40,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix redirection from landing page to home page to not modify the navigation history.
 - Fix bug of get started button showing on landing page on top right corner on desktop.
 - Fix broken CSS property preventing text size being correct on Safari mobile.
+- Fix bug of WhatsApp sharing link not opening externally.
+- Fix URL for invite friends link.
+- Fix title for invite friends link - remove colon.
+- Fix paragraph margins for all Markdown content.
+- Fix meta tags for all pages and locales.
 
 ## [1.2.1] - 2021-01-16
 
