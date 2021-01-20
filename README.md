@@ -66,3 +66,11 @@ Since we don't want our own visits to show up there, add this entry to your `/et
 ```
 127.0.0.1	sa.skoleapp.com
 ```
+
+## Troubleshooting
+
+### My frontend dependencies are not getting loaded from the built image?
+
+1. Run `docker-compose build frontend`
+2. Run `docker-compose up -V`, (same as [`--renew-anow-volumes`](https://docs.docker.com/compose/reference/up/)) this forces the anonymous node_modules volume to update its contents from the freshly built image.
+3. 🍻
