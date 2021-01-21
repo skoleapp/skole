@@ -5,6 +5,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2021-01-18
+
+### Added
+
+- Add suggested courses, resources and comments.
+- Add app store links to teacher landing page too.
+- Add blogging system and first blog about app store releases.
+- Add about page that contains links to all info pages etc. (for teachers, contact, guidelines, score, values, blog, terms and privacy)
+- Show back button on all settings pages on desktop.
+- Add SA badges to values pages.
+
+### Changed
+
+- Make top navbar header text to truncate if it overflows.
+- Move activity and starred pages in the root of the site.
+- Change English texts for all "see all" buttons.
+- Change login button on desktop to automatically redirect back to correct page.
+- Update all course and resource tables to have a consistent style and modify their layout a bit.
+- Make landing page texts more responsive to prevent wrapping to multiple lines.
+- Update texts for teacher landing page.
+- Enable app store links in landing page.
+- Change href for Markdown reference link.
+- Make back button always behave like the browsers back button.
+- Send my-data downloads as links in the email instead of attachments.
+- Change font from Roboto to Rubik.
+
+### Removed
+
+- Remove margins from Markdown paragraphs.
+- Remove all table headers.
+
+### Fixed
+
+- Fix redirection from landing page to home page to not modify the navigation history.
+- Fix bug of get started button showing on landing page on top right corner on desktop.
+- Fix broken CSS property preventing text size being correct on Safari mobile.
+- Fix bug of WhatsApp sharing link not opening externally.
+- Fix URL for invite friends link.
+- Fix title for invite friends link - remove colon.
+- Fix paragraph margins for all Markdown content.
+- Fix meta tags for all pages and locales.
+- Fix miscellaneous emojis.
+
 ## [1.2.1] - 2021-01-16
 
 ### Added
