@@ -14,6 +14,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add blogging system and first blog about app store releases.
 - Add about page that contains links to all info pages etc. (for teachers, contact, guidelines, score, values, blog, terms and privacy)
 - Show back button on all settings pages on desktop.
+- Add SA badges to values pages.
 
 ### Changed
 
@@ -27,8 +28,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Enable app store links in landing page.
 - Change href for Markdown reference link.
 - Make back button always behave like the browsers back button.
-- Make translations for "Hot Topics" more compact.
 - Send my-data downloads as links in the email instead of attachments.
+- Change font from Roboto to Rubik.
 
 ### Removed
 
@@ -45,6 +46,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix title for invite friends link - remove colon.
 - Fix paragraph margins for all Markdown content.
 - Fix meta tags for all pages and locales.
+- Fix miscellaneous emojis.
 
 ## [1.2.1] - 2021-01-16
 
