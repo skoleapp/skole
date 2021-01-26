@@ -5,13 +5,47 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.2] - 2020-01-21
+## [1.3.3] - 2021-01-25
+
+### Added
+
+- Add consistent emojis for all header texts.
+- Show user's comments in profile.
+- Add current score and star count to course and resource headers on desktop.
+- Add course to resource lists.
+
+### Changed
+
+- Slightly modify texts for register, verify account, logout, reset password pages.
+- Change the text color for all header texts to a lighter shade.
+- Change behaviour of back button to take the user to landing page on first page view.
+- Replace boring material icons with emojis in settings and about pages and in all dialogs.
+- Make the layout for the pitch texts wider on teacher landing page.
+- Change style for course, resource and comment tables.
+- Reduce margin on Markdown paragraphs.
+- Make the header texts on course and resource pages more responsive on desktop.
+- Improve frontpage trending list.
+
+### Removed
+
+- Remove description meta tags from search page.
+
+### Fixed
+
+- Fix bug of tooltip not showing for settings button.
+- Fix bug of votes, starred status etc. not loading properly on course and resource pages.
+- Fix bug of resource PDF not loading properly from cache.
+- Allow UTF-8 characters in my-data json file.
+- Fix comment scores not getting calculated correctly.
+- Fix issue where my-data download would return out of date information.
+
+## [1.3.2] - 2021-01-21
 
 ### Fixed
 
 - Fix analytics for landing and teacher pages.
 
-## [1.3.1] - 2020-01-21
+## [1.3.1] - 2021-01-21
 
 ### Fixed
 
