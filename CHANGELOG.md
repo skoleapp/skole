@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.4] - 2021-01-26
+
+### Changed
+
+- Exclude reply comments from trending list.
+
 ## [1.3.3] - 2021-01-25
 
 ### Added
