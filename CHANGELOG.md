@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.5] - 2021-01-27
+
+### Changed
+
+- Replace all emojis in menu items with material icons.
+- Emphasize footer headers.
+
+### Fixed
+
+- Fix 500 error when requesting `sitemap.xml`.
+- Fix vertical alignment for resource bottom navbar.
+- Fix bug of created field not working in trending preview.
+- Fix bug of comment links not working from profile.
+- Fix text wrapping for tab labels on profile and remove emojis from them.
+
 ## [1.3.4] - 2021-01-26
 
 ### Changed
