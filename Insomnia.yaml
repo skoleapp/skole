@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2020-12-29T21:27:42.268Z
+__export_date: 2021-01-23T13:43:48.557Z
 __export_source: insomnia.desktop.app:v2020.5.2
 resources:
   - _id: req_7c4b81c4bd664de3864fad87a00c3abf
@@ -638,6 +638,39 @@ resources:
         value: application/json
     authentication: {}
     metaSortKey: -1576078003263
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ce3c283ec3af43e5a2f05d5d909c5f9b
+    parentId: fld_78601cb821124a789353bc6243fda754
+    modified: 1611409270111
+    created: 1611409228341
+    url: localhost:8000/graphql/
+    name: reosurces
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query Resources($user: ID, $course: ID, $page: Int, $pageSize:
+        Int) {\n  resources(user: $user, course: $course, page: $page, pageSize:
+        $pageSize)
+        {\n    page\n    pages\n    hasNext\n    hasPrev\n    count\n    objects
+        {\n      id\n      title\n      date\n      title\n      file\n      score\n      user
+        {\n        id\n      }\n      vote
+        {\n        id\n        status\n      }\n      course
+        {\n        id\n        code\n        name\n      }\n    }\n  }\n}\n","variables":{},"operationName":"Resources"}'
+    parameters: []
+    headers:
+      - id: pair_d3ecbf212959474da4f672981cab6244
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1576078003238
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
