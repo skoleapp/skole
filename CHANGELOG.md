@@ -7,10 +7,23 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [1.3.5] - 2021-01-28
 
+### Added
+
+- Add product updates system and first update post.
+- Add product updates link in the footer.
+- Add preview thumbnails for comment attachments.
+- Show loading dialog when sending new comments.
+
 ### Changed
 
 - Replace all emojis in menu items with material icons.
 - Emphasize footer headers.
+- Allow filtering course autocompletion by the course code as well.
+- Show bottom navbar on login, register and logout pages.
+- Make footer column width match with home page content.
+- Hide language button on non-translated pages.
+- Show reply comments in top-level threads.
+- Use scroll reveal/infinite scroll for comments to improve the rendering performance.
 
 ### Fixed
 
@@ -19,6 +32,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of created field not working in trending preview.
 - Fix bug of comment links not working from profile.
 - Fix text wrapping for tab labels on profile and remove emojis from them.
+- Fix poor quality on PDFs.
 
 ## [1.3.4] - 2021-01-26
 
