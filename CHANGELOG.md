@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2021-01-29
+
+### Added
+
+- Add product updates system and first update post.
+- Add product updates link in the footer.
+- Add preview thumbnails for comment attachments.
+- Show loading dialog when sending new comments.
+
+### Changed
+
+- Allow filtering course autocompletion by the course code as well.
+- Show bottom navbar on login, register and logout pages.
+- Make footer column width match with home page content.
+- Hide language button on non-translated pages.
+- Show reply comments in top-level threads.
+- Use scroll reveal/infinite scroll for comments to improve the rendering performance.
+
+### Fixed
+
+- Fix poor quality on PDFs.
+
 ## [1.3.5] - 2021-01-28
 
 ### Changed
