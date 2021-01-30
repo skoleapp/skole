@@ -13,6 +13,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add product updates link in the footer.
 - Add preview thumbnails for comment attachments.
 - Show loading dialog when sending new comments.
+- Add support for automatic links in comments.
+- Add app store badges in footer.
 
 ### Changed
 
@@ -22,10 +24,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Hide language button on non-translated pages.
 - Show reply comments in top-level threads.
 - Use scroll reveal/infinite scroll for comments to improve the rendering performance.
+- Change social media links in footer to icons.
+- Prevent showing Markdown images in comments.
+- Make marketing description slightly larger on desktop on landing pages.
+
+### Removed
+
+- Remove slogan from landing pages.
 
 ### Fixed
 
 - Fix poor quality on PDFs.
+- Fix translations for comment reply buttons and placeholders.
+- Fix initial comment count for course and resource pages on mobile.
+- Fix creator info alignment on table row layouts on tablet sizes.
 
 ## [1.3.5] - 2021-01-28
 
