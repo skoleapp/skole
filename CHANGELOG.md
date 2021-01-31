@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.4.0] - 2021-01-29
+## [1.4.0] - 2021-01-31
 
 ### Added
 
@@ -27,6 +27,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Change social media links in footer to icons.
 - Prevent showing Markdown images in comments.
 - Make marketing description slightly larger on desktop on landing pages.
+- Improve email body for shared links.
+- Hide back button during loading screen on mobile.
 
 ### Removed
 
@@ -38,6 +40,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix translations for comment reply buttons and placeholders.
 - Fix initial comment count for course and resource pages on mobile.
 - Fix creator info alignment on table row layouts on tablet sizes.
+- Fix broken WhatsApp sharing title from home page.
 
 ## [1.3.5] - 2021-01-28
 
