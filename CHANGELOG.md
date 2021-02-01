@@ -29,6 +29,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Make marketing description slightly larger on desktop on landing pages.
 - Improve email body for shared links.
 - Hide back button during loading screen on mobile.
+- Combine the course name and code searches into one input.
 
 ### Removed
 
