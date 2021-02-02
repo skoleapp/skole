@@ -138,7 +138,7 @@ workflows:
           repo: frontend-staging
           path: frontend
           context: staging
-          extra-build-args: "--build-arg API_URL --build-arg FRONTEND_URL --build-arg EMAIL_ADDRESS"
+          extra-build-args: "--build-arg API_URL --build-arg FRONTEND_URL --build-arg SA_URL --build-arg EMAIL_ADDRESS"
           <<: *build-image
           <<: *staging-branch
 
