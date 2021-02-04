@@ -5,6 +5,51 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2021-02-04
+
+### Added
+
+- Add school discussion.
+- Allow users to include their messages in higher-level discussions:
+  * In resources -> allow including messages in course discussion.
+  * In courses -> allow including messages in school discussion.
+ - Add a new page for posting comment in any discussion without seeing the contents of the discussion in advance.
+ - Add avatar thumbnails in comment tables.
+ - Show links to other discussions in comments if they have been included in those.
+ - Add navigation tabs for desktop layout.
+ - On course and resource pages, show a small score icon for non-verified users to make the score more clear.
+
+### Changed
+
+- Make upload materials button on course page more visible.
+- Make add courses button on school page more visible.
+- Rename the "no resources" text to "no materials" on course page.
+- On mobile, only show info and actions button on top-right corner on course, resource and school pages and move all other shortcuts in the actions menu - no more duplicate actions.
+- Add more spacing for the author selection button.
+- Bump amount of visible comments and infinite scrolling amount to 20.
+- When clearing autocomplete value, close the options automatically.
+- Use hardcoded url for resource page back button on desktop.
+- Make all header titles slightly smaller.
+- Use consistent header title style for course and resource pages with other pages.
+- Make discussion header text more compact.
+- Sort blogs and product updates in inverse chronological order.
+
+### Removed
+
+- Remove back button from desktop layout of all pages except resource page.
+
+### Fixed
+
+- Fix bug of drawing mode not working after first time on desktop.
+- Fix exit drawing mode tooltip on resource page.
+- Fix bug of unexpected error translations not working.
+- Fix incorrect menu item icons for sharing and deletion actions.
+- Fix bug of table row texts still overflowing on some screen sizes.
+- Fix bug of pagination not working in school and user profile pages.
+- Fix bug of avatar thumbnails not being rounded.
+- Fix bug of avatar thumbnail not updating automatically after profile update.
+- Fix vertical alignment on resource bottom navbar.
+
 ## [1.4.1] - 2021-02-02
 
 ### Changed
