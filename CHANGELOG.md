@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
  - Show links to other discussions in comments if they have been included in those.
  - Add navigation tabs for desktop layout.
  - On course and resource pages, show a small score icon for non-verified users to make the score more clear.
+ - Add emojis on 404, 500 and offline pages.
 
 ### Changed
 
@@ -33,6 +34,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Use consistent header title style for course and resource pages with other pages.
 - Make discussion header text more compact.
 - Sort blogs and product updates in inverse chronological order.
+- Hide desktop navigation on landing pages and loading screen.
+- Optimize comment attachment images.
+- Optimize main background image.
+- Improve spacings on buttons on course and school pages.
 
 ### Removed
 
