@@ -5,6 +5,70 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2021-02-08
+
+### Added
+
+- Add school discussion.
+- Add shortcut in home page to quickly add new comment to a relevant discussion.
+- Allow users to include their messages in higher-level discussions:
+  - In resources -> allow including messages in course discussion.
+  - In courses -> allow including messages in school discussion.
+- Add avatar thumbnails in comment tables.
+- Show links to other discussions in comments if they have been included in those.
+- Add navigation tabs for desktop layout.
+- On course and resource pages, show a small score icon for non-verified users to make the score more clear.
+- Add emojis on 404, 500 and offline pages.
+- Add user's rank to top navbar on desktop.
+- Add option for dark mode - save selection to browser.
+- Add emoji to rank chip on profile.
+- Add emoji to drawing mode header text.
+- Add a link to the most recent product update on home page.
+- Add 'Give us feedback' button to most markdown pages.
+- Add information about ranks to the score page.
+- Add emojis on guidelines page headers.
+- Add a blog about choosing a minor subject.
+- Show author images on blog pages.
+
+### Changed
+
+- Make upload materials button on course page more visible.
+- Make add courses button on school page more visible.
+- Rename the "no resources" text to "no materials" on course page.
+- On mobile, only show info and actions button on top-right corner on course, resource and school pages and move all other shortcuts in the actions menu - no more duplicate actions.
+- Add more spacing for the author selection button.
+- Bump amount of visible comments and infinite scrolling amount to 20.
+- When clearing autocomplete value, close the options automatically.
+- Use hardcoded url for resource page back button on desktop.
+- Make all header titles slightly smaller.
+- Use consistent header title style for course and resource pages with other pages.
+- Make discussion header text more compact.
+- Sort blogs and product updates in inverse chronological order.
+- Hide desktop navigation on landing pages and loading screen.
+- Optimize comment attachment images.
+- Optimize main background image.
+- Improve spacings on buttons on course and school pages.
+- On user profile, use different tooltip when hovering own rank.
+- Change autocomplete lists to show course codes in parenthesis.
+- Hide app store badges from footer on landing pages where they were shown twice.
+
+### Removed
+
+- Remove back button from desktop layout of all pages except resource page.
+
+### Fixed
+
+- Fix bug of drawing mode not working after first time on desktop.
+- Fix exit drawing mode tooltip on resource page.
+- Fix bug of unexpected error translations not working.
+- Fix incorrect menu item icons for sharing and deletion actions.
+- Fix bug of table row texts still overflowing on some screen sizes.
+- Fix bug of pagination not working in school and user profile pages.
+- Fix bug of avatar thumbnails not being rounded.
+- Fix bug of avatar thumbnail not updating automatically after profile update.
+- Fix vertical alignment on resource bottom navbar.
+- Fix bug of correct bottom navbar content not showing for "owner" users on course and resource pages on mobile - the score icon was not visible, which is fixed now.
+
 ## [1.4.1] - 2021-02-02
 
 ### Changed
