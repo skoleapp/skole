@@ -23,6 +23,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add option for dark mode - save selection to browser.
 - Add emoji to rank chip on profile.
 - Add emoji to drawing mode header text.
+- Add a link to the most recent product update on home page.
+- Add 'Give us feedback' button to most markdown pages.
+- Add information about ranks to the score page.
+- Add emojis on guidelines page headers.
 
 ### Changed
 
