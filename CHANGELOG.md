@@ -27,6 +27,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add 'Give us feedback' button to most markdown pages.
 - Add information about ranks to the score page.
 - Add emojis on guidelines page headers.
+- Add a blog about choosing a minor subject.
+- Show author images on blog pages.
 
 ### Changed
 
