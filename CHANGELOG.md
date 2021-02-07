@@ -10,15 +10,19 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Added
 
 - Add school discussion.
+- Add shortcut in home page to quickly add new comment to a relevant discussion.
 - Allow users to include their messages in higher-level discussions:
-  * In resources -> allow including messages in course discussion.
-  * In courses -> allow including messages in school discussion.
- - Add a new page for posting comment in any discussion without seeing the contents of the discussion in advance.
- - Add avatar thumbnails in comment tables.
- - Show links to other discussions in comments if they have been included in those.
- - Add navigation tabs for desktop layout.
- - On course and resource pages, show a small score icon for non-verified users to make the score more clear.
- - Add emojis on 404, 500 and offline pages.
+  - In resources -> allow including messages in course discussion.
+  - In courses -> allow including messages in school discussion.
+- Add avatar thumbnails in comment tables.
+- Show links to other discussions in comments if they have been included in those.
+- Add navigation tabs for desktop layout.
+- On course and resource pages, show a small score icon for non-verified users to make the score more clear.
+- Add emojis on 404, 500 and offline pages.
+- Add user's rank to top navbar on desktop.
+- Add option for dark mode - save selection to browser.
+- Add emoji to rank chip on profile.
+- Add emoji to drawing mode header text.
 
 ### Changed
 
@@ -38,6 +42,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Optimize comment attachment images.
 - Optimize main background image.
 - Improve spacings on buttons on course and school pages.
+- On user profile, use different tooltip when hovering own rank.
+- Change autocomplete lists to show course codes in parenthesis.
+- Hide app store badges from footer on landing pages where they were shown twice.
 
 ### Removed
 
@@ -54,6 +61,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of avatar thumbnails not being rounded.
 - Fix bug of avatar thumbnail not updating automatically after profile update.
 - Fix vertical alignment on resource bottom navbar.
+- Fix bug of correct bottom navbar content not showing for "owner" users on course and resource pages on mobile - the score icon was not visible, which is fixed now.
 
 ## [1.4.1] - 2021-02-02
 
