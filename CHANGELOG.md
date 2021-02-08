@@ -29,6 +29,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add emojis on guidelines page headers.
 - Add a blog about choosing a minor subject.
 - Show author images on blog pages.
+- Add author images on blog list.
+- Add feedback link to footer.
+- Pre-fill user's email in contact form.
 
 ### Changed
 
@@ -51,6 +54,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - On user profile, use different tooltip when hovering own rank.
 - Change autocomplete lists to show course codes in parenthesis.
 - Hide app store badges from footer on landing pages where they were shown twice.
+- Make sure blog images keep their aspect ratio.
+- Improve contact form fields by fixing labels on optional fields and making subject and email fields optional.
+- Don't log out users so quickly from the site.
 
 ### Removed
 
