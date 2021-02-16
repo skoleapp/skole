@@ -5,6 +5,48 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.3] - 2021-02-16
+
+### Added
+
+- Add product update 15.2.2021
+- Add trending link to desktop navigation.
+- Add "reply" chip to reply comments showing in user profile.
+- Add links to latest blog posts in home page.
+- Add link to own school discussion (if one exists) in home page.
+- Add "noreferrer" attributes on all external links.
+- Add account settings page that includes email, school, subject and email settings selection.
+- Add continue button on account verification page under the "email sent" text.
+
+### Changed
+
+- Tweak font sizes in landing pages once again to make them more responsive.
+- Rename "Product" to "Skole" in footer again.
+- Make the home page layout wider on laptop-sized screens.
+- Make the footer layout width consistent with home page layout width.
+- Move pages that were earlier under `/account-settings/*` path to root of the site.
+- Improve miscellaneous translations.
+
+### Fixed
+
+- Fix bug of infinite loading screen on empty discussions.
+- Fix links to school discussions and all reply comments from comment tables in trending lists and user profile.
+- Fix bug of correct discussions not showing in school and resource pages.
+- Fix bug of link buttons with "full width" not working - the widths broke in #369
+- Fix bug of desktop navigation items not having the correct height - broken in #369
+- Fix text wrapping for creator info texts in course, resource and comment tables.
+- Fix links to user profile from comment tables.
+- Fix CMD + click for all links.
+- Fix bug of user avatar not working always when logging in with existing user saved in the device.
+- Fix bug of autocomplete options not showing properly for fields support only one selection.
+- Fix bug of comment deletion not showing for own comments.
+- Fix bug of course menu button not showing on desktop.
+- Fix bug of general form errors not working for various forms.
+- Translate tooltip for opening autocomplete options and text for not having any options in autocomplete field.
+- Fix various links having broken width due to custom link component.
+- Fix spacing for avatar menu.
+- Use consistent spacing and text alignment for all form texts.
+
 ## [1.5.2] - 2021-02-11
 
 ### Fixed
