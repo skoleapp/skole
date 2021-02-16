@@ -26,6 +26,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Make the footer layout width consistent with home page layout width.
 - Move pages that were earlier under `/account-settings/*` path to root of the site.
 - Improve miscellaneous translations.
+- Change all course code references to plural form.
+- Improve course page title when course has no course codes.
 
 ### Fixed
 
@@ -46,6 +48,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix various links having broken width due to custom link component.
 - Fix spacing for avatar menu.
 - Use consistent spacing and text alignment for all form texts.
+- Fix bug of pre-filled school of user not working on add course form.
 
 ## [1.5.2] - 2021-02-11
 
