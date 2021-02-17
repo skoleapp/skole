@@ -17,6 +17,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add "noreferrer" attributes on all external links.
 - Add account settings page that includes email, school, subject and email settings selection.
 - Add continue button on account verification page under the "email sent" text.
+- Add "verification required" template to prevent unverified users from accessing the add course and upload resource forms.
 
 ### Changed
 
@@ -28,6 +29,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Improve miscellaneous translations.
 - Change all course code references to plural form.
 - Improve course page title when course has no course codes.
+- Refer courses, resources, schools, school types, countries and cities with #-prefixes in the UI texts.
+- Improve table rows by making the layout more responsive on mobile and including school links in course rows, course links in resource rows and dynamic links on comment rows.
+- If comments have line breaks, only show the first line in table previews.
+- Rename the URL `/upload-resource` to `/upload-material`.
 
 ### Fixed
 
@@ -49,6 +54,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix spacing for avatar menu.
 - Use consistent spacing and text alignment for all form texts.
 - Fix bug of pre-filled school of user not working on add course form.
+- Fix incorrect comment counts showing on discussions.
+- Fix text overflow issue in long filenames on attachment viewer.
 
 ## [1.5.2] - 2021-02-11
 
