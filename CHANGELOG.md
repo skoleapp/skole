@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2021-02-24
+
+### Added
+
+- Add page for managing email subscriptions.
+- Add email notification settings to account settings.
+- Add contact links to blogs for people who wan't to write blogs for us.
+- Add contact links to product updates for people who have feature ideas for us.
+- Add email subscription forms to product updates and blog posts shown for unauthenticated users - show links to account settings instead for authenticated users who have not subscribed to those.
+
+### Changed
+
+- Improve email inputs on teacher page and email subscription forms - add loading indicator, disable field when submitting etc.
+- Improve "snackbar" notifications - fix text overflow, adjust border radius.
+
+### Fixed
+
+- Fix width for about page items.
+- Fix comment query params.
+
 ## [1.5.4] - 2021-02-20
 
 ### Fixed
