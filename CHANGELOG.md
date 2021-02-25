@@ -14,16 +14,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add contact links to blogs for people who wan't to write blogs for us.
 - Add contact links to product updates for people who have feature ideas for us.
 - Add email subscription forms to product updates and blog posts shown for unauthenticated users - show links to account settings instead for authenticated users who have not subscribed to those.
+- Add helper text to PDF viewer.
 
 ### Changed
 
 - Improve email inputs on teacher page and email subscription forms - add loading indicator, disable field when submitting etc.
 - Improve "snackbar" notifications - fix text overflow, adjust border radius.
+- Change subjects label to optional in add course form.
+- Make SA event from add comment page unique from other comments.
 
 ### Fixed
 
 - Fix width for about page items.
 - Fix comment query params.
+- Fix subject link from course page to search.
 
 ## [1.5.4] - 2021-02-20
 
