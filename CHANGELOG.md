@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.6] - 2021-03-08
+
+### Added
+
+- Add email notifications.
+- Add email subscriptions for blog posts and product updates.
+- Add helper text to PDF viewer for zooming in/out.
+
+### Changed
+
+- Update marketing description.
+- Change subjects label to optional in add course form.
+- Make SA event from add comment page unique from other comments.
+
+### Fixed
+
+- Fix subject link from course page to search.
+- Fix duplicate results in trending suggestions.
+- Fix home page layout on tablet screen sizes.
+- Fix bug of links not working for school reply comment activities.
+
 ## [1.5.5] - 2021-02-28
 
 ### Added
