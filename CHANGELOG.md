@@ -23,6 +23,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Change subjects label to optional in add course form.
 - Make SA event from add comment page unique from other comments.
 - Update marketing description.
+- Use the same password fields for change password form that are used in registration form.
+- Improve the button texts for returning from change password and my data pages back to account settings.
 
 ### Fixed
 
@@ -32,6 +34,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix subject link from course page to search.
 - Fix home page layout on tablet screen sizes.
 - Fix bug of links not working for school reply comment activities.
+- Fix redirection from password reset page: logout -> login.
+- Fix resource bottom navbar layout on small screen sizes.
+- Fix Finnish translation for username helper text on registration form.
+- Fix duplicates occurring in discussion suggestions.
 
 ## [1.5.5] - 2021-02-28
 
