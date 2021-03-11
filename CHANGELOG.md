@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] - 2021-03-11
+
+### Added
+
+- Add page for managing email subscriptions.
+- Add email notification settings to account settings.
+- Add contact links to blogs for people who wan't to write blogs for us.
+- Add contact links to product updates for people who have feature ideas for us.
+- Add email subscription forms to product updates and blog posts shown for unauthenticated users - show links to account settings instead for authenticated users who have not subscribed to those.
+- Add helper text to PDF viewer.
+
+### Changed
+
+- Improve email inputs on teacher page and email subscription forms - add loading indicator, disable field when submitting etc.
+- Improve "snackbar" notifications - fix text overflow, adjust border radius.
+- Change subjects label to optional in add course form.
+- Make SA event from add comment page unique from other comments.
+- Update marketing description.
+- Use the same password fields for change password form that are used in registration form.
+- Improve the button texts for returning from change password and my data pages back to account settings.
+
+### Fixed
+
+- Fix width for about page items.
+- Fix comment query params.
+- Fix duplicate results in trending suggestions.
+- Fix subject link from course page to search.
+- Fix home page layout on tablet screen sizes.
+- Fix bug of links not working for school reply comment activities.
+- Fix redirection from password reset page: logout -> login.
+- Fix resource bottom navbar layout on small screen sizes.
+- Fix Finnish translation for username helper text on registration form.
+- Fix duplicates occurring in discussion suggestions.
+
 ## [1.5.5] - 2021-02-28
 
 ### Added
