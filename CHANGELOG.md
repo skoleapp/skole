@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.2] - 2021-03-14
+
+### Changed
+
+- Make all URL slugs immutable, except user slugs.
+- Prevent trailing dashes (and other special characters) in slugs.
+- Don't show the S3 filename when viewing a comment attachment.
+
+### Fixed
+
+- Fix error on course page which was caused by non-unique course slugs, by forcing them to be unique.
+- Fix screen shaking on a Safari window that was 50% width of a 1080p screen.
+- Show the correct amount of courses on each school page subject.
+- Make sure that the school filter is applied on the search page when coming to it by clicking a subject on a school page.
+
 ## [1.6.1] - 2021-03-11
 
 ### Fixed
