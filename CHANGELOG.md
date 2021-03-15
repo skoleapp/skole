@@ -10,6 +10,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Added
 
 - Add ability for users to track their progress of getting badges.
+- Add info page for badges.
+- Add support for push notifications with notification settings included in account settings.
+
+### Changed
+
+- Remove user's school from search filters when clicking on a subject link from course page.
 
 ## [1.6.2] - 2021-03-14
 
