@@ -5,13 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.7.0] - 2021-03-14
+## [1.7.0] - 2021-03-21
 
 ### Added
 
 - Add ability for users to track their progress of getting badges.
 - Add info page for badges.
 - Add support for push notifications with notification settings included in account settings.
+- Add 'First Comment', 'First Course', 'First Resource', 'First Upvote', and 'First Downvote' badges.
+- Show new badges in the acvitity feed.
+- Send email and push notifications for acquiring badges.
+- Add a product update about notifications and badge tracking.
 
 ### Changed
 
