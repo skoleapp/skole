@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
       target: dev
       args:
-        dev_requirements: "requirements-dev.txt"
+        install_dev_dependencies: 1
     ports:
       - "8000:8000"
     env_file:
