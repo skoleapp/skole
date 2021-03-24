@@ -25,6 +25,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fix a typo on the Finnish landing page.
+- Fix issue where activity links that are comment replies cannot be clicked.
 
 ## [1.6.2] - 2021-03-14
 
