@@ -20,7 +20,7 @@ staging-branch: &staging-branch
         - develop
 
 build-image: &build-image
-  executor: machine-with-cache
+  executor: machine-executor
   pre-steps:
     - update-submodules
   dockerfile: Dockerfile
@@ -39,12 +39,11 @@ verify-deployment: &verify-deployment
 # CircleCI's own sections
 
 executors:
-  machine-with-cache:
+  machine-executor:
     machine:
       image: ubuntu-1604:201903-01
-      docker_layer_caching: true
 
-  docker-no-cache:
+  docker-executor:
     docker:
       - image: cimg/base:2020.01
     resource_class: small
@@ -59,7 +58,7 @@ commands:
 
 jobs:
   check-commits:
-    executor: docker-no-cache
+    executor: docker-executor
     steps:
       - update-submodules
       - run:
