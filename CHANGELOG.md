@@ -3,7 +3,39 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [2.0.0] - 2021-04-02
+
+### Added
+
+- Allow users to delete their own anonymous comments.
+- Allow users to set a backup email address.
+
+### Changed
+
+- Hide most content from anonymous users.
+- Only allow Finnish university email addresses in registration.
+- Require invitation code in registration.
+- Completely redesign the landing page.
+- Massively streamline the whole UI.
+- Change courses into more generic threads.
+- Give more score for comments and threads (old courses).
+- Update guidelines, terms, and privacy policy to reflect the new feature set.
+
+### Removed
+
+- Remove dedicated material pages.
+- Remove dedicated school pages.
+- Remove trending page.
+- Remove for-teachers page.
+- Remove product updates.
+- Remove blogs.
+- Remove user marketing email settings.
+
+### Fixed
+
+- Fix issue where dark mode selection didn't persist.
 
 ## [1.7.0] - 2021-03-24
 
