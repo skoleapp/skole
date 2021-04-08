@@ -13,7 +13,7 @@
     "backend:makemigrations": "docker-compose run --rm backend sh -c 'python manage.py makemigrations'",
     "backend:migrate": "docker-compose run --rm backend sh -c 'python manage.py migrate'",
     "backend:create-superuser": "docker-compose run --rm backend sh -c 'python manage.py createsuperuser'",
-    "backend:import-test-data": "docker-compose run --rm backend sh -c 'python manage.py loaddata test-data.yaml'",
+    "backend:import-test-data": "docker-compose run --rm backend sh -c 'python manage.py loaddata skole/fixtures/*.yaml'",
     "backend:makemessages": "docker-compose run --no-deps --rm backend sh -c 'python manage.py makemessages --all'",
     "backend:compilemessages": "docker-compose run --no-deps --rm backend sh -c 'python manage.py compilemessages'",
     "backend:setup": "docker-compose run --rm backend sh -c 'python manage.py migrate && python manage.py compilemessages && python manage.py loaddata skole/fixtures/*.yaml'",
