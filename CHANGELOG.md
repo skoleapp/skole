@@ -5,18 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2021-04-02
+## [2.0.0] - 2021-04-09
 
 ### Added
 
 - Allow users to delete their own anonymous comments.
-- Allow users to set a backup email address.
+- Allow users to set a backup email address. This needs to be verified with their primary email.
 
 ### Changed
 
 - Hide most content from anonymous users.
 - Only allow Finnish university email addresses in registration.
 - Require invitation code in registration.
+- Show a prompt on the home page for new users to invite friends.
 - Completely redesign the landing page.
 - Massively streamline the whole UI.
 - Change courses into more generic threads.
@@ -36,6 +37,7 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 ### Fixed
 
 - Fix issue where dark mode selection didn't persist.
+- Order user's acquired badges by their tier.
 
 ## [1.7.0] - 2021-03-24
 
