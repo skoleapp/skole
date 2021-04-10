@@ -9,6 +9,8 @@
     "build": "docker-compose build",
     "build:backend": "yarn build backend",
     "build:frontend": "yarn build frontend",
+    "start-prodlike": "docker-compose --file docker-compose-prodlike.yml up",
+    "build-prodlike": "docker-compose --file docker-compose-prodlike.yml build",
     "stop": "docker-compose down",
     "backend:makemigrations": "docker-compose run --rm backend sh -c 'python manage.py makemigrations'",
     "backend:migrate": "docker-compose run --rm backend sh -c 'python manage.py migrate'",

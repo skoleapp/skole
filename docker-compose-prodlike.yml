@@ -1,0 +1,52 @@
+version: "3.7"
+
+services:
+  db-prodlike:
+    container_name: db-prodlike
+    image: postgres:12.4-alpine@sha256:4c493832e4865189e3cab86281a1706a074ea6796b525a7f191b3f48546c25a8
+    ports:
+      - "5433:5433"
+    env_file:
+      - ./.env
+    environment:
+      - PGPORT=5433
+    volumes:
+      - postgres_data_prodlike:/var/lib/postgresql/data/
+    restart: unless-stopped
+
+  backend-prodlike:
+    container_name: backend-prodlike
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: prod
+      args:
+        install_dev_dependencies: 0
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    environment:
+      - DATABASE_URL=postgres://username:password@db-prodlike:5433/skole
+    depends_on:
+      - db-prodlike
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  frontend-prodlike:
+    container_name: frontend-prodlike
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: prod
+      args:
+        - API_URL=http://localhost:8000
+        - FRONTEND_URL=http://localhost:3001
+        - EMAIL_ADDRESS=hello@test.test
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+volumes:
+  postgres_data_prodlike:
