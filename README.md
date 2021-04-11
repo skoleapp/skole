@@ -34,7 +34,8 @@
 
 - To build images, run `yarn build`.
 - To start containers in development, run `yarn start`.
-- To start containers in production, run `yarn prod`.
+- To start containers in a production like setup, run `yarn start-prodlike`. NOTE: This has no code volumes so changes won't get updated without rebuilding.
+- To build images for a production like setup, run `yarn build-prodlike`.
 - To make migrations, run `yarn backend:makemigrations`.
 - To migrate db, run: `yarn backend:migrate`.
 - To create superuser, run `yarn backend:create-superuser`.
