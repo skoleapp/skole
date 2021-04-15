@@ -64,11 +64,23 @@
 ## Using the production site
 
 We use [Simple Analytics](https://simpleanalytics.com) with a [custom subdomain](https://docs.simpleanalytics.com/bypass-ad-blockers#setup-a-custom-subdomain) in the production site.
-Since we don't want our own visits to show up there, add this entry to your `/etc/hosts` file to block those requests:
+Since we don't want our own visits to show up there, do these steps:
+
+##### Desktop
+
+- Add this entry to your `/etc/hosts` file:
 
 ```
 127.0.0.1	sa.skoleapp.com
 ```
+
+##### iOS
+
+- Install [about:blank](https://apps.apple.com/app/about-blank/id1239207203) from the App Store and block `sa.skoleapp.com` with it.
+
+##### Android
+
+- SOL/TODO
 
 ## Troubleshooting
 
