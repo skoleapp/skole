@@ -1,0 +1,33 @@
+name: "Release"
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build:
+    name: "Release Skole"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+
+      - name: "Extract changelog for release notes"
+        id: release_notes
+        # Find the lines between the first `## [<number>` and the second `## [<number>`. (https://stackoverflow.com/a/40450300/9835872)
+        run: sed '1,/^## *\[[0-9]/d;/^## *\[[0-9]/Q' CHANGELOG.md > release_notes.txt
+
+      - name: "Get version"
+        id: get_version
+        run: echo ::set-output name=version::${GITHUB_REF#refs/tags/}
+
+      - name: "Create GitHub release"
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.get_version.outputs.version }}
+          name: ${{ steps.get_version.outputs.version }}
+          body_path: release_notes.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
