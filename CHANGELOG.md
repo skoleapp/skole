@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2021-04-12
+## [2.0.0] - 2021-04-16
 
 ### Added
 
@@ -13,6 +13,7 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 - Allow users to set a backup email address. This needs to be verified with their primary email.
 - Show comment creator score and badges on the comment card.
 - Make the text search functionality return better results with incomplete search terms.
+- Track user and thread views.
 
 ### Changed
 
@@ -25,6 +26,8 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 - Change courses into more generic threads.
 - Give more score for comments and threads (old courses).
 - Update guidelines, terms, and privacy policy to reflect the new feature set.
+- Use skeletons instead of loading spinners for all tables.
+- Use pages from API response data instead of query params.
 
 ### Removed
 
