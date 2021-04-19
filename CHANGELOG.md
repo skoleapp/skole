@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2021-04-19
+
+### Added
+
+- Show the avatar of the thread creator in the thread page.
+
+### Changed
+
+- Make the "best" thread sorting option take freshness into consideration.
+- Lower the matching threshold of thread search.
+- Replace star count with views in thread lists.
+- Match the thread text font size with the comment texts.
+- Add some indent on reply comments.
+- Include share text in desktop Whatsapp links.
+- Improve invite texts.
+- Improve thread sharing texts.
+- Improve profile sharing texts
+
+### Removed
+
+- Hide app store badges on native apps.
+
+### Fixed
+
+- Fix pagination working incorrectly.
+- Fix bug of user link not working from thread page.
+- Fix thread sharing links.
+
 ## [2.0.0] - 2021-04-19
 
 ### Added
