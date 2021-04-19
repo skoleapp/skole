@@ -13,15 +13,24 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 
 ### Changed
 
+- Make the "best" thread sorting option take freshness into consideration.
 - Replace star count with views in thread lists.
 - Match the thread text font size with the comment texts.
 - Add some indent on reply comments.
 - Include share text in desktop Whatsapp links.
 - Improve invite texts.
+- Improve thread sharing texts.
+- Improve profile sharing texts
+
+### Removed
+
+- Hide app store badges on native apps.
 
 ### Fixed
 
 - Fix pagination working incorrectly.
+- Fix bug of user link not working from thread page.
+- Fix thread sharing links.
 
 ## [2.0.0] - 2021-04-19
 
