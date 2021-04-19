@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2021-04-18
+## [2.0.0] - 2021-04-19
 
 ### Added
 
@@ -29,6 +29,7 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 - Use skeletons instead of loading spinners for all tables.
 - Use pages from API response data instead of query params.
 - Rename "Community User" to "Anonymous Student".
+- Improve sharing texts.
 
 ### Removed
 
