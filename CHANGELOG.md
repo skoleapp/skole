@@ -14,6 +14,7 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 ### Changed
 
 - Make the "best" thread sorting option take freshness into consideration.
+- Lower the matching threshold of thread search.
 - Replace star count with views in thread lists.
 - Match the thread text font size with the comment texts.
 - Add some indent on reply comments.
