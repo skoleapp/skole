@@ -1,10 +1,11 @@
 # Skole 🎓
 
-[![CircleCI build status](https://circleci.com/gh/skoleapp/skole.svg?style=shield&circle-token=5cdb1313cb62a0ca8fa117cfd73db38db149774c)](https://circleci.com/gh/skoleapp/skole)
+[![CircleCI build status](https://circleci.com/gh/skoleapp/skole.svg?style=shield&circle-token=c77d16868db482c65e5547e4823bce58f68165b1)](https://circleci.com/gh/skoleapp/skole)
 
 ## Requirements
 
 - [Docker](https://www.docker.com/)
+- [Yarn](https://yarnpkg.com) (Optional but recommended)
 
 ## Get the development environment up and running
 
@@ -16,12 +17,12 @@
 
 4. Build the images: `docker-compose build`
 
-5. Setup the backend for development:
+5. Setup the backend for development (alternatively just run `yarn backend:setup`):
 
        docker-compose run --rm backend sh -c \
            'python manage.py migrate \
             && python manage.py compilemessages \
-            && python manage.py loaddata test-data.yaml'
+            && python manage.py loaddata skole/fixtures/*.yaml'
 
 6. Run the app: `docker-compose up`
 
@@ -33,13 +34,15 @@
 
 - To build images, run `yarn build`.
 - To start containers in development, run `yarn start`.
-- To start containers in production, run `yarn prod`.
+- To start containers in a production like setup, run `yarn start-prodlike`. NOTE: This has no code volumes so changes won't get updated without rebuilding.
+- To build images for a production like setup, run `yarn build-prodlike`.
 - To make migrations, run `yarn backend:makemigrations`.
 - To migrate db, run: `yarn backend:migrate`.
 - To create superuser, run `yarn backend:create-superuser`.
 - To import test data, run `yarn backend:import-test-data`.
 - To make messages in the backend, run `yarn backend:makemessages`.
 - To compile messages in the backend, run `yarn backend:compilemessages`.
+- To run migrations, compile messages, and import test data in the backend, run `yarn backend:setup`.
 - To run tests and type checks in the backend, run `yarn backend:test`.
 - To run type-checking in the backend, run `yarn backend:type-check`.
 - To run linting in the backend, run `yarn backend:lint`.
@@ -48,8 +51,8 @@
 ## Environment variables
 
 - Copy the template env file: `cp .env.template .env` and add values for the \<placeholder\> variables in the `.env` file.
-- If you want to test PDF file conversion during development, you will need a Cloudmersive API key, which you can get [here](https://www.cloudmersive.com/).  
-  Note that this is optional and the application will work fine without it.
+- (Optional) If you want to test PDF file conversion during development, you will need a Cloudmersive API key, which you can get [here](https://www.cloudmersive.com/).
+- (Optional) If you want to test push notificatons during development, you will need a Firebase Cloud Messaging Server key, which you can get [here](https://console.firebase.google.com).
 
 ## Developing locally on your mobile device
 
@@ -61,16 +64,28 @@
 ## Using the production site
 
 We use [Simple Analytics](https://simpleanalytics.com) with a [custom subdomain](https://docs.simpleanalytics.com/bypass-ad-blockers#setup-a-custom-subdomain) in the production site.
-Since we don't want our own visits to show up there, add this entry to your `/etc/hosts` file to block those requests:
+Since we don't want our own visits to show up there, do these steps:
+
+##### Desktop
+
+- Add this entry to your `/etc/hosts` file:
 
 ```
 127.0.0.1	sa.skoleapp.com
 ```
+
+##### iOS
+
+- Install [about:blank](https://apps.apple.com/app/about-blank/id1239207203) from the App Store and block `sa.skoleapp.com` with it.
+
+##### Android
+
+- SOL/TODO
 
 ## Troubleshooting
 
 ### My frontend dependencies are not getting loaded from the built image?
 
 1. Run `docker-compose build frontend`
-2. Run `docker-compose up -V`, (same as [`--renew-anow-volumes`](https://docs.docker.com/compose/reference/up/)) this forces the anonymous node_modules volume to update its contents from the freshly built image.
+2. Run `docker-compose up -V`, (same as [`--renew-anow-volumes`](https://docs.docker.com/compose/reference/up/)) this forces the anonymous `node_modules` volume to update its contents from the freshly built image.
 3. 🍻

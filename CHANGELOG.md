@@ -3,7 +3,49 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [2.0.0] - 2021-04-19
+
+### Added
+
+- Allow users to delete their own anonymous comments.
+- Allow users to set a backup email address. This needs to be verified with their primary email.
+- Show comment creator score and badges on the comment card.
+- Make the text search functionality return better results with incomplete search terms.
+- Track user and thread views.
+
+### Changed
+
+- Hide most content from anonymous users.
+- Only allow Finnish university email addresses in registration.
+- Require invitation code in registration.
+- Show a prompt on the home page for new users to invite friends.
+- Completely redesign the landing page.
+- Massively streamline the whole UI.
+- Change courses into more generic threads.
+- Give more score for comments and threads (old courses).
+- Update guidelines, terms, and privacy policy to reflect the new feature set.
+- Use skeletons instead of loading spinners for all tables.
+- Use pages from API response data instead of query params.
+- Rename "Community User" to "Anonymous Student".
+- Improve sharing texts.
+
+### Removed
+
+- Remove dedicated material pages.
+- Remove dedicated school pages.
+- Remove trending page.
+- Remove for-teachers page.
+- Remove product updates.
+- Remove blogs.
+- Remove user marketing email settings.
+
+### Fixed
+
+- Fix issue where dark mode selection didn't persist.
+- Order user's acquired badges by their tier.
+- Fix constantly happening error when a user would have multiple mobile devices in use.
 
 ## [1.7.0] - 2021-03-24
 
@@ -13,7 +55,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add info page for badges.
 - Add support for push notifications with notification settings included in account settings.
 - Add 'First Comment', 'First Course', 'First Resource', 'First Upvote', and 'First Downvote' badges.
-- Show new badges in the acvitity feed.
+- Show new badges in the activity feed.
 - Send email and push notifications for acquiring badges.
 - Add a product update about notifications and badge tracking.
 
@@ -53,7 +95,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Add page for managing email subscriptions.
 - Add email notification settings to account settings.
-- Add contact links to blogs for people who wan't to write blogs for us.
+- Add contact links to blogs for people who want to write blogs for us.
 - Add contact links to product updates for people who have feature ideas for us.
 - Add email subscription forms to product updates and blog posts shown for unauthenticated users - show links to account settings instead for authenticated users who have not subscribed to those.
 - Add helper text to PDF viewer.
@@ -102,7 +144,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add product update 15.2.2021
 - Add trending link to desktop navigation.
 - Add "reply" chip to reply comments showing in user profile.
-- Add links to latest blog posts in home page.
+- Add links to the latest blog posts in home page.
 - Add link to own school discussion (if one exists) in home page.
 - Add "noreferrer" attributes on all external links.
 - Add account settings page that includes email, school, subject and email settings selection.
@@ -179,7 +221,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add emoji to rank chip on profile.
 - Add emoji to drawing mode header text.
 - Add a link to the most recent product update on home page.
-- Add 'Give us feedback' button to most markdown pages.
+- Add 'Give us feedback' button to most Markdown pages.
 - Add information about ranks to the score page.
 - Add emojis on guidelines page headers.
 - Add a blog about choosing a minor subject.
@@ -193,11 +235,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Make upload materials button on course page more visible.
 - Make add courses button on school page more visible.
 - Rename the "no resources" text to "no materials" on course page.
-- On mobile, only show info and actions button on top-right corner on course, resource and school pages and move all other shortcuts in the actions menu - no more duplicate actions.
+- On mobile, only show info and actions button on top-right corner on course,
+  resource and school pages and move all other shortcuts to the actions menu - no more duplicate actions.
 - Add more spacing for the author selection button.
 - Bump amount of visible comments and infinite scrolling amount to 20.
 - When clearing autocomplete value, close the options automatically.
-- Use hardcoded url for resource page back button on desktop.
+- Use hardcoded URL for resource page back button on desktop.
 - Make all header titles slightly smaller.
 - Use consistent header title style for course and resource pages with other pages.
 - Make discussion header text more compact.
@@ -234,7 +277,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Change the cover image for the 'treding content' product update.
+- Change the cover image for the 'trending content' product update.
 
 ## [1.4.0] - 2021-01-31
 
@@ -308,7 +351,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Slightly modify texts for register, verify account, logout, reset password pages.
 - Change the text color for all header texts to a lighter shade.
-- Change behaviour of back button to take the user to landing page on first page view.
+- Change behavior of back button to take the user to landing page on first page view.
 - Replace boring material icons with emojis in settings and about pages and in all dialogs.
 - Make the layout for the pitch texts wider on teacher landing page.
 - Change style for course, resource and comment tables.
@@ -325,7 +368,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix bug of tooltip not showing for settings button.
 - Fix bug of votes, starred status etc. not loading properly on course and resource pages.
 - Fix bug of resource PDF not loading properly from cache.
-- Allow UTF-8 characters in my-data json file.
+- Allow UTF-8 characters in my-data JSON file.
 - Fix comment scores not getting calculated correctly.
 - Fix issue where my-data download would return out of date information.
 
@@ -419,7 +462,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add back buttons for basically all pages both on desktop and mobile.
 - Add landing page for educators.
 - Add handling for an edge case when user navigates to verify account page as not logged in and without token.
-- Add a next step item on home page for adding school and subcject.
+- Add a next step item on home page for adding school and subject.
 - Update left column header on footer and add a link to "for educators" page.
 - Add indicator for unread notifications on both mobile and desktop.
 - Add initial versions/drafts for score reference, company values and community guideline pages.
@@ -440,11 +483,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Use shared "unexpected error" notification for all edge cases such as voting errors etc.
 - Change casing for words in quotes in terms and conditions.
 - Refactor terms and privacy pages to static pages generated from Markdown at build time.
-- Change link style in all markdown pages and comments to consistent red.
+- Change link style in all Markdown pages and comments to consistent red.
 - Change spacings for all dialogs that are lists such as settings, sharing dialogs etc.
 - Hide settings toolbar from pages that have nothing to do with settings such as starred, terms and privacy pages.
 - Use more descriptive title for discussion header to indicate the amount of comments on desktop.
-- Change all autocomplete fields to re-fetch the data on every key stroke.
+- Change all autocomplete fields to re-fetch the data on every keystroke.
 - On resource page on mobile, instead of a blank bottom nav bar for non-verified users on discussion tab, show the default bottom nav bar instead.
 - Update helper text for register form's username field.
 - Update texts for landing page.
@@ -453,16 +496,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Hide terms, privacy and contact links from the settings menu on desktop.
 - Make avatar bigger on user profile on desktop.
 - Change activity tooltip to show the amount of unread activities.
-- Move language button from footer to alway be on top-right corner on desktop.
-- Update Swedish locale for for educators page.
-- Make content of all static markdown pages slightly narrower.
+- Move language button from footer to always be on top-right corner on desktop.
+- Update Swedish locale for for-educators page.
+- Make content of all static Markdown pages slightly narrower.
 - Make bottom and top nav bars slightly thicker on mobile mostly in order to have more space for the unread activity indicator.
 - Render "login required" and "logout" content directly on pages and remove redirection to another page.
 - Improve buttons and button texts register and login pages.
-- Change landing page URL to the root of the site and home home page under `/home` URL.
+- Change landing page URL to the root of the site and home page under `/home` URL.
 - Change the marketing description to even shorter one.
 - On mobile, show language button on top-right corner for all pages that do not have custom content there.
-- On home page, on mobile, for anonymous users, show a small launch icon button on the top-left corner that takes the user to the landing page.
+- On home page, on mobile, for anonymous users, show a small launch icon button in the top-left corner that takes the user to the landing page.
 - Show "file selected" text in the middle of the drop zone and as the file selection button text on mobile.
 - To save space in the top nav bar, show login/register buttons only up from 960px.
 - Hide get started button for authenticated users in footer.
@@ -482,14 +525,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - On logout page, show login, register, get started and for teachers button after logout.
 - Show login button on register page on top right corner on desktop.
 - Show register button on login page on top right corner on desktop.
-- Show dynamic texts (course name, resource title, school name) as info dialog headers on course, resource and school pages and remove those infos from the actual dialog content.
+- Show dynamic texts (course name, resource title, school name) as info dialog headers on course,
+  resource and school pages and remove that info from the actual dialog content.
 
 ### Fixed
 
 - Fix the misaligned screenshots in drawing mode.
 - Fix bug of comment count not showing on course and resource pages.
 - Fix sharing link for comments.
-- FIx links for next steps on home page.
+- Fix links for next steps on home page.
 - Fix bug of back buttons having incorrect color on mobile.
 - Fix bug of bottom nav bar not showing on home page.
 - Fix bug of activity menu button not showing on activity page on mobile.
@@ -505,8 +549,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Make username and email case insensitive on login.
-- Make email case insensitive on forgot password form.
+- Make username and email case-insensitive on login.
+- Make email case-insensitive on forgot password form.
 
 ## [1.1.0] - 2021-01-01
 
@@ -529,7 +573,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Show default bottom nav bar for non-verified users on course page.
 - On mobile, do not render the "add course to this school" button on course page at all.
 - Bump PDF viewer's max zoom to 5.
-- Implement a regular text/markdown editor instead of using draft.js editor.
+- Implement a regular text/Markdown editor instead of using draft.js editor.
 - Make avatars on comment cards bigger.
 - Fix all other avatar thumbnails so that they match with all other icons in size.
 - Show comments that scroll under the comment reply button on mobile.
@@ -562,7 +606,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix z-index issue for bottom nav bar causing some elements to overlap it.
 - Make sure school page header is centered.
 - Fix positioning for create comment button on mobile.
-- Fix downloaded my data json having user's created and modified values being swapped.
+- Fix downloaded my data JSON having user's created and modified values being swapped.
 - Fix remaining overflow issues for PDF viewer.
 - Fix typo in landing page.
 - Fix scrolling behavior on tables.
@@ -656,7 +700,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Add custom Instagram-like sharing menu for more user-friendly sharing options.
 - Add option for authenticated users to post as anonymous users.
-- The the username and avatar of the account making the comment in the comment creation form.
+- The username and avatar of the account making the comment in the comment creation form.
 - Add keywords and Twitter meta tags to improve SEO.
 
 ### Changed
@@ -709,7 +753,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - Update miscellaneous texts and translations.
-- Use markdown for rendering comments and bio field in user profile.
+- Use Markdown for rendering comments and bio field in user profile.
 - Change layout to show the desktop layout for all devices 960px wide.
 - Disable search field for 500/offline pages.
 - Only pre-fill users selected school in search page.
@@ -732,7 +776,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Allow selecting text from PDF files.
 - Move gray background lower on home page.
 - Disable grouping by resource type in resource lists.
-- Show the type of every resoruce in resource lists.
+- Show the type of every resource in resource lists.
 
 ### Removed
 
@@ -762,7 +806,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Change overall scrolling behaviour and scrolling logic for tables.
+- Change overall scrolling behavior and scrolling logic for tables.
 - Make rich text editor buttons smaller.
 - Improve typings for PDF related components.
 
@@ -809,7 +853,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - Change the designs for landing and home pages
-- Re-implement translations with a lighter `next-translate` library and built-in next.js localised routing.
+- Re-implement translations with a lighter `next-translate` library and built-in next.js localized routing.
 - Use a dedicated query for the activity preview menu.
 - Use nprogress instead of the default loading screen for page transitions.
 - Refactor misc. typings for cleaner code.
@@ -821,10 +865,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fix bug that prevented submitting the register form.
-- Fix layout issues in resource page and some of the settings pages.
+- Fix layout issues in resource page and some settings pages.
 - Fix bottom navbar navigation and Finnish translations when not authenticated.
 - Potentially fix bug of top-level comments not being reset when changing routes.
-- Fix mutation payloads according to the lastest backend schema.
+- Fix mutation payloads according to the latest backend schema.
 - Fix layout for user profile when viewing other users' profiles.
 
 ## [0.15.1] - 2020-11-01
@@ -910,7 +954,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Slightly redesign profile page, improve profile strength stepper (always show completed steps first).
 - Change theming with e.g. rounded corners and other misc. overrides to default MUI components.
 - Remove NProgress - show regular loading screen instead
-- Improve all tables for better compability and hover effects etc.
+- Improve all tables for better compatibility and hover effects etc.
 - Replace `moment.js` with `day.js`.
 - Make most content pages public (home, search, course, resource).
 - Allow commenting for non-logged users but prevent them from adding resources.
@@ -922,17 +966,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fix client-side logout error.
 - Fix bug that caused form error when logging in with different credentials as an existing user.
 - Replace all styled-components styles with MUI's own CSS in JS.
-- Fix error handling for all mutations with latest backend version.
+- Fix error handling for all mutations with the latest backend version.
 - Fix status bar style on iOS.
 - Fix miscellaneous iOS bugs.
 - Fix HTML lang-attribute.
 - Fix create comment button positioning.
-- Fix bug of bottom navbar not showing not authenticated users..
+- Fix bug of bottom navbar not showing non-authenticated users.
 - Fix lang-attribute for HTML-document.
 - Use client-side data fetching for all dynamic pages - fix translation bug.
 - Fix bug of theme overrides not being applied and thus miscellaneous UI elements looking weird.
 - Fix miscellaneous UI bugs.
-- Fix translations on user profile by using client-side data fecthing.
+- Fix translations on user profile by using client-side data fetching.
 - Fix miscellaneous locale typos.
 - Fix avatar thumbnail sizing on mobile.
 - Fix PDF viewer overflow issue preventing border radius from showing.
@@ -1170,7 +1214,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fix bug of displaying PDF viewer screenshot at incorrect size/cutting out areas.
-- Fix bug of not centering horizontal scroll wheen zooming in/out on PDF viewer.
+- Fix bug of not centering horizontal scroll when zooming in/out on PDF viewer.
 - Fix bug of not displaying correct cursor on PDF viewer when holding down CTRL key.
 - Potentially fix CORS error related to printing PDF file.
 
