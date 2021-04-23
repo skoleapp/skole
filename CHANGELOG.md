@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.2] - 2021-04-23
+
+### Added
+
+- Add support for adding comment files.
+- Add support for using native sharing of Android devices.
+
+### Fixed
+
+- Fix safe are issues everywhere, make the image viewer more responsive.
+- Fix swedish translations for views.
+- Fix bug of avatar selection having incorrect texts.
+- Fix UI strings for posting comments as anonymous.
+- Add safe area inset to fix the spacing on the bottom of the landing page.
+- Disable scrolling when the image viewer is displayed.
+- Hide the bottom navbar on all error pages.
+- Make the comment file link style consistent with other comment buttons.
+- Improve the layout for the profile stats.
+
 ## [2.0.1] - 2021-04-19
 
 ### Added
