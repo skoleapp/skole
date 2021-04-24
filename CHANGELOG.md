@@ -5,12 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.2] - 2021-04-23
+## [2.0.2] - 2021-04-24
 
 ### Added
 
 - Add support for adding comment files.
 - Add support for using native sharing of Android devices.
+
+### Changed
+
+- Format all dates by minutes and not by days.
+- Show reply buttons also for reply comments.
+- Use the ordering parameters from URL.
 
 ### Fixed
 
@@ -23,6 +29,9 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 - Hide the bottom navbar on all error pages.
 - Make the comment file link style consistent with other comment buttons.
 - Improve the layout for the profile stats.
+- Fix bug of the push notification signal handler logging an error for every activity.
+- Fix bug of push notifications not working for users with multiple FCM devices.
+- Fix bug of the invite dialog not closing when clicking the backdrop.
 
 ## [2.0.1] - 2021-04-19
 
