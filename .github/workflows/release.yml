@@ -24,7 +24,7 @@ jobs:
         run: echo ::set-output name=version::${GITHUB_REF#refs/tags/}
 
       - name: "Create GitHub release"
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@91409e712cf565ce9eff10c87a8d1b11b81757ae  # v1
         with:
           tag_name: ${{ steps.get_version.outputs.version }}
           name: ${{ steps.get_version.outputs.version }}
