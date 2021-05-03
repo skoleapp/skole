@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.1.0] - 2021-04-29
+## [2.1.0] - 2021-05-03
 
 ### Added
 
@@ -25,6 +25,7 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 - Attempt to improve the speed of loading a thread's comments.
 - Fix typo in author selection.
 - Fix bug of clear comment file/image button not working.
+- Show comments in user profile in chronological order.
 
 ## [2.0.2] - 2021-04-24
 
