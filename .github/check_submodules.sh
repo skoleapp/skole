@@ -1,10 +1,9 @@
 #!/bin/sh
 
-# CircleCI runs this script to check if the commits pointing to the submodules
+# CI runs this script to check if the commits pointing to the submodules
 # are merge commits coming from the default branches and not just some random feature branch.
 
-for module in $(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
-do 
+for module in $(git config --file .gitmodules --get-regexp path | awk '{ print $2 }'); do
     default_branch="$(git -C "$module" remote show origin | awk '/HEAD branch/ {print $NF}')"
     commit="$(git -C "$module" rev-parse HEAD)"
 
