@@ -41,11 +41,11 @@ jobs:
           && echo "::set-output name=tag::$IMAGE_TAG"
 
       - name: "Notify Slack"
-        if: always()
+        if: failure()
         uses: rtCamp/action-slack-notify@f565a63638bd3615e76249bffab00fcb9dab90f7  # v2.1.3
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_COLOR: "${{ job.status == 'success' && 'good' || 'danger' }}"
+          SLACK_COLOR: 'danger'
 
   build-frontend:
     name: "Build Frontend"
@@ -87,11 +87,11 @@ jobs:
           && echo "::set-output name=tag::$IMAGE_TAG"
 
       - name: "Notify Slack"
-        if: always()
+        if: failure()
         uses: rtCamp/action-slack-notify@f565a63638bd3615e76249bffab00fcb9dab90f7  # v2.1.3
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_COLOR: "${{ job.status == 'success' && 'good' || 'danger' }}"
+          SLACK_COLOR: 'danger'
 
   deploy-staging:
     name: "Deploy Staging"
