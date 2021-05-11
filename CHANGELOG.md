@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.2] - 2021-05-10
+
+### Fixed
+
+- Don't show user's anonymous comments in their profile.
+- Fix iOS Smart App Banner not showing up.
+- Attempt to improve the speed of loading a thread's comments.
+
 ## [2.1.1] - 2021-05-06
 
 ### Fixed
