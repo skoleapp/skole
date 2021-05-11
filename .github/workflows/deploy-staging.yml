@@ -95,10 +95,10 @@ jobs:
         with:
           context: frontend
           build-args: |
-            API_URL=${{ secrets.STAGING_API_URL }}
-            FRONTEND_URL=${{ secrets.STAGING_FRONTEND_URL }}
-            SA_URL=${{ secrets.STAGING_SA_URL }}
-            EMAIL_ADDRESS=${{ secrets.STAGING_EMAIL_ADDRESS }}
+            API_URL=https://dev-api.skoleapp.com
+            FRONTEND_URL=https://dev.skoleapp.com
+            SA_URL=https://dev-sa.skoleapp.com
+            EMAIL_ADDRESS=dev@skoleapp.com
           push: true
           tags: ${{ secrets.AWS_ECR_ACCOUNT_URL }}/frontend-staging:${{ github.sha }}
           cache-from: type=local,src=/tmp/.buildx-cache
