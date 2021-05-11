@@ -95,10 +95,10 @@ jobs:
         with:
           context: frontend
           build-args: |
-            API_URL=${{ secrets.PROD_API_URL }}
-            FRONTEND_URL=${{ secrets.PROD_FRONTEND_URL }}
-            SA_URL=${{ secrets.PROD_SA_URL }}
-            EMAIL_ADDRESS=${{ secrets.PROD_EMAIL_ADDRESS }}
+            API_URL=https://api.skoleapp.com
+            FRONTEND_URL=https://www.skoleapp.com
+            SA_URL=https://sa.skoleapp.com
+            EMAIL_ADDRESS=hello@skoleapp.com
           push: true
           tags: ${{ secrets.AWS_ECR_ACCOUNT_URL }}/frontend-prod:${{ github.sha }}
           cache-from: type=local,src=/tmp/.buildx-cache
