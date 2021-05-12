@@ -1,0 +1,22 @@
+name: "CI"
+
+on: pull_request
+
+jobs:
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: true
+          ref: ${{ github.event.pull_request.head.sha }}
+          token: ${{ secrets.SKOLE_PAT }}
+
+      - name: "Check commits of the PR branch"
+        run: ./.github/check_commits.sh
+
+      - name: "Check submodule commit branches"
+        run: ./.github/check_submodules.sh
