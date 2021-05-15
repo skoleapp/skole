@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-staging
+spec:
+  selector:
+    matchLabels:
+      name: frontend-staging
+  template:
+    metadata:
+      labels:
+        name: frontend-staging
+    spec:
+      containers:
+        - name: frontend-staging
+          image: $FRONTEND_IMAGE_URL
+          ports:
+            - containerPort: 3001
