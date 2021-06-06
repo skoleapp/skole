@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.3] - 2021-05-31
+
+### Added
+
+- Add file thumbnails to user profile comments.
+
+### Changed
+
+- Opt out of Google FLoC.
+
+### Fixed
+
+- Fix bug of ordering not retaining on thread page after changing pages.
+- Fix bug of comment file not clearing when closing the comment creation modal.
+- Fix some thread links being shown as `@undefined` in user profile.
+
 ## [2.1.2] - 2021-05-12
 
 ### Fixed
