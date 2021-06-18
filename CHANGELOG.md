@@ -12,6 +12,10 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 - Allow Google to again index most of the pages.
 - Add dynamic thread and user detail pages back to sitemap.
 
+### Fixed
+
+- Fix FLoC opt-out header not getting returned on index page.
+
 ## [2.1.3] - 2021-05-31
 
 ### Added
