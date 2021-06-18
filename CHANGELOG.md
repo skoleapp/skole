@@ -5,7 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.1.3] - 2021-06-18
+## [2.1.4] - 2021-06-18
+
+### Changed
+
+- Allow Google to again index most of the pages.
+- Add dynamic thread and user detail pages back to sitemap.
+
+### Fixed
+
+- Fix FLoC opt-out header not getting returned on index page.
+
+## [2.1.3] - 2021-05-31
 
 ### Added
 
@@ -14,8 +25,6 @@ This project does NOT strictly adhere to [Semantic Versioning](https://semver.or
 ### Changed
 
 - Opt out of Google FLoC.
-- Allow Google to again index most of the pages.
-- Add dynamic thread and user detail pages back to sitemap.
 
 ### Fixed
 
