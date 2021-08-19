@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project does NOT strictly adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2021-08-16
+
+### Removed
+
+- Remove the need to use an invite code when registering.
+
 ## [2.1.6] - 2021-08-09
 
 ### Fixed
