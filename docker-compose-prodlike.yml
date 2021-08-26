@@ -42,6 +42,7 @@ services:
       target: prod
       args:
         - API_URL=http://localhost:8000
+        - BACKEND_URL=http://backend-prodlike:8000
         - FRONTEND_URL=http://localhost:3001
         - EMAIL_ADDRESS=hello@test.test
     ports:
