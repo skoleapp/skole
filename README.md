@@ -1,6 +1,6 @@
 # Skole 🎓
 
-[![CircleCI build status](https://circleci.com/gh/skoleapp/skole.svg?style=shield&circle-token=c77d16868db482c65e5547e4823bce58f68165b1)](https://circleci.com/gh/skoleapp/skole)
+[![ci](https://github.com/skoleapp/skole/actions/workflows/ci.yml/badge.svg)](https://github.com/skoleapp/skole/actions)
 
 ## Requirements
 
