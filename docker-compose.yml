@@ -18,14 +18,12 @@ services:
       context: ./backend
       dockerfile: Dockerfile
       target: dev
-      args:
-        install_dev_dependencies: 1
     ports:
       - "8000:8000"
     env_file:
       - ./.env
     volumes:
-      - ./backend:/home/user/app
+      - ./backend:/app
     depends_on:
       - db
     stdin_open: true
@@ -43,9 +41,9 @@ services:
     env_file:
       - ./.env
     volumes:
-      - ./frontend:/home/user/app
-      - /home/user/app/node_modules
-      - /home/user/app/.next
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
     restart: unless-stopped
 
 volumes:

@@ -20,8 +20,6 @@ services:
       context: ./backend
       dockerfile: Dockerfile
       target: prod
-      args:
-        install_dev_dependencies: 0
     ports:
       - "8000:8000"
     env_file:
