@@ -61,27 +61,6 @@
 - Check your WiFi inet address using e.g. `ipconfig getifaddr en0` and replace the `API_URL` env variable with http://<your_wifi_inet>:8000/
 - That's it, now you should be able to connect on the dev server locally with your mobile device at http://<your_wifi_inet>:3001/
 
-## Using the production site
-
-We use [Simple Analytics](https://simpleanalytics.com) with a [custom subdomain](https://docs.simpleanalytics.com/bypass-ad-blockers#setup-a-custom-subdomain) in the production site.
-Since we don't want our own visits to show up there, do these steps:
-
-##### Desktop
-
-- Add this entry to your `/etc/hosts` file:
-
-```
-127.0.0.1	sa.skoleapp.com
-```
-
-##### iOS
-
-- Install [about:blank](https://apps.apple.com/app/about-blank/id1239207203) from the App Store and block `sa.skoleapp.com` with it.
-
-##### Android
-
-- SOL/TODO
-
 ## Troubleshooting
 
 ### My frontend dependencies are not getting loaded from the built image?
@@ -89,3 +68,7 @@ Since we don't want our own visits to show up there, do these steps:
 1. Run `docker-compose build frontend`
 2. Run `docker-compose up -V`, (same as [`--renew-anow-volumes`](https://docs.docker.com/compose/reference/up/)) this forces the anonymous `node_modules` volume to update its contents from the freshly built image.
 3. 🍻
+
+---
+
+![Skole's landing page](landing-page.png)
